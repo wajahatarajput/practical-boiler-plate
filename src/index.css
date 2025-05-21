@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+/* Test if CSS works at all */
+.test-class {
+  color: red;
+  font-size: 2rem;
+}
