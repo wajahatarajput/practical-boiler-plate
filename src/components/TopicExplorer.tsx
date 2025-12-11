@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ChevronRight, BookOpen, Clock } from 'lucide-react';
 import TopicDetail from './TopicDetail';
 
-export type TopicId = 'arithmetic' | 'algebra' | 'geometry' | 'percentages' | 'ratios' | 'qc' | 'data';
+export type TopicId = 'arithmetic' | 'algebra' | 'geometry' | 'percentages' | 'ratios' | 'qc' | 'data' | 'sentence-completion' | 'analogy' | 'critical-reading';
 
 interface Topic {
   id: TopicId;
@@ -94,6 +94,33 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       difficulty: 'advanced',
       estimatedTime: '8-10 hours',
       concepts: 24,
+    },
+    {
+      id: 'sentence-completion',
+      title: 'Sentence Completion',
+      icon: '✍️',
+      description: 'Master choosing correct words to complete sentences using grammar and vocabulary',
+      difficulty: 'beginner',
+      estimatedTime: '6-8 hours',
+      concepts: 15,
+    },
+    {
+      id: 'analogy',
+      title: 'Analogy Questions',
+      icon: '🔗',
+      description: 'Learn to identify relationships between word pairs and solve analogy problems',
+      difficulty: 'intermediate',
+      estimatedTime: '8-10 hours',
+      concepts: 20,
+    },
+    {
+      id: 'critical-reading',
+      title: 'Critical Reading',
+      icon: '📖',
+      description: 'Master reading comprehension passages and answer various question types',
+      difficulty: 'advanced',
+      estimatedTime: '10-12 hours',
+      concepts: 25,
     },
   ];
 
