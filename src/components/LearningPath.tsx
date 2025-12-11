@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CheckCircle, Lock, ArrowRight, BookOpen, Target, Clock } from 'lucide-react';
-import type { Progress } from './TopicExplorer';
+import type { Progress, TopicId } from './TopicExplorer';
+import TopicDetail from './TopicDetail';
 
 interface LearningPathProps {
   progress: Progress;
@@ -20,6 +21,7 @@ interface PathStep {
 
 const LearningPath = ({ progress, setProgress }: LearningPathProps) => {
   const [selectedPath, setSelectedPath] = useState<'beginner' | 'intermediate' | 'advanced'>('beginner');
+  const [selectedTopic, setSelectedTopic] = useState<TopicId | null>(null);
 
   const learningPaths: Record<'beginner' | 'intermediate' | 'advanced', PathStep[]> = {
     beginner: [
@@ -191,11 +193,27 @@ const LearningPath = ({ progress, setProgress }: LearningPathProps) => {
   };
 
   const currentPath = learningPaths[selectedPath];
-  const completedSteps = new Set<string>(); // This would come from progress tracking
+  
+  // Derive completed steps from progress
+  const completedSteps = new Set<string>();
+  currentPath.forEach((step) => {
+    const topicProgress = progress[step.topic];
+    if (topicProgress) {
+      const levelProgress = topicProgress[step.level];
+      // Consider step completed if progress for that level is >= 50%
+      if (levelProgress >= 50) {
+        completedSteps.add(step.id);
+      }
+    }
+  });
 
   const isStepUnlocked = (step: PathStep): boolean => {
     if (step.prerequisites.length === 0) return true;
     return step.prerequisites.every((prereq) => completedSteps.has(prereq));
+  };
+
+  const handleStartLearning = (step: PathStep) => {
+    setSelectedTopic(step.topic as TopicId);
   };
 
   const getStepStatus = (step: PathStep) => {
@@ -206,6 +224,18 @@ const LearningPath = ({ progress, setProgress }: LearningPathProps) => {
     if (isUnlocked) return 'available';
     return 'locked';
   };
+
+  // If a topic is selected, show TopicDetail (similar to TopicExplorer)
+  if (selectedTopic) {
+    return (
+      <TopicDetail
+        topicId={selectedTopic}
+        onBack={() => setSelectedTopic(null)}
+        progress={progress}
+        setProgress={setProgress}
+      />
+    );
+  }
 
   return (
     <div>
@@ -326,8 +356,19 @@ const LearningPath = ({ progress, setProgress }: LearningPathProps) => {
                   </div>
 
                   {status === 'available' && (
-                    <button className="flex gap-2 justify-center items-center px-4 py-2 mt-4 w-full font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+                    <button 
+                      onClick={() => handleStartLearning(step)}
+                      className="flex gap-2 justify-center items-center px-4 py-2 mt-4 w-full font-medium text-white bg-blue-600 rounded-lg transition-colors hover:bg-blue-700"
+                    >
                       Start Learning <ArrowRight size={16} />
+                    </button>
+                  )}
+                  {status === 'completed' && (
+                    <button 
+                      onClick={() => handleStartLearning(step)}
+                      className="flex gap-2 justify-center items-center px-4 py-2 mt-4 w-full font-medium text-green-700 bg-green-100 rounded-lg transition-colors hover:bg-green-200"
+                    >
+                      Review <ArrowRight size={16} />
                     </button>
                   )}
                   {status === 'locked' && (
