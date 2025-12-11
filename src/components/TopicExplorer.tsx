@@ -38,8 +38,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '🔢',
       description: 'Master basic operations, number properties, factors, multiples, and prime numbers',
       difficulty: 'beginner',
-      estimatedTime: '2-3 hours',
-      concepts: 8,
+      estimatedTime: '4-5 hours',
+      concepts: 10,
     },
     {
       id: 'algebra',
@@ -47,8 +47,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '📐',
       description: 'Learn algebraic identities, solving equations, and word problem translation',
       difficulty: 'intermediate',
-      estimatedTime: '3-4 hours',
-      concepts: 6,
+      estimatedTime: '5-6 hours',
+      concepts: 7,
     },
     {
       id: 'geometry',
@@ -56,8 +56,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '📏',
       description: 'Understand lines, angles, triangles, circles, and all geometric formulas',
       difficulty: 'intermediate',
-      estimatedTime: '4-5 hours',
-      concepts: 10,
+      estimatedTime: '6-7 hours',
+      concepts: 7,
     },
     {
       id: 'percentages',
@@ -65,7 +65,7 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '📊',
       description: 'Master percentage calculations, fraction comparisons, and decimal conversions',
       difficulty: 'beginner',
-      estimatedTime: '2-3 hours',
+      estimatedTime: '4-5 hours',
       concepts: 5,
     },
     {
@@ -74,7 +74,7 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '⚖️',
       description: 'Learn ratio calculations, proportions, and distribution problems',
       difficulty: 'beginner',
-      estimatedTime: '2 hours',
+      estimatedTime: '4-5 hours',
       concepts: 4,
     },
     {
@@ -83,8 +83,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '🎯',
       description: 'Master QC strategies, systematic testing, and common traps',
       difficulty: 'advanced',
-      estimatedTime: '3-4 hours',
-      concepts: 7,
+      estimatedTime: '4-5 hours',
+      concepts: 3,
     },
     {
       id: 'data',
@@ -92,8 +92,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '📉',
       description: 'Analyze graphs, charts, tables, and estimation strategies',
       difficulty: 'advanced',
-      estimatedTime: '3-4 hours',
-      concepts: 6,
+      estimatedTime: '4-5 hours',
+      concepts: 4,
     },
   ];
 
