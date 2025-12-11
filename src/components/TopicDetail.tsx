@@ -137,9 +137,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'If n is integer, which MUST be even? A) n²+n+1  B) n(n+1)  C) n²+1  D) 2n+1',
-              solution: 'B) n(n+1) → product of consecutive integers → ALWAYS even',
-              explanation: 'Consecutive integers are one even and one odd. Their product is always even. Test others: A can be odd (n=1), C can be even or odd, D is always odd.',
+              question: 'If n is an integer, which of the following expressions MUST be even? A) n²+n+1  B) n(n+1)  C) n²+1  D) 2n+1',
+              solution: 'Step 1: Understand the problem. We need to find which expression is ALWAYS even, regardless of what integer n is. Step 2: Test option A: n²+n+1. Test n=1: 1²+1+1 = 1+1+1 = 3 (odd). Since we found one case where it\'s odd, A is NOT always even. Step 3: Test option B: n(n+1). This is the product of two consecutive integers. For any integer n, either n is even or n+1 is even (consecutive integers always include one even number). The product of an even number with any integer is always even. Therefore, n(n+1) is ALWAYS even. Step 4: Verify with test cases. Test n=0: 0(0+1) = 0 (even). Test n=1: 1(2) = 2 (even). Test n=2: 2(3) = 6 (even). Test n=-1: (-1)(0) = 0 (even). All cases give even results. Step 5: Check other options to confirm. Option C: n²+1. Test n=1: 1+1=2 (even), but test n=2: 4+1=5 (odd). Not always even. Option D: 2n+1. This is always odd (2n is always even, even+1=odd). Step 6: Final answer. B) n(n+1) is the only expression that MUST be even for all integers n.',
+              explanation: 'The key insight is recognizing that n(n+1) represents the product of two consecutive integers. Consecutive integers always include one even number, and multiplying any number by an even number results in an even product. This is a fundamental property that makes this expression always even, regardless of whether n itself is even or odd.',
             },
           ],
           commonMistakes: [
@@ -207,14 +207,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Solve: 3 − 2x ≤ 7',
-              solution: '3 − 2x ≤ 7 → −2x ≤ 4 → x ≥ −2 (flip sign when dividing by −2!)',
-              explanation: 'When dividing by negative number, the inequality sign reverses. Always check if you\'re dividing by negative.',
+              question: 'Solve the inequality: 3 − 2x ≤ 7',
+              solution: 'Step 1: Start with the given inequality. 3 − 2x ≤ 7. Step 2: Isolate the term with x. We need to get x by itself. First, subtract 3 from both sides to move the constant term. 3 − 2x − 3 ≤ 7 − 3. This simplifies to: −2x ≤ 4. Step 3: Divide both sides by −2 to solve for x. Here is the CRITICAL step: when dividing (or multiplying) both sides of an inequality by a NEGATIVE number, we must REVERSE the inequality sign. So: −2x ÷ (−2) ≥ 4 ÷ (−2). Notice the sign changed from ≤ to ≥. Step 4: Simplify both sides. x ≥ −2. Step 5: Verify the answer. Test x = −2 (boundary): 3 − 2(−2) = 3 + 4 = 7 ≤ 7 ✓. Test x = 0 (greater than −2): 3 − 2(0) = 3 ≤ 7 ✓. Test x = −3 (less than −2): 3 − 2(−3) = 3 + 6 = 9 ≤ 7 ✗. This confirms our answer is correct. Therefore, the solution is x ≥ −2.',
+              explanation: 'The most critical point in solving this inequality is remembering to reverse the inequality sign when dividing by a negative number. This is a common mistake that leads to incorrect answers. The rule is: if a < b and c < 0, then ac > bc (the inequality reverses). Always check the sign of the number you\'re dividing by!',
             },
             {
-              question: 'Compare: x = 0.25, which is greater: x² or √x?',
-              solution: 'x² = (0.25)² = 0.0625, √x = √0.25 = 0.5 → √x > x²',
-              explanation: 'For numbers between 0 and 1, squaring makes smaller, square root makes larger. This is a key property to remember.',
+              question: 'If x = 0.25, which is greater: x² or √x?',
+              solution: 'Step 1: Understand the problem. We need to compare x² and √x when x = 0.25. Step 2: Calculate x². x² = (0.25)² = 0.25 × 0.25. To calculate: 0.25 × 0.25 = (25/100) × (25/100) = 625/10000 = 0.0625. Step 3: Calculate √x. √x = √0.25. We know that 0.25 = 1/4, and √(1/4) = 1/√4 = 1/2 = 0.5. Alternatively, we can think: what number squared equals 0.25? Since 0.5 × 0.5 = 0.25, we have √0.25 = 0.5. Step 4: Compare the values. x² = 0.0625 and √x = 0.5. Since 0.5 > 0.0625, we have √x > x². Step 5: Understand the general principle. For any number x where 0 < x < 1, we have: x² < x < √x. This is because squaring a number between 0 and 1 makes it smaller (multiplying two fractions less than 1), while taking the square root makes it larger (closer to 1). Therefore, √x > x².',
+              explanation: 'This problem demonstrates an important property: for numbers between 0 and 1, squaring makes them smaller while taking the square root makes them larger. This is the opposite of what happens for numbers greater than 1. Understanding this property helps solve many comparison problems quickly.',
             },
           ],
           commonMistakes: [
@@ -247,18 +247,18 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           examples: [
             {
               question: 'Is 4,572 divisible by 3?',
-              solution: 'Sum of digits: 4+5+7+2 = 18 → 18 is divisible by 3 → Yes, 4,572 is divisible by 3',
-              explanation: 'Add all digits. If the sum is divisible by 3, the original number is divisible by 3.',
+              solution: 'Step 1: Recall the divisibility rule for 3. A number is divisible by 3 if the sum of its digits is divisible by 3. Step 2: Find the sum of all digits. 4,572: 4 + 5 + 7 + 2 = 18. Step 3: Check if the sum is divisible by 3. 18 ÷ 3 = 6, so 18 is divisible by 3. Step 4: Apply the rule. Since the sum of digits (18) is divisible by 3, the original number (4,572) is also divisible by 3. Step 5: Verify (optional). 4,572 ÷ 3 = 1,524 ✓. Therefore, yes, 4,572 is divisible by 3.',
+              explanation: 'The divisibility rule for 3 is simple: add all digits, and if that sum is divisible by 3, the original number is divisible by 3. This works because of the properties of the number system. This rule saves time compared to actually dividing the number.',
             },
             {
               question: 'Is 8,436 divisible by 4?',
-              solution: 'Last two digits: 36 → 36 ÷ 4 = 9 → Yes, 8,436 is divisible by 4',
-              explanation: 'Check only the last two digits. If they form a number divisible by 4, the whole number is divisible by 4.',
+              solution: 'Step 1: Recall the divisibility rule for 4. A number is divisible by 4 if the number formed by its last two digits is divisible by 4. Step 2: Identify the last two digits. For 8,436, the last two digits are 36. Step 3: Check if the last two digits form a number divisible by 4. 36 ÷ 4 = 9, so 36 is divisible by 4. Step 4: Apply the rule. Since the last two digits (36) form a number divisible by 4, the whole number (8,436) is divisible by 4. Step 5: Verify (optional). 8,436 ÷ 4 = 2,109 ✓. Therefore, yes, 8,436 is divisible by 4.',
+              explanation: 'The divisibility rule for 4 only requires checking the last two digits. This is because 100 is divisible by 4, so any number can be written as (hundreds part × 100) + (last two digits), and since 100 is divisible by 4, only the last two digits matter. This makes checking divisibility by 4 very quick.',
             },
             {
-              question: 'Which is divisible by 6? A) 234  B) 235  C) 237',
-              solution: 'A) 234: Last digit 4 (even) ✓, Sum 2+3+4=9 (divisible by 3) ✓ → Divisible by 6',
-              explanation: 'Must be divisible by both 2 (even) and 3 (sum divisible by 3).',
+              question: 'Which of the following numbers is divisible by 6? A) 234  B) 235  C) 237',
+              solution: 'Step 1: Understand divisibility by 6. A number is divisible by 6 if it is divisible by BOTH 2 AND 3. This is because 6 = 2 × 3, and 2 and 3 are relatively prime. Step 2: Test option A) 234. Check divisibility by 2: Last digit is 4 (even) ✓, so 234 is divisible by 2. Check divisibility by 3: Sum of digits = 2 + 3 + 4 = 9. Since 9 is divisible by 3, 234 is divisible by 3 ✓. Since 234 is divisible by both 2 and 3, it is divisible by 6. Step 3: Test option B) 235. Check divisibility by 2: Last digit is 5 (odd) ✗, so 235 is NOT divisible by 2. Since it fails the first condition, 235 is NOT divisible by 6. Step 4: Test option C) 237. Check divisibility by 2: Last digit is 7 (odd) ✗, so 237 is NOT divisible by 2. Since it fails the first condition, 237 is NOT divisible by 6. Step 5: Final answer. Only option A) 234 is divisible by 6. Step 6: Verify. 234 ÷ 6 = 39 ✓.',
+              explanation: 'For divisibility by composite numbers like 6, check divisibility by its prime factors (2 and 3). Both conditions must be satisfied. Always check the easier condition first (divisibility by 2 is just checking if the last digit is even).',
             },
           ],
           commonMistakes: [
@@ -289,19 +289,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'PEMDAS: Parentheses → Exponents → Multiplication/Division → Addition/Subtraction',
           examples: [
             {
-              question: 'Evaluate: 8 + 2 × 3²',
-              solution: 'First: 3² = 9 → Then: 2 × 9 = 18 → Finally: 8 + 18 = 26',
-              explanation: 'Exponents before multiplication, multiplication before addition. NOT (8+2) × 9 = 90!',
+              question: 'Evaluate the expression: 8 + 2 × 3²',
+              solution: 'Step 1: Recall PEMDAS order. Parentheses, Exponents, Multiplication/Division (left to right), Addition/Subtraction (left to right). Step 2: Identify operations. We have: addition (+), multiplication (×), and exponent (²). Step 3: Apply exponents first (E in PEMDAS). 3² = 3 × 3 = 9. The expression becomes: 8 + 2 × 9. Step 4: Apply multiplication before addition (M before A). 2 × 9 = 18. The expression becomes: 8 + 18. Step 5: Perform addition. 8 + 18 = 26. Step 6: Common mistake to avoid. Many people incorrectly do: (8 + 2) × 3² = 10 × 9 = 90. This is WRONG because it ignores the order of operations. Step 7: Final answer. Therefore, 8 + 2 × 3² = 26.',
+              explanation: 'Order of operations is critical! Exponents come before multiplication, and multiplication comes before addition. The common mistake is doing addition first, which gives the wrong answer. Always follow PEMDAS systematically.',
             },
             {
-              question: 'Evaluate: 20 − 8 ÷ 2 × 3',
-              solution: 'Division and multiplication have same priority, go left to right: 8 ÷ 2 = 4 → 4 × 3 = 12 → 20 − 12 = 8',
-              explanation: 'Do multiplication and division from left to right, then subtraction.',
+              question: 'Evaluate the expression: 20 − 8 ÷ 2 × 3',
+              solution: 'Step 1: Identify operations. We have: subtraction (−), division (÷), and multiplication (×). Step 2: Apply PEMDAS. There are no parentheses or exponents, so we move to multiplication and division. Step 3: Important rule: Multiplication and division have the SAME priority. When operations have the same priority, work from LEFT TO RIGHT. Step 4: Work left to right. Starting from the left: 8 ÷ 2 comes first. 8 ÷ 2 = 4. The expression becomes: 20 − 4 × 3. Step 5: Continue left to right. Next is: 4 × 3 = 12. The expression becomes: 20 − 12. Step 6: Perform subtraction. 20 − 12 = 8. Step 7: Common mistake. Some people incorrectly do: 20 − (8 ÷ 2 × 3) = 20 − 12 = 8 (this happens to be correct by coincidence), but the wrong approach is: 20 − 8 ÷ (2 × 3) = 20 − 8 ÷ 6 = 20 − 1.33... which is wrong. Step 8: Final answer. Therefore, 20 − 8 ÷ 2 × 3 = 8.',
+              explanation: 'When multiplication and division appear together, they have equal priority and must be done from left to right. This is a common source of errors. Always work systematically from left to right for operations with the same priority.',
             },
             {
-              question: 'Evaluate: 2(3 + 4)²',
-              solution: 'First: (3 + 4) = 7 → Then: 7² = 49 → Finally: 2 × 49 = 98',
-              explanation: 'Parentheses first, then exponent, then multiplication.',
+              question: 'Evaluate the expression: 2(3 + 4)²',
+              solution: 'Step 1: Identify operations. We have: parentheses, exponent, and multiplication. Step 2: Apply PEMDAS order. P (Parentheses) comes first, then E (Exponents), then M (Multiplication). Step 3: Evaluate parentheses first (P in PEMDAS). (3 + 4) = 7. The expression becomes: 2(7)², which is the same as 2 × 7². Step 4: Apply exponent next (E in PEMDAS). 7² = 7 × 7 = 49. The expression becomes: 2 × 49. Step 5: Perform multiplication (M in PEMDAS). 2 × 49 = 98. Step 6: Common mistake. Some people incorrectly do: 2(3 + 4)² = 2(7)² = 14² = 196. This is WRONG because it multiplies before applying the exponent. The exponent applies only to what\'s inside the parentheses, not to the 2. Step 7: Final answer. Therefore, 2(3 + 4)² = 98.',
+              explanation: 'Parentheses must be evaluated first, then exponents, then multiplication. The exponent applies to the value inside the parentheses (7), not to the entire expression. Always follow PEMDAS order strictly.',
             },
           ],
           commonMistakes: [
@@ -332,19 +332,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: '|x| = x if x ≥ 0, |x| = −x if x < 0',
           examples: [
             {
-              question: 'Solve: |x − 3| = 5',
-              solution: 'x − 3 = 5 or x − 3 = −5 → x = 8 or x = −2',
-              explanation: 'Absolute value equals 5 means the expression inside equals 5 or −5. Solve both cases.',
+              question: 'Solve the equation: |x − 3| = 5',
+              solution: 'Step 1: Understand absolute value. The absolute value |x − 3| represents the distance from x to 3 on the number line. If this distance equals 5, then x is either 5 units to the right of 3 or 5 units to the left of 3. Step 2: Set up two cases. When |expression| = a (where a > 0), we have two possibilities: expression = a OR expression = −a. So: |x − 3| = 5 means: x − 3 = 5 OR x − 3 = −5. Step 3: Solve Case 1: x − 3 = 5. Add 3 to both sides: x − 3 + 3 = 5 + 3, which gives: x = 8. Step 4: Solve Case 2: x − 3 = −5. Add 3 to both sides: x − 3 + 3 = −5 + 3, which gives: x = −2. Step 5: Verify both solutions. Check x = 8: |8 − 3| = |5| = 5 ✓. Check x = −2: |−2 − 3| = |−5| = 5 ✓. Step 6: Final answer. The solutions are x = 8 or x = −2.',
+              explanation: 'Absolute value equations always have two cases when the right side is positive. The expression inside the absolute value can equal either the positive or negative value on the right side. Always check both solutions to verify they work.',
             },
             {
-              question: 'Solve: |2x + 1| < 7',
-              solution: '−7 < 2x + 1 < 7 → −8 < 2x < 6 → −4 < x < 3',
-              explanation: '|expression| < a means −a < expression < a. Solve the compound inequality.',
+              question: 'Solve the inequality: |2x + 1| < 7',
+              solution: 'Step 1: Understand the inequality. |2x + 1| < 7 means the distance from (2x + 1) to 0 is less than 7. This means (2x + 1) is between −7 and 7. Step 2: Convert to compound inequality. When |expression| < a (where a > 0), we have: −a < expression < a. So: |2x + 1| < 7 becomes: −7 < 2x + 1 < 7. Step 3: Solve the compound inequality. We need to isolate x in the middle. Subtract 1 from all three parts: −7 − 1 < 2x + 1 − 1 < 7 − 1. This gives: −8 < 2x < 6. Step 4: Divide all three parts by 2. Since 2 is positive, the inequality signs do NOT reverse: −8 ÷ 2 < 2x ÷ 2 < 6 ÷ 2. This gives: −4 < x < 3. Step 5: Interpret the solution. This means x is greater than −4 AND less than 3. In interval notation: (−4, 3). Step 6: Verify with test values. Test x = 0 (in range): |2(0) + 1| = |1| = 1 < 7 ✓. Test x = −4 (boundary): |2(−4) + 1| = |−7| = 7, NOT < 7 ✗ (boundary not included). Test x = 3 (boundary): |2(3) + 1| = |7| = 7, NOT < 7 ✗ (boundary not included). Test x = −5 (outside): |2(−5) + 1| = |−9| = 9, NOT < 7 ✗. Therefore, the solution is −4 < x < 3.',
+              explanation: 'For absolute value inequalities with <, we convert to a compound inequality: −a < expression < a. Then we solve this compound inequality by performing the same operations on all three parts. Remember: only reverse inequality signs when multiplying or dividing by a negative number.',
             },
             {
-              question: 'What is |−15| + |−8|?',
-              solution: '|−15| = 15, |−8| = 8 → 15 + 8 = 23',
-              explanation: 'Absolute value of negative number is its positive value.',
+              question: 'Calculate: |−15| + |−8|',
+              solution: 'Step 1: Understand absolute value. The absolute value of a number is its distance from 0 on the number line, which is always non-negative. Step 2: Calculate |−15|. The absolute value of −15 is 15, because −15 is 15 units away from 0. So: |−15| = 15. Step 3: Calculate |−8|. The absolute value of −8 is 8, because −8 is 8 units away from 0. So: |−8| = 8. Step 4: Add the results. |−15| + |−8| = 15 + 8 = 23. Step 5: Final answer. Therefore, |−15| + |−8| = 23.',
+              explanation: 'Absolute value always returns a non-negative number. For negative numbers, the absolute value is the positive version of that number. For positive numbers, the absolute value is the number itself. The absolute value of 0 is 0.',
             },
           ],
           commonMistakes: [
@@ -436,14 +436,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'On number line, what is distance between −5 and 3?',
-              solution: 'Distance = |3 − (−5)| = |3 + 5| = |8| = 8',
-              explanation: 'Use absolute value to find distance. Distance is always positive.',
+              question: 'On a number line, what is the distance between −5 and 3?',
+              solution: 'Step 1: Understand distance. Distance is always a positive value representing how far apart two numbers are on the number line. Step 2: Use the distance formula. Distance between two numbers a and b is: |a − b| or |b − a| (both give the same result). Step 3: Apply the formula. Distance = |3 − (−5)|. Step 4: Simplify inside the absolute value. 3 − (−5) = 3 + 5 = 8. Step 5: Apply absolute value. |8| = 8. Step 6: Verify. We can also use: |−5 − 3| = |−8| = 8 ✓. Both methods give the same answer. Step 7: Visualize on number line. On a number line, −5 is 5 units left of 0, and 3 is 3 units right of 0. The distance from −5 to 0 is 5, and from 0 to 3 is 3, so total distance = 5 + 3 = 8 ✓. Step 8: Final answer. Therefore, the distance between −5 and 3 is 8 units.',
+              explanation: 'Distance is always positive and represents the absolute difference between two numbers. The formula |a − b| works regardless of which number is larger. Distance can never be negative.',
             },
             {
-              question: 'Represent on number line: −2 < x ≤ 4',
-              solution: 'Open circle at −2, closed circle at 4, shade between them',
-              explanation: '< means open (not included), ≤ means closed (included).',
+              question: 'Represent the inequality −2 < x ≤ 4 on a number line.',
+              solution: 'Step 1: Understand the inequality. −2 < x ≤ 4 means: x is greater than −2 AND x is less than or equal to 4. This is a compound inequality. Step 2: Identify the boundaries. Lower boundary: x = −2 (not included, because of <). Upper boundary: x = 4 (included, because of ≤). Step 3: Draw the number line. Draw a horizontal line with numbers marked. Step 4: Mark the lower boundary (−2). Since −2 < x (strict inequality, not ≤), −2 is NOT included. Use an OPEN circle (or parenthesis) at −2. Step 5: Mark the upper boundary (4). Since x ≤ 4 (includes equality), 4 IS included. Use a CLOSED circle (or bracket) at 4. Step 6: Shade the region. Shade the region between −2 and 4, including all numbers greater than −2 and less than or equal to 4. Step 7: Verify with test points. Test x = 0 (should be included): −2 < 0 ≤ 4 ✓. Test x = −2 (should NOT be included): −2 < −2 is false ✗. Test x = 4 (should be included): −2 < 4 ≤ 4 ✓. Test x = 5 (should NOT be included): 5 ≤ 4 is false ✗. Step 8: Final representation. On the number line: Open circle at −2, closed circle at 4, with the line between them shaded. In interval notation: (−2, 4].',
+              explanation: 'Inequalities on number lines: < or > use open circles (not included), ≤ or ≥ use closed circles (included). Always test boundary points to verify. The shading shows all numbers that satisfy the inequality.',
             },
           ],
           commonMistakes: [
@@ -472,14 +472,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Estimate: 487 + 623',
-              solution: 'Round: 500 + 600 = 1,100 (actual: 1,110)',
-              explanation: 'Round both numbers to nearest hundred, then add.',
+              question: 'Estimate the sum: 487 + 623',
+              solution: 'Step 1: Understand estimation. Estimation gives a quick approximate answer, not the exact value. It\'s useful for checking if an answer is reasonable. Step 2: Round each number to the nearest hundred. 487: The tens digit is 8, which is ≥ 5, so round up. 487 rounds to 500. 623: The tens digit is 2, which is < 5, so round down. 623 rounds to 600. Step 3: Add the rounded numbers. 500 + 600 = 1,100. Step 4: Compare with actual answer. Actual: 487 + 623 = 1,110. Our estimate: 1,100. The estimate is very close (only 10 off), which is good! Step 5: Interpret. The estimate of 1,100 is within 1% of the actual answer (1,110), which is excellent for a quick mental calculation. Therefore, the estimated sum is 1,100 (actual: 1,110).',
+              explanation: 'For addition, round all numbers to the same place value (hundreds, tens, etc.), then add. Rounding to the nearest hundred gives a good balance between accuracy and simplicity. The estimate helps verify that your exact calculation is reasonable.',
             },
             {
-              question: 'Estimate: 23 × 48',
-              solution: 'Round: 20 × 50 = 1,000 (actual: 1,104)',
-              explanation: 'Round one down, one up to balance error.',
+              question: 'Estimate the product: 23 × 48',
+              solution: 'Step 1: Understand estimation for multiplication. For multiplication, we can round to make calculation easier. Step 2: Round strategically. For multiplication, it\'s often better to round one number up and one down to balance errors. 23: Round to 20 (round down by 3). 48: Round to 50 (round up by 2). Step 3: Multiply the rounded numbers. 20 × 50 = 1,000. Step 4: Compare with actual answer. Actual: 23 × 48 = 1,104. Our estimate: 1,000. The estimate is close (only 104 off, about 9.4% error). Step 5: Why this method works. By rounding one up and one down, the errors partially cancel each other out. If we had rounded both down (20 × 40 = 800) or both up (30 × 50 = 1,500), the error would be larger. Step 6: Final answer. Therefore, the estimated product is 1,000 (actual: 1,104).',
+              explanation: 'For multiplication, rounding one number up and one down helps balance errors. This is because the errors multiply together, so having opposite errors (one too high, one too low) partially cancels them out. This gives better estimates than rounding both in the same direction.',
             },
           ],
           commonMistakes: [
@@ -508,19 +508,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Add: 12.45 + 3.7',
-              solution: 'Align: 12.45 + 3.70 = 16.15',
-              explanation: 'Add zero to 3.7 to align decimal points, then add normally.',
+              question: 'Add the decimals: 12.45 + 3.7',
+              solution: 'Step 1: Understand the problem. We need to add two decimal numbers. Step 2: Align decimal points. For addition and subtraction, decimal points must be aligned vertically. Write: 12.45 + 3.7. Step 3: Add zeros to make decimal places match. 3.7 has one decimal place, while 12.45 has two. Add a zero to 3.7: 3.7 = 3.70. This doesn\'t change the value (3.7 = 3.70). Step 4: Write vertically with aligned decimals. 12.45 + 3.70. Step 5: Add column by column from right to left. Start with the rightmost column (hundredths): 5 + 0 = 5. Next column (tenths): 4 + 7 = 11. Write 1, carry 1. Next column (ones): 2 + 3 + 1 (carry) = 6. Next column (tens): 1 + 0 = 1. Step 6: Place the decimal point. The decimal point goes directly below the aligned decimal points. Result: 16.15. Step 7: Verify. 12.45 + 3.70 = 16.15 ✓. Therefore, 12.45 + 3.7 = 16.15.',
+              explanation: 'The key to decimal addition is aligning decimal points. You can add zeros after the decimal point to make the number of decimal places match - this doesn\'t change the value. Then add column by column, just like whole number addition, making sure to place the decimal point in the correct position.',
             },
             {
-              question: 'Multiply: 2.5 × 0.4',
-              solution: '2.5 × 0.4 = 1.00 (2 decimal places total)',
-              explanation: 'Multiply as if whole numbers: 25 × 4 = 100, then place decimal: 1.00',
+              question: 'Multiply the decimals: 2.5 × 0.4',
+              solution: 'Step 1: Understand the problem. We need to multiply two decimal numbers. Step 2: Count decimal places. 2.5 has 1 decimal place. 0.4 has 1 decimal place. Total decimal places = 1 + 1 = 2. Step 3: Multiply as if they were whole numbers. Ignore the decimal points temporarily: 25 × 4 = 100. Step 4: Place the decimal point. Since we need 2 decimal places total, count 2 places from the right in the product (100). 100 with 2 decimal places = 1.00. Step 5: Simplify if possible. 1.00 = 1.0 = 1. However, 1.00 is also correct. Step 6: Verify. 2.5 × 0.4. We can think: 2.5 × 0.4 = (25/10) × (4/10) = 100/100 = 1 ✓. Therefore, 2.5 × 0.4 = 1.00 (or simply 1).',
+              explanation: 'For decimal multiplication, multiply as if they were whole numbers, then count the total number of decimal places in both factors and place the decimal point that many places from the right in the product. This is much easier than trying to work with decimals during multiplication.',
             },
             {
-              question: 'Divide: 12.6 ÷ 0.3',
-              solution: 'Move decimals: 126 ÷ 3 = 42',
-              explanation: 'Move decimal one place right in both numbers, then divide.',
+              question: 'Divide the decimals: 12.6 ÷ 0.3',
+              solution: 'Step 1: Understand the problem. We need to divide 12.6 by 0.3. Step 2: Convert divisor to whole number. For division, we want the divisor (0.3) to be a whole number. To do this, move the decimal point one place to the right: 0.3 becomes 3. Step 3: Move decimal in dividend by same amount. Since we moved the divisor\'s decimal 1 place right, we must move the dividend\'s decimal 1 place right as well: 12.6 becomes 126. Step 4: Perform the division. Now we have: 126 ÷ 3. 126 ÷ 3 = 42. Step 5: Verify. Check: 42 × 0.3 = 12.6 ✓. We can also verify: 12.6 ÷ 0.3 = (12.6/0.3) = (126/3) = 42 ✓. Therefore, 12.6 ÷ 0.3 = 42.',
+              explanation: 'For decimal division, move the decimal point in the divisor to make it a whole number, then move the decimal point in the dividend the same number of places. This is equivalent to multiplying both numbers by the same power of 10, which doesn\'t change the quotient. This makes division much easier.',
             },
           ],
           commonMistakes: [
@@ -549,19 +549,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Add: 1/3 + 1/4',
-              solution: 'LCM of 3 and 4 = 12 → 4/12 + 3/12 = 7/12',
-              explanation: 'Find common denominator (LCM), convert fractions, then add numerators.',
+              question: 'Add the fractions: 1/3 + 1/4',
+              solution: 'Step 1: Understand the problem. We need to add two fractions with different denominators. Step 2: Find a common denominator. To add fractions, they must have the same denominator. We need the LCM (Least Common Multiple) of 3 and 4. The multiples of 3 are: 3, 6, 9, 12, 15, ... The multiples of 4 are: 4, 8, 12, 16, ... The LCM is 12. Step 3: Convert first fraction to denominator 12. 1/3 = ?/12. Since 3 × 4 = 12, multiply numerator and denominator by 4: 1/3 = (1 × 4)/(3 × 4) = 4/12. Step 4: Convert second fraction to denominator 12. 1/4 = ?/12. Since 4 × 3 = 12, multiply numerator and denominator by 3: 1/4 = (1 × 3)/(4 × 3) = 3/12. Step 5: Add the fractions. Now both have denominator 12: 4/12 + 3/12 = (4 + 3)/12 = 7/12. Step 6: Check if simplification is needed. 7/12 is already in simplest form (7 and 12 have no common factors other than 1). Step 7: Verify. 1/3 = 4/12 ≈ 0.333, 1/4 = 3/12 = 0.25, sum = 7/12 ≈ 0.583. Also, 1/3 + 1/4 = 4/12 + 3/12 = 7/12 ✓. Therefore, 1/3 + 1/4 = 7/12.',
+              explanation: 'To add fractions with different denominators, find a common denominator (preferably the LCM), convert each fraction to that denominator, then add the numerators while keeping the denominator the same. Never add denominators directly - this is a common mistake!',
             },
             {
-              question: 'Multiply: 2/3 × 3/5',
-              solution: '(2 × 3)/(3 × 5) = 6/15 = 2/5',
-              explanation: 'Multiply numerators and denominators, then simplify.',
+              question: 'Multiply the fractions: 2/3 × 3/5',
+              solution: 'Step 1: Understand the problem. We need to multiply two fractions. Step 2: Recall the multiplication rule. To multiply fractions, multiply the numerators together and multiply the denominators together. Step 3: Multiply numerators. Numerator: 2 × 3 = 6. Step 4: Multiply denominators. Denominator: 3 × 5 = 15. Step 5: Write the product. 2/3 × 3/5 = 6/15. Step 6: Simplify the fraction. Find the GCD of 6 and 15. Factors of 6: 1, 2, 3, 6. Factors of 15: 1, 3, 5, 15. GCD = 3. Divide both numerator and denominator by 3: 6/15 = (6 ÷ 3)/(15 ÷ 3) = 2/5. Step 7: Verify. 2/3 × 3/5 = (2 × 3)/(3 × 5) = 6/15 = 2/5. We can also verify: 2/3 ≈ 0.667, 3/5 = 0.6, product = 0.4, and 2/5 = 0.4 ✓. Therefore, 2/3 × 3/5 = 2/5.',
+              explanation: 'Fraction multiplication is straightforward: multiply numerators and multiply denominators. Always simplify the result to lowest terms. Notice that we could have simplified before multiplying: 2/3 × 3/5, the 3 in numerator and denominator cancel, giving 2/5 directly.',
             },
             {
-              question: 'Divide: 3/4 ÷ 2/5',
-              solution: '3/4 × 5/2 = 15/8 = 1 7/8',
-              explanation: 'Multiply by reciprocal: flip second fraction, then multiply.',
+              question: 'Divide the fractions: 3/4 ÷ 2/5',
+              solution: 'Step 1: Understand the problem. We need to divide 3/4 by 2/5. Step 2: Recall the division rule. To divide fractions, multiply by the reciprocal (flip) of the second fraction. The reciprocal of a/b is b/a. Step 3: Find the reciprocal of the divisor. The divisor is 2/5. Its reciprocal is 5/2 (flip numerator and denominator). Step 4: Change division to multiplication. 3/4 ÷ 2/5 = 3/4 × 5/2. Step 5: Multiply the fractions. Multiply numerators: 3 × 5 = 15. Multiply denominators: 4 × 2 = 8. So: 3/4 × 5/2 = 15/8. Step 6: Convert to mixed number (if needed). 15/8 is an improper fraction. Divide: 15 ÷ 8 = 1 remainder 7. So: 15/8 = 1 7/8. Step 7: Verify. Check: (1 7/8) × (2/5) = (15/8) × (2/5) = 30/40 = 3/4 ✓. Also, 3/4 ÷ 2/5 = (3/4) × (5/2) = 15/8 = 1.875, and 3/4 = 0.75, 2/5 = 0.4, so 0.75 ÷ 0.4 = 1.875 ✓. Therefore, 3/4 ÷ 2/5 = 15/8 = 1 7/8.',
+              explanation: 'Division of fractions is done by multiplying by the reciprocal. The reciprocal is found by flipping the numerator and denominator. This is much easier than trying to divide fractions directly. Always remember: "flip and multiply" for fraction division.',
             },
           ],
           commonMistakes: [
@@ -593,18 +593,18 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           examples: [
             {
               question: 'Express 45,000 in scientific notation',
-              solution: '45,000 = 4.5 × 10⁴',
-              explanation: 'Move decimal 4 places left, so exponent is 4.',
+              solution: 'Step 1: Understand scientific notation format. Scientific notation is written as a × 10ⁿ, where 1 ≤ a < 10 and n is an integer. Step 2: Identify the current decimal position. 45,000 = 45000.0 (the decimal point is after the last zero). Step 3: Move the decimal point to create a number between 1 and 10. We need to move the decimal point left until we have a number between 1 and 10. Starting from 45000.0, move left: 4500.0 (1 place), 450.0 (2 places), 45.0 (3 places), 4.5 (4 places). We stop at 4.5 because it\'s between 1 and 10. Step 4: Count how many places we moved. We moved the decimal point 4 places to the left. Step 5: Determine the exponent. Since we moved left (making the number smaller), we need a positive exponent to compensate. The exponent is +4. Step 6: Write in scientific notation. 45,000 = 4.5 × 10⁴. Step 7: Verify. 4.5 × 10⁴ = 4.5 × 10,000 = 45,000 ✓. Therefore, 45,000 = 4.5 × 10⁴.',
+              explanation: 'For large numbers, move the decimal point left to create a number between 1 and 10. The number of places moved left becomes the positive exponent. The coefficient must be between 1 and 10 (1 ≤ coefficient < 10).',
             },
             {
               question: 'Express 0.00032 in scientific notation',
-              solution: '0.00032 = 3.2 × 10⁻⁴',
-              explanation: 'Move decimal 4 places right, so exponent is −4.',
+              solution: 'Step 1: Understand the number. We have a very small number: 0.00032. Step 2: Identify the current decimal position. The decimal point is before the first non-zero digit. Step 3: Move the decimal point to create a number between 1 and 10. We need to move the decimal point right until we have a number between 1 and 10. Starting from 0.00032, move right: 0.0032 (1 place), 0.032 (2 places), 0.32 (3 places), 3.2 (4 places). We stop at 3.2 because it\'s between 1 and 10. Step 4: Count how many places we moved. We moved the decimal point 4 places to the right. Step 5: Determine the exponent. Since we moved right (making the number larger), we need a negative exponent to compensate. The exponent is −4. Step 6: Write in scientific notation. 0.00032 = 3.2 × 10⁻⁴. Step 7: Verify. 3.2 × 10⁻⁴ = 3.2 × 0.0001 = 0.00032 ✓. Therefore, 0.00032 = 3.2 × 10⁻⁴.',
+              explanation: 'For small numbers (less than 1), move the decimal point right to create a number between 1 and 10. The number of places moved right becomes the negative exponent. This makes very small numbers easier to work with.',
             },
             {
               question: 'Multiply: (2 × 10³) × (3 × 10⁵)',
-              solution: '(2 × 3) × 10³⁺⁵ = 6 × 10⁸',
-              explanation: 'Multiply coefficients (2×3=6), add exponents (3+5=8).',
+              solution: 'Step 1: Understand the problem. We need to multiply two numbers in scientific notation. Step 2: Recall the multiplication rule. When multiplying numbers in scientific notation: (a × 10ᵐ) × (b × 10ⁿ) = (a × b) × 10ᵐ⁺ⁿ. We multiply the coefficients and add the exponents. Step 3: Multiply the coefficients. Coefficient 1: 2, Coefficient 2: 3. Product: 2 × 3 = 6. Step 4: Add the exponents. Exponent 1: 3, Exponent 2: 5. Sum: 3 + 5 = 8. Step 5: Write the result. (2 × 10³) × (3 × 10⁵) = (2 × 3) × 10³⁺⁵ = 6 × 10⁸. Step 6: Verify. 2 × 10³ = 2,000, 3 × 10⁵ = 300,000. Product: 2,000 × 300,000 = 600,000,000 = 6 × 10⁸ ✓. Also, 6 × 10⁸ = 600,000,000 ✓. Therefore, (2 × 10³) × (3 × 10⁵) = 6 × 10⁸.',
+              explanation: 'Multiplying numbers in scientific notation is easy: multiply the coefficients and add the exponents. This is much simpler than converting to standard form, multiplying, and converting back. The rule comes from the properties of exponents: 10ᵐ × 10ⁿ = 10ᵐ⁺ⁿ.',
             },
           ],
           commonMistakes: [
@@ -635,19 +635,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: '√(ab) = √a × √b   |   √(a/b) = √a / √b   |   √a² = |a|',
           examples: [
             {
-              question: 'Simplify: √72',
-              solution: '√72 = √(36 × 2) = √36 × √2 = 6√2',
-              explanation: 'Factor out perfect square (36), simplify.',
+              question: 'Simplify the square root: √72',
+              solution: 'Step 1: Understand the goal. We want to simplify √72 by factoring out perfect squares. Step 2: Factor 72 to find perfect squares. Find the prime factorization or look for perfect square factors. 72 = 36 × 2 (since 36 is a perfect square: 6² = 36). We could also use: 72 = 9 × 8 = 9 × 4 × 2, but 36 × 2 is simpler. Step 3: Apply the square root property. Use the property: √(ab) = √a × √b (when a, b ≥ 0). So: √72 = √(36 × 2) = √36 × √2. Step 4: Simplify the perfect square. √36 = 6 (since 6² = 36). Step 5: Write the simplified form. √72 = 6 × √2 = 6√2. Step 6: Verify. Check: (6√2)² = 6² × (√2)² = 36 × 2 = 72 ✓. Also, √72 ≈ 8.485, and 6√2 = 6 × 1.414 ≈ 8.485 ✓. Therefore, √72 = 6√2.',
+              explanation: 'To simplify square roots, factor the number under the radical to find perfect square factors. Then use the property √(ab) = √a × √b to separate them. The largest perfect square factor gives the simplest form. Remember: √(a+b) ≠ √a + √b (this is a common mistake!).',
             },
             {
-              question: 'Simplify: √(50/2)',
-              solution: '√(50/2) = √50 / √2 = √25 = 5',
-              explanation: 'Use property: √(a/b) = √a / √b, or simplify inside first.',
+              question: 'Simplify the square root: √(50/2)',
+              solution: 'Step 1: Understand the problem. We have a square root of a fraction: √(50/2). Step 2: Method 1 - Simplify inside first. Simplify the fraction inside: 50/2 = 25. So: √(50/2) = √25 = 5. Step 3: Method 2 - Use the division property. We can also use the property: √(a/b) = √a / √b (when a, b > 0). So: √(50/2) = √50 / √2. Step 4: Simplify further if needed. √50 = √(25 × 2) = 5√2, and √2 = √2. So: √50 / √2 = (5√2) / √2 = 5 (since √2/√2 = 1). Step 5: Compare both methods. Method 1 (simplify first) is simpler: 50/2 = 25, √25 = 5. Method 2 also works but requires more steps. Step 6: Verify. Check: (5)² = 25, and 50/2 = 25, so √(50/2) = √25 = 5 ✓. Therefore, √(50/2) = 5.',
+              explanation: 'When simplifying square roots of fractions, you can either simplify the fraction first (if possible) or use the property √(a/b) = √a / √b. Simplifying first is usually easier. Always check if the fraction can be reduced before applying square root properties.',
             },
             {
-              question: 'Solve: x² = 49',
-              solution: 'x = ±√49 = ±7',
-              explanation: 'Square root of 49 is 7, but x² = 49 means x = 7 or x = −7.',
+              question: 'Solve the equation: x² = 49',
+              solution: 'Step 1: Understand the equation. We have x² = 49, which means x squared equals 49. Step 2: Take the square root of both sides. To solve for x, take the square root of both sides: √(x²) = √49. Step 3: Apply the square root property. √(x²) = |x| (absolute value of x), and √49 = 7. So: |x| = 7. Step 4: Consider both cases. Since |x| = 7, we have two possibilities: x = 7 OR x = −7. Step 5: Verify both solutions. Check x = 7: 7² = 49 ✓. Check x = −7: (−7)² = 49 ✓. Both solutions work. Step 6: Write the answer. The solutions are x = 7 or x = −7. We can also write: x = ±7 (where ± means "plus or minus"). Step 7: Common mistake. Many people forget the negative solution and only write x = 7. This is incorrect! When solving x² = a (where a > 0), there are always TWO solutions: x = √a and x = −√a. Therefore, x = ±7.',
+              explanation: 'When solving x² = a (where a > 0), there are always two solutions: x = √a and x = −√a. This is because both positive and negative numbers, when squared, give positive results. Always remember the ± (plus or minus) sign when taking square roots to solve equations.',
             },
           ],
           commonMistakes: [
@@ -677,19 +677,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: '∛(ab) = ∛a × ∛b   |   ∛a³ = a',
           examples: [
             {
-              question: 'Find: ∛64',
-              solution: '64 = 4³, so ∛64 = 4',
-              explanation: 'Recognize 64 as perfect cube: 4³ = 64.',
+              question: 'Find the cube root of 64: ∛64',
+              solution: 'Step 1: Understand cube root. The cube root of a number x is the number that, when multiplied by itself three times, gives x. In other words, if y³ = x, then y = ∛x. Step 2: Recognize perfect cubes. We need to find what number cubed equals 64. Let\'s check: 1³ = 1, 2³ = 8, 3³ = 27, 4³ = 64. Step 3: Identify the answer. Since 4³ = 4 × 4 × 4 = 16 × 4 = 64, we have ∛64 = 4. Step 4: Verify. Check: 4³ = 4 × 4 × 4 = 64 ✓. Step 5: Final answer. Therefore, ∛64 = 4.',
+              explanation: 'Perfect cubes to memorize: 1³=1, 2³=8, 3³=27, 4³=64, 5³=125, 6³=216, 7³=343, 8³=512, 9³=729, 10³=1000. Recognizing these helps find cube roots quickly. Unlike square roots, cube roots of negative numbers are also real numbers.',
             },
             {
-              question: 'Find: ∛−125',
-              solution: '−125 = (−5)³, so ∛−125 = −5',
-              explanation: 'Cube root of negative is negative. −5 × −5 × −5 = −125.',
+              question: 'Find the cube root of −125: ∛−125',
+              solution: 'Step 1: Understand cube roots of negative numbers. Unlike square roots, cube roots of negative numbers are real numbers. This is because a negative number cubed gives a negative result: (−a)³ = −a³. Step 2: Find what number cubed equals −125. We know that 5³ = 125. So (−5)³ should equal −125. Let\'s verify: (−5)³ = (−5) × (−5) × (−5) = 25 × (−5) = −125 ✓. Step 3: Apply the cube root. Since (−5)³ = −125, we have ∛−125 = −5. Step 4: Important note. Unlike square roots (where √(−125) is not a real number), cube roots of negative numbers ARE real numbers. The cube root preserves the sign. Step 5: Verify. Check: (−5)³ = −125 ✓. Step 6: Final answer. Therefore, ∛−125 = −5.',
+              explanation: 'Cube roots of negative numbers are negative. This is different from square roots: √(−125) is not a real number, but ∛−125 = −5 is real. The key: an odd root (cube, fifth, etc.) of a negative number is negative, while an even root (square, fourth, etc.) of a negative number is not a real number.',
             },
             {
-              question: 'Simplify: ∛(8 × 27)',
-              solution: '∛(8 × 27) = ∛8 × ∛27 = 2 × 3 = 6',
-              explanation: 'Use property: ∛(ab) = ∛a × ∛b.',
+              question: 'Simplify the expression: ∛(8 × 27)',
+              solution: 'Step 1: Understand the problem. We need to find the cube root of the product 8 × 27. Step 2: Method 1 - Use the property. The cube root property states: ∛(ab) = ∛a × ∛b (when a, b are real numbers). So: ∛(8 × 27) = ∛8 × ∛27. Step 3: Find individual cube roots. ∛8 = 2 (since 2³ = 8). ∛27 = 3 (since 3³ = 27). Step 4: Multiply the results. ∛(8 × 27) = ∛8 × ∛27 = 2 × 3 = 6. Step 5: Method 2 - Verify by calculating directly. First, find 8 × 27 = 216. Then find ∛216. We know 6³ = 216, so ∛216 = 6. This matches our answer ✓. Step 6: Final answer. Therefore, ∛(8 × 27) = 6.',
+              explanation: 'The property ∛(ab) = ∛a × ∛b allows us to simplify cube roots of products. This is similar to the square root property √(ab) = √a × √b. However, remember: ∛(a+b) ≠ ∛a + ∛b (this does NOT work for addition).',
             },
           ],
           commonMistakes: [
@@ -720,19 +720,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Which is irrational? A) 0.5  B) √4  C) √2  D) 3/4',
-              solution: 'C) √2 is irrational (cannot be expressed as fraction)',
-              explanation: 'A, B, D are all rational (can be fractions). √2 cannot be fraction.',
+              question: 'Which of the following numbers is irrational? A) 0.5  B) √4  C) √2  D) 3/4',
+              solution: 'Step 1: Recall the definition. A rational number can be expressed as a fraction p/q where p and q are integers and q ≠ 0. An irrational number cannot be expressed as such a fraction. Step 2: Test option A) 0.5. 0.5 = 1/2, which is a fraction of two integers. Therefore, 0.5 is rational. Step 3: Test option B) √4. √4 = 2, which can be written as 2/1 (a fraction). Therefore, √4 is rational. Important: Not all square roots are irrational - only those that don\'t simplify to integers or fractions. Step 4: Test option C) √2. √2 ≈ 1.41421356... This is a non-terminating, non-repeating decimal. It cannot be expressed as a fraction of two integers. Therefore, √2 is irrational. Step 5: Test option D) 3/4. This is already written as a fraction of two integers. Therefore, 3/4 is rational. Step 6: Final answer. Therefore, only option C) √2 is irrational.',
+              explanation: 'Rational numbers can be written as fractions. Irrational numbers cannot. Common irrationals include √2, √3, π, and e. However, √4 = 2 is rational because it simplifies to an integer. The key is whether the number can be expressed as a fraction, not whether it\'s written as one.',
             },
             {
-              question: 'Is 0.333... rational?',
-              solution: 'Yes, 0.333... = 1/3, which is rational',
-              explanation: 'Repeating decimals can be expressed as fractions, so they are rational.',
+              question: 'Is the decimal 0.333... (repeating) a rational or irrational number?',
+              solution: 'Step 1: Understand repeating decimals. 0.333... means the digit 3 repeats infinitely: 0.3333333... Step 2: Recall the property. All repeating (or terminating) decimals can be expressed as fractions, which means they are rational numbers. Step 3: Convert to fraction. Let x = 0.333... Multiply both sides by 10: 10x = 3.333... Subtract the original equation: 10x − x = 3.333... − 0.333..., which gives: 9x = 3. Solve: x = 3/9 = 1/3. Step 4: Verify. Check: 1/3 = 0.333... ✓. Step 5: Apply the definition. Since 0.333... = 1/3, and 1/3 is a fraction of two integers (1 and 3), 0.333... is rational. Step 6: Final answer. Therefore, 0.333... is a rational number (it equals 1/3).',
+              explanation: 'Any repeating or terminating decimal is rational because it can be converted to a fraction. The conversion method: let x equal the decimal, multiply by an appropriate power of 10, subtract, and solve. This works for any repeating decimal.',
             },
             {
-              question: 'What is √2 + √2?',
-              solution: '√2 + √2 = 2√2, which is irrational',
-              explanation: 'Sum of irrational numbers can be irrational (or rational if they cancel).',
+              question: 'What is √2 + √2? Is the result rational or irrational?',
+              solution: 'Step 1: Simplify the expression. √2 + √2 = 2√2 (combining like terms, just like 2x + 2x = 4x). Step 2: Determine if 2√2 is rational or irrational. We know that √2 is irrational (cannot be expressed as a fraction). Step 3: Apply the property. When you multiply a rational number (2) by an irrational number (√2), the result is irrational. Rational × Irrational = Irrational (unless the rational is 0). Step 4: Verify. If 2√2 were rational, then 2√2 = p/q for some integers p, q. Then √2 = p/(2q), which would make √2 rational. But we know √2 is irrational, so this is a contradiction. Therefore, 2√2 must be irrational. Step 5: Final answer. √2 + √2 = 2√2, and this is an irrational number.',
+              explanation: 'The sum of two irrational numbers can be either rational or irrational. For example, √2 + (−√2) = 0 (rational), but √2 + √2 = 2√2 (irrational). When you multiply a non-zero rational by an irrational, the result is always irrational.',
             },
           ],
           commonMistakes: [
@@ -763,19 +763,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Which is prime? A) 1  B) 2  C) 4  D) 6',
-              solution: 'B) 2 is prime (only factors: 1 and 2)',
-              explanation: '1 is not prime (only one factor), 4 and 6 are composite (multiple factors).',
+              question: 'Which of the following numbers is prime? A) 1  B) 2  C) 4  D) 6',
+              solution: 'Step 1: Recall the definition of prime. A prime number is a natural number greater than 1 that has exactly two distinct positive divisors: 1 and itself. Step 2: Test option A) 1. Factors of 1: Only 1 itself. Since 1 has only one factor (not two), 1 is NOT prime. Also, by definition, prime numbers must be greater than 1. Step 3: Test option B) 2. Factors of 2: 1 and 2. Since 2 has exactly two factors (1 and itself), 2 IS prime. Also, 2 is the only even prime number. Step 4: Test option C) 4. Factors of 4: 1, 2, and 4. Since 4 has more than two factors, 4 is NOT prime. 4 is composite. Step 5: Test option D) 6. Factors of 6: 1, 2, 3, and 6. Since 6 has more than two factors, 6 is NOT prime. 6 is composite. Step 6: Final answer. Therefore, only option B) 2 is prime.',
+              explanation: 'Prime numbers have exactly two factors: 1 and the number itself. The number 1 is special - it is neither prime nor composite. The number 2 is the only even prime number. All other even numbers (4, 6, 8, etc.) are composite because they are divisible by 2.',
             },
             {
-              question: 'Smallest composite number?',
-              solution: '4 (factors: 1, 2, 4)',
-              explanation: 'Composite means more than 2 factors. 4 is smallest composite.',
+              question: 'What is the smallest composite number?',
+              solution: 'Step 1: Recall the definition of composite. A composite number is a natural number greater than 1 that has more than two positive divisors (factors). Step 2: Check small numbers systematically. Start with 1: Has only 1 factor → Neither prime nor composite. Check 2: Factors are 1 and 2 (exactly 2 factors) → Prime, not composite. Check 3: Factors are 1 and 3 (exactly 2 factors) → Prime, not composite. Check 4: Factors are 1, 2, and 4 (3 factors, which is more than 2) → Composite! Step 3: Verify 4 is composite. 4 = 1 × 4 and 4 = 2 × 2, so it has factors: 1, 2, and 4. Since it has more than 2 factors, 4 is composite. Step 4: Confirm it\'s the smallest. Since 1, 2, and 3 are not composite, and 4 is composite, 4 is the smallest composite number. Step 5: Final answer. Therefore, the smallest composite number is 4.',
+              explanation: 'Composite numbers have more than two factors. The first few natural numbers are: 1 (neither), 2 (prime), 3 (prime), 4 (composite - first one!). All numbers greater than 1 are either prime or composite, except 1 which is special.',
             },
             {
               question: 'Is 0 a natural number?',
-              solution: 'No, natural numbers start from 1',
-              explanation: 'Natural numbers = positive integers (1, 2, 3, ...). 0 is whole number, not natural.',
+              solution: 'Step 1: Understand number classifications. Natural numbers are the counting numbers used for counting objects. Step 2: Recall the definition. Natural numbers are the positive integers starting from 1: {1, 2, 3, 4, 5, ...}. Step 3: Check if 0 fits this definition. 0 is not a positive integer (it\'s neither positive nor negative). Natural numbers start from 1, not 0. Step 4: Understand where 0 belongs. 0 is a whole number. Whole numbers include 0 and all natural numbers: {0, 1, 2, 3, 4, ...}. Step 5: Final answer. Therefore, 0 is NOT a natural number. 0 is a whole number, but natural numbers start from 1.',
+              explanation: 'Natural numbers = positive integers (1, 2, 3, ...). Whole numbers = natural numbers + 0 (0, 1, 2, 3, ...). Integers = whole numbers + negative numbers (..., -2, -1, 0, 1, 2, ...). This classification is important for number theory problems.',
             },
           ],
           commonMistakes: [
@@ -804,19 +804,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'What is remainder when 47 is divided by 5?',
-              solution: '47 ÷ 5 = 9 remainder 2, so remainder = 2',
-              explanation: '47 = 5 × 9 + 2, so remainder is 2.',
+              question: 'What is the remainder when 47 is divided by 5?',
+              solution: 'Step 1: Understand division with remainder. When we divide a number by another, we get a quotient and a remainder. The relationship is: Dividend = Divisor × Quotient + Remainder, where 0 ≤ Remainder < Divisor. Step 2: Perform the division. 47 ÷ 5. How many times does 5 go into 47? 5 × 9 = 45, and 5 × 10 = 50 (too big). So the quotient is 9. Step 3: Calculate the remainder. 47 = 5 × 9 + Remainder. So: 47 = 45 + Remainder. Therefore: Remainder = 47 − 45 = 2. Step 4: Verify. Check: 47 = 5 × 9 + 2 = 45 + 2 = 47 ✓. Also, the remainder (2) is less than the divisor (5) ✓. Step 5: Final answer. Therefore, when 47 is divided by 5, the remainder is 2.',
+              explanation: 'The remainder is what\'s left over after dividing as many times as possible. It must always be less than the divisor. The formula a = bq + r helps find remainders, where a is the dividend, b is the divisor, q is the quotient, and r is the remainder (0 ≤ r < b).',
             },
             {
-              question: 'What is remainder when 100 is divided by 7?',
-              solution: '100 ÷ 7 = 14 remainder 2, so remainder = 2',
-              explanation: '100 = 7 × 14 + 2, so remainder is 2.',
+              question: 'What is the remainder when 100 is divided by 7?',
+              solution: 'Step 1: Set up the division. We need to find 100 ÷ 7. Step 2: Find the quotient. How many times does 7 go into 100? 7 × 14 = 98, and 7 × 15 = 105 (too big). So the quotient is 14. Step 3: Calculate the remainder. Using the formula: 100 = 7 × 14 + Remainder. So: 100 = 98 + Remainder. Therefore: Remainder = 100 − 98 = 2. Step 4: Verify. Check: 100 = 7 × 14 + 2 = 98 + 2 = 100 ✓. The remainder (2) is less than the divisor (7) ✓. Step 5: Alternative method. We can also think: 100 ÷ 7 = 14.2857... The whole number part is 14, and 100 − 7×14 = 100 − 98 = 2. Step 6: Final answer. Therefore, when 100 is divided by 7, the remainder is 2.',
+              explanation: 'To find remainders, find the largest multiple of the divisor that doesn\'t exceed the dividend, subtract it, and what\'s left is the remainder. This is faster than doing long division completely.',
             },
             {
-              question: 'If number leaves remainder 3 when divided by 5, what possible remainders when divided by 10?',
-              solution: 'Number could be 3, 8, 13, 18, ... → When divided by 10: remainders 3 or 8',
-              explanation: 'Numbers with remainder 3 mod 5: 3, 8, 13, 18, 23, ... These give remainders 3 or 8 mod 10.',
+              question: 'If a number leaves a remainder of 3 when divided by 5, what are the possible remainders when this number is divided by 10?',
+              solution: 'Step 1: Understand the problem. We know: Number mod 5 = 3 (remainder 3 when divided by 5). We need to find: Number mod 10 (possible remainders when divided by 10). Step 2: Find numbers that satisfy the first condition. Numbers that leave remainder 3 when divided by 5 are: 3, 8, 13, 18, 23, 28, 33, 38, ... (all numbers of the form 5k + 3, where k is an integer). Step 3: Check what remainders these give when divided by 10. Test 3: 3 ÷ 10 = 0 remainder 3. Test 8: 8 ÷ 10 = 0 remainder 8. Test 13: 13 ÷ 10 = 1 remainder 3. Test 18: 18 ÷ 10 = 1 remainder 8. Test 23: 23 ÷ 10 = 2 remainder 3. Test 28: 28 ÷ 10 = 2 remainder 8. Step 4: Identify the pattern. The remainders when divided by 10 alternate between 3 and 8. Step 5: Understand why. Numbers of the form 5k + 3: If k is even (k = 2m), then 5(2m) + 3 = 10m + 3, remainder = 3. If k is odd (k = 2m+1), then 5(2m+1) + 3 = 10m + 5 + 3 = 10m + 8, remainder = 8. Step 6: Final answer. Therefore, when a number with remainder 3 mod 5 is divided by 10, the possible remainders are 3 or 8.',
+              explanation: 'This problem demonstrates modular arithmetic relationships. When a number has remainder r mod m, and we want to know its remainder mod n (where n is a multiple or factor of m), we need to check the pattern. In this case, numbers of form 5k+3 give remainders 3 or 8 when divided by 10, depending on whether k is even or odd.',
             },
           ],
           commonMistakes: [
@@ -846,19 +846,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Convert 2.5 km to meters',
-              solution: '2.5 km × 1000 m/km = 2,500 m',
-              explanation: 'Multiply by conversion factor: 1 km = 1000 m.',
+              question: 'Convert 2.5 kilometers to meters.',
+              solution: 'Step 1: Identify the conversion. We need to convert from kilometers (km) to meters (m). Step 2: Recall the conversion factor. 1 kilometer = 1,000 meters. This means there are 1,000 meters in every kilometer. Step 3: Set up the conversion. Since we\'re going from a larger unit (km) to a smaller unit (m), we multiply. The conversion factor is: 1 km = 1,000 m, or written as a fraction: (1,000 m) / (1 km) = 1. Step 4: Multiply by the conversion factor. 2.5 km × (1,000 m / 1 km) = 2.5 × 1,000 m = 2,500 m. Notice that the "km" units cancel out, leaving "m". Step 5: Verify the answer makes sense. 2.5 km should be 2,500 m. Since meters are smaller than kilometers, we should have more meters than kilometers, which is correct (2,500 > 2.5) ✓. Step 6: Final answer. Therefore, 2.5 km = 2,500 m.',
+              explanation: 'When converting from larger to smaller units, multiply. When converting from smaller to larger units, divide. Always check that your answer makes sense: larger unit = smaller number, smaller unit = larger number. Using conversion factors as fractions helps ensure units cancel correctly.',
             },
             {
-              question: 'Convert 3 hours 25 minutes to minutes',
-              solution: '3 hours = 3 × 60 = 180 min → Total = 180 + 25 = 205 minutes',
-              explanation: 'Convert hours to minutes, then add remaining minutes.',
+              question: 'Convert 3 hours 25 minutes to total minutes.',
+              solution: 'Step 1: Understand the problem. We have a mixed time: 3 hours and 25 minutes. We need to express this entirely in minutes. Step 2: Convert hours to minutes. 1 hour = 60 minutes. So: 3 hours = 3 × 60 minutes = 180 minutes. Step 3: Add the remaining minutes. We already have 25 minutes. Total minutes = 180 + 25 = 205 minutes. Step 4: Verify. Check: 205 minutes = 180 minutes (3 hours) + 25 minutes = 3 hours 25 minutes ✓. We can also verify: 205 ÷ 60 = 3 remainder 25, which means 3 hours and 25 minutes ✓. Step 5: Final answer. Therefore, 3 hours 25 minutes = 205 minutes.',
+              explanation: 'For mixed units, convert each part separately, then combine. Always convert to the smaller unit first, then add. This method works for any mixed unit conversion (hours/minutes, km/m, etc.).',
             },
             {
-              question: 'Convert 4500 g to kg',
-              solution: '4500 g ÷ 1000 = 4.5 kg',
-              explanation: 'Divide by conversion factor: 1 kg = 1000 g.',
+              question: 'Convert 4,500 grams to kilograms.',
+              solution: 'Step 1: Identify the conversion. We need to convert from grams (g) to kilograms (kg). Step 2: Recall the conversion factor. 1 kilogram = 1,000 grams. This means 1 kg contains 1,000 g. Step 3: Set up the conversion. Since we\'re going from a smaller unit (g) to a larger unit (kg), we divide. The conversion factor is: 1 kg = 1,000 g, or: 1 kg / 1,000 g = 1. Step 4: Divide by the conversion factor. 4,500 g ÷ 1,000 = 4.5 kg. Alternatively, using the fraction method: 4,500 g × (1 kg / 1,000 g) = 4,500 / 1,000 kg = 4.5 kg. Step 5: Verify the answer makes sense. 4,500 g should be 4.5 kg. Since kilograms are larger than grams, we should have fewer kilograms than grams, which is correct (4.5 < 4,500) ✓. Step 6: Verify by converting back. Check: 4.5 kg × 1,000 = 4,500 g ✓. Step 7: Final answer. Therefore, 4,500 g = 4.5 kg.',
+              explanation: 'When converting from smaller to larger units, divide. When converting from larger to smaller units, multiply. A helpful trick: "larger unit = smaller number" - if you\'re converting to a larger unit, your number should get smaller. Always verify by converting back or checking that the answer makes logical sense.',
             },
           ],
           commonMistakes: [
@@ -888,14 +888,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Mean = Sum / Count   |   Median = middle value   |   Mode = most frequent',
           examples: [
             {
-              question: 'Find mean, median, mode: 5, 7, 3, 7, 9, 5, 7',
-              solution: 'Mean: (5+7+3+7+9+5+7)/7 = 43/7 ≈ 6.14 → Median: 3,5,5,7,7,7,9 = 7 → Mode: 7 (appears 3 times)',
-              explanation: 'Mean = sum divided by count. Median = middle when sorted. Mode = most frequent.',
+              question: 'Find the mean, median, and mode of the data set: 5, 7, 3, 7, 9, 5, 7',
+              solution: 'Step 1: Understand the three measures. Mean = average, Median = middle value, Mode = most frequent value. Step 2: Calculate the mean. Mean = (Sum of all values) / (Number of values). Sum = 5 + 7 + 3 + 7 + 9 + 5 + 7 = 43. Number of values = 7. Mean = 43 / 7 ≈ 6.14. Step 3: Find the median. First, sort the data in ascending order: 3, 5, 5, 7, 7, 7, 9. Since there are 7 values (odd number), the median is the middle value. The 4th value (position (7+1)/2 = 4) is 7. So Median = 7. Step 4: Find the mode. Count the frequency of each value: 3 appears 1 time, 5 appears 2 times, 7 appears 3 times, 9 appears 1 time. The value 7 appears most frequently (3 times). So Mode = 7. Step 5: Final answers. Mean ≈ 6.14, Median = 7, Mode = 7.',
+              explanation: 'Mean is the arithmetic average. Median requires sorting the data first, then finding the middle value (or average of two middle values if even count). Mode is the value that appears most often. These three measures give different insights into the data set.',
             },
             {
-              question: 'If mean of 5 numbers is 20, and four numbers are 15, 18, 22, 25, find fifth',
-              solution: 'Total = 20 × 5 = 100 → Sum of four = 15+18+22+25 = 80 → Fifth = 100 − 80 = 20',
-              explanation: 'Use formula: Total = Mean × Count. Subtract known sum from total.',
+              question: 'The mean of 5 numbers is 20. Four of the numbers are 15, 18, 22, and 25. Find the fifth number.',
+              solution: 'Step 1: Understand the problem. We know the mean of 5 numbers is 20, and we know 4 of the numbers. We need to find the 5th number. Step 2: Use the mean formula. Mean = (Sum of all values) / (Number of values). Rearranging: Sum of all values = Mean × Number of values. Step 3: Calculate the total sum. Total sum = Mean × Count = 20 × 5 = 100. Step 4: Calculate the sum of the four known numbers. Sum of four = 15 + 18 + 22 + 25 = 80. Step 5: Find the fifth number. Since Total = Sum of four + Fifth number, we have: 100 = 80 + Fifth number. Therefore: Fifth number = 100 − 80 = 20. Step 6: Verify. Check: Mean of {15, 18, 22, 25, 20} = (15 + 18 + 22 + 25 + 20) / 5 = 100 / 5 = 20 ✓. Step 7: Final answer. Therefore, the fifth number is 20.',
+              explanation: 'When you know the mean and all but one value, use the formula: Total = Mean × Count to find the total sum, then subtract the sum of known values to find the missing value. This technique is very useful in statistics problems.',
             },
           ],
           commonMistakes: [
@@ -963,19 +963,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'P(Event) = Favorable / Total   |   P(not A) = 1 − P(A)',
           examples: [
             {
-              question: 'Probability of rolling 6 on die?',
-              solution: 'P(6) = 1/6 (one favorable outcome out of 6 total)',
-              explanation: 'One way to get 6, six total outcomes, so probability = 1/6.',
+              question: 'What is the probability of rolling a 6 on a fair six-sided die?',
+              solution: 'Step 1: Understand probability. Probability = (Number of favorable outcomes) / (Total number of possible outcomes). Step 2: Identify favorable outcomes. We want to roll a 6. There is 1 favorable outcome (rolling a 6). Step 3: Identify total possible outcomes. A fair die has 6 faces: 1, 2, 3, 4, 5, 6. So there are 6 possible outcomes. Step 4: Calculate the probability. P(rolling 6) = Favorable outcomes / Total outcomes = 1 / 6. Step 5: Interpret the result. The probability is 1/6, which means there is a 1 in 6 chance of rolling a 6, or approximately 16.67%. Step 6: Verify. Since the die is fair, each number (1 through 6) has equal probability, so P(6) = 1/6 makes sense. Therefore, the probability of rolling a 6 is 1/6.',
+              explanation: 'For a fair die, each outcome is equally likely. The probability of any specific number is 1 divided by the total number of faces. This is the most basic probability calculation.',
             },
             {
-              question: 'Probability of NOT rolling 6?',
-              solution: 'P(not 6) = 1 − 1/6 = 5/6',
-              explanation: 'Use complement rule: P(not A) = 1 − P(A).',
+              question: 'What is the probability of NOT rolling a 6 on a fair six-sided die?',
+              solution: 'Step 1: Understand the problem. We want the probability of rolling any number except 6. Step 2: Method 1 - Direct calculation. Favorable outcomes: rolling 1, 2, 3, 4, or 5. That\'s 5 favorable outcomes. Total outcomes: 6. P(not 6) = 5/6. Step 3: Method 2 - Complement rule. The complement rule states: P(not A) = 1 − P(A). We know P(rolling 6) = 1/6. So: P(not 6) = 1 − P(6) = 1 − 1/6 = 6/6 − 1/6 = 5/6. Step 4: Verify both methods. Method 1: 5 favorable outcomes out of 6 total = 5/6. Method 2: 1 − 1/6 = 5/6. Both give the same answer ✓. Step 5: Interpret. The probability of not rolling a 6 is 5/6, which means there is a 5 in 6 chance (approximately 83.33%) of rolling something other than 6. Therefore, the probability of NOT rolling a 6 is 5/6.',
+              explanation: 'The complement rule is very useful: P(not A) = 1 − P(A). This is often easier than counting all the "not A" outcomes directly. The complement rule works because either A happens or it doesn\'t, and the probabilities must sum to 1.',
             },
             {
-              question: 'Two dice, probability both show 6?',
-              solution: 'P(6 and 6) = 1/6 × 1/6 = 1/36',
-              explanation: 'Independent events: multiply probabilities.',
+              question: 'Two fair dice are rolled. What is the probability that both dice show 6?',
+              solution: 'Step 1: Understand the problem. We have two independent events: rolling a 6 on the first die AND rolling a 6 on the second die. Step 2: Identify that events are independent. The outcome of the first die does not affect the outcome of the second die. They are independent events. Step 3: Recall the rule for independent events. For independent events A and B: P(A and B) = P(A) × P(B). We multiply the probabilities. Step 4: Find individual probabilities. P(first die shows 6) = 1/6. P(second die shows 6) = 1/6. Step 5: Calculate the combined probability. P(both show 6) = P(first is 6) × P(second is 6) = (1/6) × (1/6) = 1/36. Step 6: Verify by listing outcomes (optional). Total outcomes when rolling two dice: 6 × 6 = 36 possible outcomes. Only one outcome is (6, 6). So P(both 6) = 1/36 ✓. Step 7: Final answer. Therefore, the probability that both dice show 6 is 1/36.',
+              explanation: 'For independent events, multiply the probabilities. This is different from "or" events (which use addition) or mutually exclusive events. The key is recognizing independence: one event doesn\'t affect the other. Always check if events are independent before multiplying probabilities.',
             },
           ],
           commonMistakes: [
@@ -1005,19 +1005,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'nPr = n!/(n−r)!   |   nCr = n!/(r!(n−r)!)',
           examples: [
             {
-              question: 'How many ways to arrange 3 books on shelf?',
-              solution: '3P3 = 3! = 3 × 2 × 1 = 6 ways',
-              explanation: 'Order matters (arrangement), so use permutation. All 3 selected: 3!',
+              question: 'In how many ways can 3 different books be arranged on a shelf?',
+              solution: 'Step 1: Identify the problem type. We need to arrange (order) 3 books. Since order matters (Book1-Book2-Book3 is different from Book3-Book2-Book1), this is a permutation problem. Step 2: Determine if it\'s a permutation. We\'re arranging all 3 books (selecting all of them), and order matters. This is a permutation of 3 objects taken 3 at a time: 3P3. Step 3: Apply the permutation formula. When selecting all n objects: nPn = n! (n factorial). So: 3P3 = 3! = 3 × 2 × 1 = 6. Step 4: Verify by listing (optional). The 6 arrangements are: ABC, ACB, BAC, BCA, CAB, CBA. That\'s 6 different ways ✓. Step 5: Understand the calculation. For the first position: 3 choices. For the second position: 2 remaining choices. For the third position: 1 remaining choice. Total: 3 × 2 × 1 = 6. Step 6: Final answer. Therefore, there are 6 ways to arrange 3 books on a shelf.',
+              explanation: 'When arranging all objects and order matters, use n! (n factorial). This counts all possible orderings. Permutations are used when the arrangement/order is important.',
             },
             {
-              question: 'How many ways to choose 2 from 5?',
-              solution: '5C2 = 5!/(2!3!) = (5×4)/(2×1) = 10 ways',
-              explanation: 'Order doesn\'t matter (just choosing), so use combination.',
+              question: 'How many ways can you choose 2 items from a set of 5 items?',
+              solution: 'Step 1: Identify the problem type. We need to choose 2 items from 5. The key question: Does order matter? Step 2: Determine if order matters. If we\'re just "choosing" or "selecting", order typically doesn\'t matter. Choosing items A and B is the same as choosing B and A. So this is a combination problem. Step 3: Apply the combination formula. Combination formula: nCr = n! / [r!(n−r)!], where n = total items, r = items to choose. Here: 5C2 = 5! / [2!(5−2)!] = 5! / (2! × 3!). Step 4: Calculate factorials. 5! = 5 × 4 × 3 × 2 × 1 = 120. 2! = 2 × 1 = 2. 3! = 3 × 2 × 1 = 6. Step 5: Simplify. 5C2 = 120 / (2 × 6) = 120 / 12 = 10. Step 6: Alternative calculation (faster). 5C2 = (5 × 4) / (2 × 1) = 20 / 2 = 10. This works because: 5!/(2!3!) = (5×4×3!)/(2!×3!) = (5×4)/(2×1) = 10. Step 7: Verify by listing (optional). If items are A, B, C, D, E, the 10 combinations are: AB, AC, AD, AE, BC, BD, BE, CD, CE, DE. That\'s 10 ✓. Step 8: Final answer. Therefore, there are 10 ways to choose 2 items from 5.',
+              explanation: 'Combinations are used when order doesn\'t matter - you\'re just selecting a group. The formula nCr = n! / [r!(n−r)!] counts selections without regard to order. A faster method: nCr = (n × (n−1) × ... × (n−r+1)) / (r × (r−1) × ... × 1).',
             },
             {
-              question: 'How many 3-letter codes from A,B,C,D (no repeats)?',
-              solution: '4P3 = 4!/(4−3)! = 24/1 = 24 codes',
-              explanation: 'Order matters (ABC ≠ CBA), no repeats, so permutation.',
+              question: 'How many different 3-letter codes can be formed from the letters A, B, C, D if no letter can be repeated?',
+              solution: 'Step 1: Understand the problem. We need to form 3-letter codes from 4 letters (A, B, C, D), with no repetition allowed. Step 2: Determine if order matters. Yes, order matters! The code ABC is different from CBA. So this is a permutation problem. Step 3: Apply the permutation formula. We\'re selecting 3 letters from 4, and order matters. This is: 4P3 = 4! / (4−3)! = 4! / 1! = 4! / 1 = 24. Step 4: Calculate 4!. 4! = 4 × 3 × 2 × 1 = 24. Step 5: Verify by counting. For the first letter: 4 choices (A, B, C, or D). For the second letter: 3 remaining choices (can\'t repeat the first). For the third letter: 2 remaining choices (can\'t repeat the first two). Total: 4 × 3 × 2 = 24 codes. Step 6: List a few examples (optional). Some codes: ABC, ABD, ACB, ACD, ADB, ADC, BAC, BAD, ... There are 24 total. Step 7: Final answer. Therefore, there are 24 different 3-letter codes that can be formed.',
+              explanation: 'When forming codes, passwords, or arrangements where order matters and items can\'t be repeated, use permutations. The formula nPr = n! / (n−r)! counts ordered selections. Think: first position has n choices, second has (n−1), third has (n−2), etc.',
             },
           ],
           commonMistakes: [
@@ -1047,14 +1047,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'n(A ∪ B) = n(A) + n(B) − n(A ∩ B)',
           examples: [
             {
-              question: 'In class: 20 like math, 15 like science, 8 like both. How many like at least one?',
-              solution: 'n(Math ∪ Science) = 20 + 15 − 8 = 27',
-              explanation: 'Use formula: total = sum of individual − intersection (to avoid double counting).',
+              question: 'In a class survey: 20 students like math, 15 students like science, and 8 students like both math and science. How many students like at least one of these subjects?',
+              solution: 'Step 1: Understand the problem. We have overlapping groups: some students like math, some like science, and some like both. We need to find how many like at least one (math OR science OR both). Step 2: Identify the sets. Let M = students who like math, n(M) = 20. Let S = students who like science, n(S) = 15. The intersection: n(M ∩ S) = 8 (students who like both). Step 3: Understand the union formula. The formula for union is: n(M ∪ S) = n(M) + n(S) − n(M ∩ S). We subtract the intersection to avoid counting those students twice. Step 4: Apply the formula. n(M ∪ S) = 20 + 15 − 8 = 35 − 8 = 27. Step 5: Verify with Venn diagram logic. Students who like only math: 20 − 8 = 12. Students who like only science: 15 − 8 = 7. Students who like both: 8. Total who like at least one: 12 + 7 + 8 = 27 ✓. Step 6: Final answer. Therefore, 27 students like at least one of the subjects (math or science or both).',
+              explanation: 'The union formula n(A ∪ B) = n(A) + n(B) − n(A ∩ B) prevents double-counting. Those in the intersection are counted in both n(A) and n(B), so we subtract them once. This is essential for overlapping set problems.',
             },
             {
-              question: 'Survey: 30 like A, 25 like B, 10 like both, 5 like neither. Total surveyed?',
-              solution: 'Like at least one: 30 + 25 − 10 = 45 → Total = 45 + 5 = 50',
-              explanation: 'Find union, then add those who like neither.',
+              question: 'In a survey: 30 people like product A, 25 people like product B, 10 people like both products A and B, and 5 people like neither product. How many people were surveyed in total?',
+              solution: 'Step 1: Understand the problem. We need to find the total number of people surveyed. We have information about overlapping groups and a "neither" group. Step 2: Find how many like at least one product. Use the union formula: n(A ∪ B) = n(A) + n(B) − n(A ∩ B). n(A) = 30, n(B) = 25, n(A ∩ B) = 10. So: n(A ∪ B) = 30 + 25 − 10 = 55 − 10 = 45. Step 3: Add those who like neither. The total surveyed includes: Those who like at least one (45) + Those who like neither (5). Total = 45 + 5 = 50. Step 4: Verify with Venn diagram. Like only A: 30 − 10 = 20. Like only B: 25 − 10 = 15. Like both: 10. Like neither: 5. Total: 20 + 15 + 10 + 5 = 50 ✓. Step 5: Final answer. Therefore, a total of 50 people were surveyed.',
+              explanation: 'When a problem includes a "neither" group, first find the union (those who like at least one), then add the "neither" group to get the total. The key is: Total = (Like at least one) + (Like neither). Always account for all groups when finding totals.',
             },
           ],
           commonMistakes: [
@@ -1086,19 +1086,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'log(ab) = log(a) + log(b)   |   log(a/b) = log(a) − log(b)   |   log(aⁿ) = n×log(a)',
           examples: [
             {
-              question: 'Solve: log₂(8) = ?',
-              solution: 'log₂(8) = 3 because 2³ = 8',
-              explanation: 'Logarithm asks: what power of 2 gives 8? Answer is 3.',
+              question: 'Evaluate: log₂(8) = ?',
+              solution: 'Step 1: Understand logarithms. log₂(8) asks: "What power of 2 equals 8?" In other words, if 2ˣ = 8, what is x? Step 2: Recognize the relationship. Logarithms are the inverse of exponents. log₂(8) = x means 2ˣ = 8. Step 3: Find the power. We need to find what power of 2 gives 8. Try: 2¹ = 2, 2² = 4, 2³ = 8. So 2³ = 8. Step 4: Apply the definition. Since 2³ = 8, we have log₂(8) = 3. Step 5: Verify. Check: 2³ = 2 × 2 × 2 = 8 ✓. Step 6: Final answer. Therefore, log₂(8) = 3.',
+              explanation: 'Logarithms are the inverse of exponents. log_b(a) = c means b^c = a. To evaluate logarithms, ask: "What power of the base gives the argument?" Memorizing powers of 2, 3, and 10 helps evaluate common logarithms quickly.',
             },
             {
               question: 'Simplify: log(100) + log(10)',
-              solution: 'log(100) + log(10) = log(100 × 10) = log(1000) = 3',
-              explanation: 'Use property: log(a) + log(b) = log(ab).',
+              solution: 'Step 1: Understand the notation. "log" without a base typically means base 10 (common logarithm). So log(100) = log₁₀(100) and log(10) = log₁₀(10). Step 2: Apply the logarithm addition property. The property states: log(a) + log(b) = log(ab). This works for any base. So: log(100) + log(10) = log(100 × 10) = log(1000). Step 3: Evaluate log(1000). log(1000) asks: "What power of 10 equals 1000?" Since 10³ = 1000, we have log(1000) = 3. Step 4: Verify by evaluating each term separately. log(100) = 2 (since 10² = 100). log(10) = 1 (since 10¹ = 10). Sum: 2 + 1 = 3 ✓. This matches our answer. Step 5: Final answer. Therefore, log(100) + log(10) = 3.',
+              explanation: 'The logarithm addition property log(a) + log(b) = log(ab) is very useful for simplifying expressions. This comes from the exponent rule: 10ᵃ × 10ᵇ = 10ᵃ⁺ᵇ. Always verify by checking if you can evaluate each term separately.',
             },
             {
-              question: 'Solve: 2ˣ = 16',
-              solution: 'Take log: x = log₂(16) = 4, or recognize 2⁴ = 16',
-              explanation: 'Use logarithm to solve exponential equation, or recognize power.',
+              question: 'Solve the exponential equation: 2ˣ = 16',
+              solution: 'Step 1: Understand the equation. We have an exponential equation where the variable is in the exponent. Step 2: Method 1 - Recognize the power. Notice that 16 = 2⁴ (since 2⁴ = 2 × 2 × 2 × 2 = 16). So: 2ˣ = 2⁴. Step 3: Apply the property. If the bases are equal and positive (not equal to 1), then the exponents must be equal. So: x = 4. Step 4: Method 2 - Use logarithms. Take the logarithm (base 2) of both sides: log₂(2ˣ) = log₂(16). Using the property log_b(bˣ) = x: x = log₂(16). Since 2⁴ = 16, we have log₂(16) = 4. So: x = 4. Step 5: Verify. Check: 2⁴ = 16 ✓. Step 6: Final answer. Therefore, x = 4.',
+              explanation: 'To solve exponential equations, either recognize the power (faster) or use logarithms. When bases are the same, set exponents equal. When bases differ, take the logarithm of both sides. Always verify by substituting back into the original equation.',
             },
           ],
           commonMistakes: [
@@ -1130,18 +1130,18 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           examples: [
             {
               question: 'Simplify: √(−16)',
-              solution: '√(−16) = √(16 × −1) = 4i',
-              explanation: 'Factor out −1, use i = √(−1).',
+              solution: 'Step 1: Understand the problem. We need to find the square root of a negative number. In the real number system, square roots of negative numbers don\'t exist. We use complex numbers. Step 2: Recall the imaginary unit. The imaginary unit i is defined as i = √(−1), so i² = −1. Step 3: Factor out −1. √(−16) = √(16 × −1) = √16 × √(−1). Step 4: Simplify. √16 = 4 (since 4² = 16). √(−1) = i. So: √(−16) = 4 × i = 4i. Step 5: Verify. Check: (4i)² = 4² × i² = 16 × (−1) = −16 ✓. Step 6: Final answer. Therefore, √(−16) = 4i.',
+              explanation: 'Square roots of negative numbers require complex numbers. Factor out −1, take the square root of the positive part, and multiply by i. Remember: i = √(−1) and i² = −1. This allows us to work with square roots of negative numbers.',
             },
             {
-              question: 'Add: (3+2i) + (1−5i)',
-              solution: '(3+2i) + (1−5i) = (3+1) + (2−5)i = 4 − 3i',
-              explanation: 'Add real parts and imaginary parts separately.',
+              question: 'Add the complex numbers: (3 + 2i) + (1 − 5i)',
+              solution: 'Step 1: Understand complex number addition. To add complex numbers, add the real parts together and add the imaginary parts together separately. Step 2: Identify the parts. First complex number: 3 + 2i (real part = 3, imaginary part = 2). Second complex number: 1 − 5i (real part = 1, imaginary part = −5). Step 3: Add the real parts. Real part: 3 + 1 = 4. Step 4: Add the imaginary parts. Imaginary part: 2i + (−5i) = 2i − 5i = (2 − 5)i = −3i. Step 5: Combine the results. (3 + 2i) + (1 − 5i) = (3 + 1) + (2i − 5i) = 4 + (−3i) = 4 − 3i. Step 6: Verify. We can think of it like combining like terms: (3 + 1) + (2 − 5)i = 4 − 3i ✓. Step 7: Final answer. Therefore, (3 + 2i) + (1 − 5i) = 4 − 3i.',
+              explanation: 'Complex number addition is straightforward: add real parts, add imaginary parts. Think of it like combining like terms in algebra. The format a + bi makes it clear: a is the real part, b is the coefficient of the imaginary part.',
             },
             {
-              question: 'Multiply: (2+i)(2−i)',
-              solution: '(2+i)(2−i) = 4 − 2i + 2i − i² = 4 − (−1) = 5',
-              explanation: 'This is difference of squares. Result is real number (no i).',
+              question: 'Multiply the complex numbers: (2 + i)(2 − i)',
+              solution: 'Step 1: Recognize the pattern. This looks like (a + b)(a − b), which is a difference of squares: a² − b². Step 2: Apply the difference of squares formula. (2 + i)(2 − i) = 2² − i² = 4 − i². Step 3: Substitute i² = −1. Since i² = −1, we have: 4 − i² = 4 − (−1) = 4 + 1 = 5. Step 4: Alternative method - Expand directly. (2 + i)(2 − i) = 2(2) + 2(−i) + i(2) + i(−i) = 4 − 2i + 2i − i² = 4 − i² = 4 − (−1) = 5. Step 5: Notice the result. The product is a real number (5), with no imaginary part. This happens because (2 + i) and (2 − i) are conjugates. Step 6: Verify. Check: (2 + i)(2 − i) = 4 − 2i + 2i − i² = 4 − (−1) = 5 ✓. Step 7: Final answer. Therefore, (2 + i)(2 − i) = 5.',
+              explanation: 'When multiplying complex conjugates (a + bi)(a − bi), the result is always a real number: a² + b². The imaginary parts cancel out. This is a useful property: the product of a complex number and its conjugate is always real and positive (or zero).',
             },
           ],
           commonMistakes: [
@@ -1213,14 +1213,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: '(a + b)² = a² + 2ab + b²   |   (a − b)² = a² − 2ab + b²   |   (a + b)(a − b) = a² − b²',
           examples: [
             {
-              question: 'Calculate 103 × 97',
-              solution: 'Use (a+b)(a−b) = a²−b² → (100+3)(100−3) = 100² − 3² = 10000 − 9 = 9991',
-              explanation: 'Recognize numbers close to 100. Use difference of squares for fast calculation without multiplication.',
+              question: 'Calculate 103 × 97 using algebraic identities',
+              solution: 'Step 1: Observe the numbers. Notice that 103 and 97 are both close to 100. Specifically: 103 = 100 + 3 and 97 = 100 − 3. Step 2: Recognize the pattern. This matches the form (a+b)(a−b), where a = 100 and b = 3. Step 3: Apply the difference of squares identity. The identity (a+b)(a−b) = a² − b² allows us to calculate this quickly. So: 103 × 97 = (100 + 3)(100 − 3) = 100² − 3². Step 4: Calculate the squares. 100² = 10,000 and 3² = 9. Step 5: Subtract. 100² − 3² = 10,000 − 9 = 9,991. Step 6: Verify (optional). We can verify: 103 × 97. Using standard multiplication: 100 × 97 = 9,700, and 3 × 97 = 291, so 9,700 + 291 = 9,991 ✓. Therefore, 103 × 97 = 9,991.',
+              explanation: 'The difference of squares identity (a+b)(a−b) = a² − b² is extremely useful for mental math when multiplying numbers that are equidistant from a round number. This technique saves time and reduces calculation errors compared to standard multiplication.',
             },
             {
-              question: 'If x+y=8 and xy=12, find x²+y²',
-              solution: '(x+y)² = x²+2xy+y² → 8² = x²+2(12)+y² → 64 = x²+24+y² → x²+y² = 40',
-              explanation: 'Use the identity (x+y)² to relate the sum and product to the sum of squares.',
+              question: 'If x + y = 8 and xy = 12, find the value of x² + y²',
+              solution: 'Step 1: Understand the given information. We know: x + y = 8 (sum of x and y) and xy = 12 (product of x and y). We need to find x² + y² (sum of squares). Step 2: Recall the algebraic identity. The identity (x + y)² = x² + 2xy + y² relates the sum, product, and sum of squares. Step 3: Expand (x + y)². (x + y)² = x² + 2xy + y². We can rearrange this to: x² + y² = (x + y)² − 2xy. Step 4: Substitute the known values. We know x + y = 8 and xy = 12. So: x² + y² = (8)² − 2(12). Step 5: Calculate. (8)² = 64, and 2(12) = 24. So: x² + y² = 64 − 24 = 40. Step 6: Final answer. Therefore, x² + y² = 40.',
+              explanation: 'This problem demonstrates how algebraic identities can help us find relationships between different expressions. The key identity (x + y)² = x² + 2xy + y² allows us to find the sum of squares when we know the sum and product. This technique is very useful in algebra problems.',
             },
           ],
           commonMistakes: [
@@ -1251,9 +1251,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Solve: ½x + 3(x−2) = 2(x+1) + 1',
-              solution: 'Step 1: x + 6(x−2) = 4(x+1) + 2 → Step 2: x + 6x − 12 = 4x + 4 + 2 → Step 3: 7x − 12 = 4x + 6 → Step 4-5: 3x = 18 → Step 6: x = 6',
-              explanation: 'Follow the 6-step method systematically. Clear fractions first, then expand, combine, and isolate variable.',
+              question: 'Solve the equation: ½x + 3(x−2) = 2(x+1) + 1',
+              solution: 'Step 1: Clear fractions/decimals. The equation has a fraction: ½x. The LCD (Lowest Common Denominator) of all denominators is 2. Multiply every term by 2: 2 × [½x + 3(x−2)] = 2 × [2(x+1) + 1]. This gives: x + 6(x−2) = 4(x+1) + 2. Step 2: Remove parentheses. Expand all expressions with parentheses: x + 6(x−2) = x + 6x − 12 = 7x − 12 (left side). 4(x+1) + 2 = 4x + 4 + 2 = 4x + 6 (right side). So: 7x − 12 = 4x + 6. Step 3: Combine like terms. Left side: 7x − 12 (already combined). Right side: 4x + 6 (already combined). The equation is: 7x − 12 = 4x + 6. Step 4: Get variables on one side. Subtract 4x from both sides to move x terms to the left: 7x − 12 − 4x = 4x + 6 − 4x, which gives: 3x − 12 = 6. Step 5: Get constants on the other side. Add 12 to both sides to move constants to the right: 3x − 12 + 12 = 6 + 12, which gives: 3x = 18. Step 6: Solve for the variable. Divide both sides by 3: 3x ÷ 3 = 18 ÷ 3, which gives: x = 6. Step 7: Verify the solution. Substitute x = 6 into the original equation: Left side: ½(6) + 3(6−2) = 3 + 3(4) = 3 + 12 = 15. Right side: 2(6+1) + 1 = 2(7) + 1 = 14 + 1 = 15. Both sides equal 15 ✓. Therefore, x = 6 is the solution.',
+              explanation: 'The 6-step method ensures you don\'t miss any steps: (1) Clear fractions/decimals, (2) Remove parentheses, (3) Combine like terms, (4) Get variables on one side, (5) Get constants on the other side, (6) Solve. Always verify by substituting back into the original equation.',
             },
           ],
           commonMistakes: [
@@ -1285,9 +1285,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: '"Five less than twice a number equals thirteen."',
-              solution: 'Let number = x → "twice a number" = 2x → "five less than" = −5 → "equals thirteen" = 13 → Equation: 2x − 5 = 13 → x = 9',
-              explanation: 'Break down phrase by phrase. "Twice" means 2×, "less than" means subtract, "equals" means =.',
+              question: 'Translate the word problem into an equation and solve: "Five less than twice a number equals thirteen."',
+              solution: 'Step 1: Identify what we\'re looking for. The problem asks for "a number". Let this number be x. Step 2: Translate phrase by phrase. "Twice a number" means 2 times x, which is 2x. "Five less than twice a number" means we subtract 5 from 2x. IMPORTANT: "Five less than" means we subtract 5 FROM the expression that comes after "than". So: 2x − 5. "Equals thirteen" means = 13. Step 3: Write the equation. Combining all parts: 2x − 5 = 13. Step 4: Solve the equation. Add 5 to both sides: 2x − 5 + 5 = 13 + 5, which gives: 2x = 18. Divide both sides by 2: 2x ÷ 2 = 18 ÷ 2, which gives: x = 9. Step 5: Verify the answer. Check: "Five less than twice 9" = 2(9) − 5 = 18 − 5 = 13 ✓. The answer makes sense. Step 6: Final answer. Therefore, the number is 9.',
+              explanation: 'Word problems require careful translation. Key phrases: "twice" = 2×, "less than" = subtract (be careful with order - "A less than B" means B − A), "equals" = =. Always read the problem carefully and translate phrase by phrase. Verify your answer by checking it makes sense in the original wording.',
             },
           ],
           commonMistakes: [
@@ -1319,19 +1319,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'x = (−b ± √(b²−4ac)) / 2a',
           examples: [
             {
-              question: 'Solve: x² − 5x + 6 = 0',
-              solution: 'Factor: (x − 2)(x − 3) = 0 → x = 2 or x = 3',
-              explanation: 'Find two numbers that multiply to 6 and add to −5: −2 and −3. Factor and set each factor equal to zero.',
+              question: 'Solve the quadratic equation: x² − 5x + 6 = 0',
+              solution: 'Step 1: Identify the equation type. This is a quadratic equation in standard form: ax² + bx + c = 0, where a = 1, b = −5, and c = 6. Step 2: Try factoring method. For x² + bx + c form, we need two numbers that multiply to c (6) and add to b (−5). Step 3: Find the two numbers. We need numbers that: multiply to 6 and add to −5. The pairs that multiply to 6 are: (1, 6), (2, 3), (−1, −6), (−2, −3). Which pair adds to −5? (−2) + (−3) = −5 ✓. So the numbers are −2 and −3. Step 4: Factor the quadratic. x² − 5x + 6 = (x − 2)(x − 3). We can verify: (x − 2)(x − 3) = x² − 3x − 2x + 6 = x² − 5x + 6 ✓. Step 5: Apply the zero product property. If (x − 2)(x − 3) = 0, then either x − 2 = 0 OR x − 3 = 0. Step 6: Solve each equation. Case 1: x − 2 = 0 → x = 2. Case 2: x − 3 = 0 → x = 3. Step 7: Verify the solutions. Check x = 2: (2)² − 5(2) + 6 = 4 − 10 + 6 = 0 ✓. Check x = 3: (3)² − 5(3) + 6 = 9 − 15 + 6 = 0 ✓. Therefore, the solutions are x = 2 or x = 3.',
+              explanation: 'Factoring is the fastest method when it works. The key is finding two numbers that multiply to c and add to b. Once factored, use the zero product property: if ab = 0, then a = 0 or b = 0. Always verify your solutions by substituting back into the original equation.',
             },
             {
-              question: 'Solve: 2x² + 7x + 3 = 0',
-              solution: 'Using quadratic formula: a=2, b=7, c=3 → x = (−7 ± √(49−24)) / 4 = (−7 ± 5) / 4 → x = −1/2 or x = −3',
-              explanation: 'When factoring is difficult, use quadratic formula. Calculate discriminant first: 49−24=25.',
+              question: 'Solve the quadratic equation: 2x² + 7x + 3 = 0',
+              solution: 'Step 1: Identify coefficients. Standard form: ax² + bx + c = 0, where a = 2, b = 7, and c = 3. Step 2: Check if factoring is easy. For ax² + bx + c where a ≠ 1, factoring can be more complex. We need two numbers that multiply to ac = 2 × 3 = 6 and add to b = 7. The numbers are 6 and 1. However, this requires more complex factoring. Let\'s use the quadratic formula instead. Step 3: Apply the quadratic formula. The formula is: x = (−b ± √(b² − 4ac)) / (2a). Step 4: Calculate the discriminant. Discriminant = b² − 4ac = 7² − 4(2)(3) = 49 − 24 = 25. Since the discriminant is positive (25 > 0), there are two real solutions. Step 5: Substitute into the formula. x = (−7 ± √25) / (2 × 2) = (−7 ± 5) / 4. Step 6: Calculate both solutions. Case 1 (using +): x = (−7 + 5) / 4 = (−2) / 4 = −1/2. Case 2 (using −): x = (−7 − 5) / 4 = (−12) / 4 = −3. Step 7: Verify the solutions. Check x = −1/2: 2(−1/2)² + 7(−1/2) + 3 = 2(1/4) − 7/2 + 3 = 1/2 − 7/2 + 3 = −6/2 + 3 = −3 + 3 = 0 ✓. Check x = −3: 2(−3)² + 7(−3) + 3 = 2(9) − 21 + 3 = 18 − 21 + 3 = 0 ✓. Therefore, the solutions are x = −1/2 or x = −3.',
+              explanation: 'When factoring is difficult (especially when a ≠ 1), the quadratic formula is reliable. Always calculate the discriminant first to determine the number of solutions. A positive discriminant means two real solutions, zero means one solution, and negative means no real solutions (complex solutions).',
             },
             {
-              question: 'How many solutions: x² + 4x + 5 = 0?',
-              solution: 'Discriminant: b²−4ac = 16−20 = −4 < 0 → No real solutions',
-              explanation: 'Negative discriminant means no real solutions (solutions would be complex numbers).',
+              question: 'Determine how many real solutions the equation x² + 4x + 5 = 0 has',
+              solution: 'Step 1: Identify the coefficients. Standard form: ax² + bx + c = 0, where a = 1, b = 4, and c = 5. Step 2: Calculate the discriminant. The discriminant is: b² − 4ac. Substituting: b² − 4ac = 4² − 4(1)(5) = 16 − 20 = −4. Step 3: Interpret the discriminant. The discriminant is −4, which is negative (less than 0). Step 4: Apply the discriminant rule. When discriminant < 0: The quadratic equation has NO real solutions. The solutions would be complex numbers (involving √(−1) = i). Step 5: Understand why. In the quadratic formula x = (−b ± √(b² − 4ac)) / (2a), we have √(b² − 4ac) = √(−4) = 2i (where i = √(−1)). This gives complex solutions, not real numbers. Step 6: Final answer. The equation x² + 4x + 5 = 0 has NO real solutions. It has two complex solutions: x = −2 + i and x = −2 − i.',
+              explanation: 'The discriminant (b² − 4ac) tells us the nature of the solutions: positive = two real solutions, zero = one real solution (repeated), negative = no real solutions (two complex solutions). This is a quick way to determine solution types without solving the full equation.',
             },
           ],
           commonMistakes: [
@@ -1360,19 +1360,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Solve: x + y = 10, x − y = 4',
-              solution: 'Add equations: 2x = 14 → x = 7 → Substitute: 7 + y = 10 → y = 3',
-              explanation: 'Adding equations eliminates y. Then substitute x into one equation to find y.',
+              question: 'Solve the system of equations: x + y = 10 and x − y = 4',
+              solution: 'Step 1: Identify the method. Both equations have x and y terms. Notice that if we add the equations, the y terms will cancel (y + (−y) = 0). This suggests using the elimination method. Step 2: Add the equations. Write both equations: x + y = 10, x − y = 4. Add them: (x + y) + (x − y) = 10 + 4. Step 3: Simplify. Left side: x + y + x − y = 2x. Right side: 10 + 4 = 14. So: 2x = 14. Step 4: Solve for x. Divide both sides by 2: 2x ÷ 2 = 14 ÷ 2, which gives: x = 7. Step 5: Substitute x into one equation to find y. Use the first equation: x + y = 10. Substitute x = 7: 7 + y = 10. Subtract 7 from both sides: y = 10 − 7 = 3. Step 6: Verify the solution. Check in both equations: Equation 1: x + y = 7 + 3 = 10 ✓. Equation 2: x − y = 7 − 3 = 4 ✓. Both equations are satisfied. Step 7: Final answer. Therefore, x = 7 and y = 3.',
+              explanation: 'The elimination method works well when adding or subtracting equations eliminates one variable. Here, adding the equations eliminated y, making it easy to solve for x. Always verify your solution by substituting into both original equations.',
             },
             {
-              question: 'Solve: 2x + 3y = 12, x = y + 1',
-              solution: 'Substitute: 2(y+1) + 3y = 12 → 2y + 2 + 3y = 12 → 5y = 10 → y = 2 → x = 2 + 1 = 3',
-              explanation: 'Substitute second equation into first. Solve for y, then find x.',
+              question: 'Solve the system of equations: 2x + 3y = 12 and x = y + 1',
+              solution: 'Step 1: Identify the method. The second equation already has x isolated (x = y + 1). This makes substitution the best method. Step 2: Substitute the second equation into the first. The second equation tells us x = y + 1. Substitute this into the first equation: 2x + 3y = 12 becomes: 2(y + 1) + 3y = 12. Step 3: Expand and simplify. Expand: 2(y + 1) = 2y + 2. So: 2y + 2 + 3y = 12. Combine like terms: (2y + 3y) + 2 = 12, which gives: 5y + 2 = 12. Step 4: Solve for y. Subtract 2 from both sides: 5y + 2 − 2 = 12 − 2, which gives: 5y = 10. Divide both sides by 5: 5y ÷ 5 = 10 ÷ 5, which gives: y = 2. Step 5: Find x using the second equation. From x = y + 1, substitute y = 2: x = 2 + 1 = 3. Step 6: Verify the solution. Check in both equations: Equation 1: 2x + 3y = 2(3) + 3(2) = 6 + 6 = 12 ✓. Equation 2: x = y + 1, so 3 = 2 + 1 = 3 ✓. Both equations are satisfied. Step 7: Final answer. Therefore, x = 3 and y = 2.',
+              explanation: 'Substitution is ideal when one variable is already isolated. Substitute the expression into the other equation, solve for one variable, then use that value to find the other. Always check your solution in both equations.',
             },
             {
-              question: 'Two numbers sum to 25. One is 7 more than the other. Find both.',
-              solution: 'Let numbers be x and y: x + y = 25, x = y + 7 → (y+7) + y = 25 → 2y = 18 → y = 9, x = 16',
-              explanation: 'Set up system from word problem. Use substitution to solve.',
+              question: 'Two numbers sum to 25. One number is 7 more than the other. Find both numbers.',
+              solution: 'Step 1: Define variables. Let the smaller number be y, and the larger number be x. Step 2: Translate the first condition. "Two numbers sum to 25" means: x + y = 25. Step 3: Translate the second condition. "One is 7 more than the other" means: x = y + 7 (the larger number is 7 more than the smaller). Step 4: Set up the system. We have: x + y = 25 and x = y + 7. Step 5: Solve using substitution. Since x = y + 7, substitute into the first equation: (y + 7) + y = 25. Step 6: Simplify and solve for y. Combine like terms: 2y + 7 = 25. Subtract 7 from both sides: 2y = 25 − 7 = 18. Divide by 2: y = 18 ÷ 2 = 9. Step 7: Find x. From x = y + 7, substitute y = 9: x = 9 + 7 = 16. Step 8: Verify the answer. Check: Sum = 16 + 9 = 25 ✓. Difference: 16 − 9 = 7 ✓ (one is 7 more than the other). Step 9: Final answer. Therefore, the two numbers are 16 and 9.',
+              explanation: 'Word problems require translating English into mathematical equations. Identify what you\'re looking for, assign variables, translate each condition into an equation, then solve the system. Always verify that your answer satisfies all the given conditions.',
             },
           ],
           commonMistakes: [
@@ -1401,24 +1401,24 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Factor: 6x² + 9x',
-              solution: 'GCF: 3x(2x + 3)',
-              explanation: 'Factor out greatest common factor: 3x is common to both terms.',
+              question: 'Factor the expression: 6x² + 9x',
+              solution: 'Step 1: Identify the type. This is a binomial (two terms) with a common factor. Step 2: Find the Greatest Common Factor (GCF). Look at the coefficients: 6 and 9. The GCF of 6 and 9 is 3. Look at the variables: x² and x. The GCF is x (the lowest power). So the GCF is 3x. Step 3: Factor out the GCF. Divide each term by 3x: 6x² ÷ 3x = 2x, and 9x ÷ 3x = 3. So: 6x² + 9x = 3x(2x + 3). Step 4: Verify by expanding. Check: 3x(2x + 3) = 3x × 2x + 3x × 3 = 6x² + 9x ✓. Step 5: Final answer. Therefore, 6x² + 9x = 3x(2x + 3).',
+              explanation: 'Always look for a GCF first before trying other factoring methods. The GCF includes both the numerical coefficient and the variable part. Factoring out the GCF simplifies the expression and may reveal other factoring opportunities.',
             },
             {
-              question: 'Factor: x² − 16',
-              solution: 'Difference of squares: (x + 4)(x − 4)',
-              explanation: 'Recognize as a² − b² where a=x, b=4. Use identity (a+b)(a−b).',
+              question: 'Factor the expression: x² − 16',
+              solution: 'Step 1: Recognize the pattern. This is a difference of two terms, both perfect squares: x² and 16 (which is 4²). This matches the form a² − b². Step 2: Identify a and b. a² = x², so a = x. b² = 16, so b = 4. Step 3: Apply the difference of squares formula. The formula is: a² − b² = (a + b)(a − b). So: x² − 16 = (x + 4)(x − 4). Step 4: Verify by expanding. Check: (x + 4)(x − 4) = x² − 4x + 4x − 16 = x² − 16 ✓. Step 5: Final answer. Therefore, x² − 16 = (x + 4)(x − 4).',
+              explanation: 'The difference of squares pattern a² − b² = (a + b)(a − b) is very common. Recognize it when you see two perfect squares separated by a minus sign. This is one of the most useful factoring patterns.',
             },
             {
-              question: 'Factor: x² + 8x + 15',
-              solution: 'Find numbers: multiply to 15, add to 8 → 3 and 5 → (x + 3)(x + 5)',
-              explanation: 'For x²+bx+c, find two numbers that multiply to c (15) and add to b (8).',
+              question: 'Factor the trinomial: x² + 8x + 15',
+              solution: 'Step 1: Identify the form. This is a trinomial in the form x² + bx + c, where b = 8 and c = 15. Step 2: Find two numbers. We need two numbers that: multiply to c (15) and add to b (8). Step 3: List factor pairs of 15. The pairs that multiply to 15 are: (1, 15), (3, 5), (−1, −15), (−3, −5). Step 4: Find the pair that adds to 8. Check each pair: 1 + 15 = 16 ✗, 3 + 5 = 8 ✓, −1 + (−15) = −16 ✗, −3 + (−5) = −8 ✗. The pair (3, 5) works! Step 5: Write the factors. Since the numbers are 3 and 5, and both are positive (because b and c are positive), the factors are: (x + 3)(x + 5). Step 6: Verify by expanding. Check: (x + 3)(x + 5) = x² + 5x + 3x + 15 = x² + 8x + 15 ✓. Step 7: Final answer. Therefore, x² + 8x + 15 = (x + 3)(x + 5).',
+              explanation: 'For trinomials x² + bx + c, find two numbers that multiply to c and add to b. The signs depend on b and c: if both b and c are positive, both factors have + signs. If c is positive but b is negative, both factors have − signs. If c is negative, one factor has + and one has −.',
             },
             {
-              question: 'Factor: 2x² + 7x + 3',
-              solution: 'ac = 6, need numbers that multiply to 6 and add to 7 → 6 and 1 → 2x² + 6x + x + 3 → 2x(x+3) + 1(x+3) → (2x+1)(x+3)',
-              explanation: 'For ax²+bx+c, multiply a×c, find factors that add to b, then factor by grouping.',
+              question: 'Factor the trinomial: 2x² + 7x + 3',
+              solution: 'Step 1: Identify the form. This is a trinomial in the form ax² + bx + c, where a = 2, b = 7, and c = 3. Since a ≠ 1, we need a different method. Step 2: Use the ac method. Multiply a × c: 2 × 3 = 6. We need two numbers that multiply to 6 and add to b (7). Step 3: Find the two numbers. Factor pairs of 6: (1, 6), (2, 3), (−1, −6), (−2, −3). Which pair adds to 7? 1 + 6 = 7 ✓. So the numbers are 1 and 6. Step 4: Split the middle term. Rewrite 7x as 6x + x: 2x² + 7x + 3 = 2x² + 6x + x + 3. Step 5: Factor by grouping. Group: (2x² + 6x) + (x + 3). Factor each group: 2x(x + 3) + 1(x + 3). Step 6: Factor out the common binomial. Both terms have (x + 3): (x + 3)(2x + 1). Step 7: Verify by expanding. Check: (x + 3)(2x + 1) = 2x² + x + 6x + 3 = 2x² + 7x + 3 ✓. Step 8: Final answer. Therefore, 2x² + 7x + 3 = (x + 3)(2x + 1).',
+              explanation: 'For trinomials ax² + bx + c where a ≠ 1, use the ac method: multiply a×c, find two numbers that multiply to ac and add to b, split the middle term, then factor by grouping. This method always works when the trinomial is factorable.',
             },
           ],
           commonMistakes: [
@@ -1447,14 +1447,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Simplify: (x²−4)/(x+2)',
-              solution: '(x²−4)/(x+2) = (x+2)(x−2)/(x+2) = x−2 (x ≠ −2)',
-              explanation: 'Factor numerator (difference of squares), cancel common factor.',
+              question: 'Simplify the rational expression: (x²−4)/(x+2)',
+              solution: 'Step 1: Factor the numerator. The numerator x² − 4 is a difference of squares. Using the identity a² − b² = (a+b)(a−b): x² − 4 = x² − 2² = (x+2)(x−2). Step 2: Rewrite the expression. (x²−4)/(x+2) = (x+2)(x−2)/(x+2). Step 3: Cancel common factors. Both numerator and denominator have the factor (x+2). We can cancel it: (x+2)(x−2)/(x+2) = x−2. Step 4: Important: State domain restrictions. When we canceled (x+2), we must note that x+2 ≠ 0, so x ≠ −2. This is because the original expression is undefined when x = −2 (division by zero). Step 5: Write the simplified form. (x²−4)/(x+2) = x−2, where x ≠ −2. Step 6: Verify by expanding. Check: (x−2)(x+2) = x² + 2x − 2x − 4 = x² − 4 ✓. Therefore, (x²−4)/(x+2) = x−2 (x ≠ −2).',
+              explanation: 'To simplify rational expressions, factor both numerator and denominator, then cancel common FACTORS (not terms!). Always state domain restrictions - any value that makes the original denominator zero must be excluded. Remember: you can only cancel factors that appear in both numerator and denominator.',
             },
             {
-              question: 'Add: 1/(x+1) + 2/(x−1)',
-              solution: 'LCD = (x+1)(x−1) → [1(x−1) + 2(x+1)] / [(x+1)(x−1)] = (3x+1)/(x²−1)',
-              explanation: 'Find LCD, convert to common denominator, add numerators.',
+              question: 'Add the rational expressions: 1/(x+1) + 2/(x−1)',
+              solution: 'Step 1: Understand the problem. We need to add two fractions with different denominators. Step 2: Find the LCD (Lowest Common Denominator). The denominators are (x+1) and (x−1). Since they have no common factors, the LCD is their product: (x+1)(x−1). Note: (x+1)(x−1) = x² − 1 (difference of squares). Step 3: Convert first fraction to LCD. 1/(x+1) needs denominator (x+1)(x−1). Multiply numerator and denominator by (x−1): 1/(x+1) = [1(x−1)] / [(x+1)(x−1)] = (x−1)/(x²−1). Step 4: Convert second fraction to LCD. 2/(x−1) needs denominator (x+1)(x−1). Multiply numerator and denominator by (x+1): 2/(x−1) = [2(x+1)] / [(x−1)(x+1)] = (2x+2)/(x²−1). Step 5: Add the fractions. Now both have the same denominator: (x−1)/(x²−1) + (2x+2)/(x²−1) = [(x−1) + (2x+2)] / (x²−1). Step 6: Simplify the numerator. (x−1) + (2x+2) = x − 1 + 2x + 2 = 3x + 1. Step 7: Write the final answer. 1/(x+1) + 2/(x−1) = (3x+1)/(x²−1). Step 8: State domain restrictions. The original expressions are undefined when x+1 = 0 (x = −1) or x−1 = 0 (x = 1). So x ≠ −1 and x ≠ 1. Therefore, 1/(x+1) + 2/(x−1) = (3x+1)/(x²−1), where x ≠ −1 and x ≠ 1.',
+              explanation: 'To add rational expressions, find the LCD, convert each fraction to have that denominator, then add the numerators while keeping the common denominator. Always factor and simplify the result if possible. Don\'t forget to state domain restrictions.',
             },
           ],
           commonMistakes: [
@@ -1483,14 +1483,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Solve: √(x+3) = 5',
-              solution: 'Square both sides: x+3 = 25 → x = 22. Check: √(22+3) = √25 = 5 ✓',
-              explanation: 'Square both sides to eliminate radical, then solve. Always check!',
+              question: 'Solve the radical equation: √(x+3) = 5',
+              solution: 'Step 1: Understand the equation. We have a square root equal to a number. The radical is already isolated on one side, which is good. Step 2: Square both sides. To eliminate the square root, square both sides: [√(x+3)]² = 5². This gives: x + 3 = 25. Step 3: Solve for x. Subtract 3 from both sides: x + 3 − 3 = 25 − 3, which gives: x = 22. Step 4: CRITICAL: Check the solution. When solving radical equations, we MUST check our answer because squaring can introduce extraneous solutions. Substitute x = 22 into the original equation: √(22+3) = √25 = 5. Since 5 = 5 ✓, the solution is valid. Step 5: Final answer. Therefore, x = 22 is the solution.',
+              explanation: 'Always check solutions to radical equations! Squaring both sides can introduce extraneous solutions (solutions that don\'t actually work). This happens because squaring loses information about the sign. For example, if we had √(x+3) = −5, squaring would give the same equation, but −5 is not a valid square root (square roots are non-negative).',
             },
             {
-              question: 'Solve: √(2x+1) = x−1',
-              solution: 'Square: 2x+1 = (x−1)² = x²−2x+1 → x²−4x = 0 → x(x−4) = 0 → x = 0 or 4. Check: x=0 gives √1 = −1 ✗, x=4 gives √9 = 3 ✓. So x = 4',
-              explanation: 'Square, solve quadratic, but check both solutions (x=0 is extraneous).',
+              question: 'Solve the radical equation: √(2x+1) = x−1',
+              solution: 'Step 1: Check the domain. For the equation to make sense, we need: 2x+1 ≥ 0 (radicand must be non-negative) and x−1 ≥ 0 (right side must be non-negative since left side is). So: x ≥ −1/2 and x ≥ 1, which means x ≥ 1. Step 2: Square both sides. Square both sides to eliminate the radical: [√(2x+1)]² = (x−1)². This gives: 2x + 1 = (x−1)². Step 3: Expand the right side. (x−1)² = x² − 2x + 1. So: 2x + 1 = x² − 2x + 1. Step 4: Rearrange to form a quadratic equation. Subtract (2x+1) from both sides: 0 = x² − 2x + 1 − 2x − 1, which gives: 0 = x² − 4x. Factor: 0 = x(x − 4). Step 5: Solve the quadratic. Using the zero product property: x = 0 or x − 4 = 0, so x = 0 or x = 4. Step 6: Check both solutions. Check x = 0: Left side: √(2(0)+1) = √1 = 1. Right side: 0 − 1 = −1. Since 1 ≠ −1, x = 0 is NOT a valid solution (it\'s extraneous). Check x = 4: Left side: √(2(4)+1) = √9 = 3. Right side: 4 − 1 = 3. Since 3 = 3 ✓, x = 4 is a valid solution. Step 7: Verify domain. x = 4 satisfies x ≥ 1 ✓. Step 8: Final answer. Therefore, the solution is x = 4. (x = 0 is extraneous and must be rejected).',
+              explanation: 'Radical equations often produce extraneous solutions when squaring. Always check every solution in the ORIGINAL equation, not the squared version. Also check domain restrictions: the radicand must be ≥ 0, and if the radical equals an expression, that expression should also be ≥ 0 (since square roots are non-negative).',
             },
           ],
           commonMistakes: [
@@ -1591,19 +1591,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'If f(x) = 2x+3, find f(5)',
-              solution: 'f(5) = 2(5) + 3 = 10 + 3 = 13',
-              explanation: 'Substitute x = 5 into function.',
+              question: 'If f(x) = 2x + 3, find f(5)',
+              solution: 'Step 1: Understand the notation. f(x) = 2x + 3 means "f is a function of x" where the rule is: multiply x by 2, then add 3. f(5) means "evaluate the function when x = 5". Step 2: Substitute x = 5 into the function. Replace every x in the function with 5: f(5) = 2(5) + 3. Step 3: Evaluate the expression. Follow order of operations: First multiply: 2(5) = 10. Then add: 10 + 3 = 13. Step 4: Write the answer. f(5) = 13. Step 5: Interpret the result. When the input is 5, the function outputs 13. Therefore, f(5) = 13.',
+              explanation: 'To evaluate a function f(x) at a specific value, substitute that value for x in the function rule and simplify. This is one of the most fundamental operations with functions.',
             },
             {
-              question: 'If f(x) = x²−4, find f(−2)',
-              solution: 'f(−2) = (−2)² − 4 = 4 − 4 = 0',
-              explanation: 'Substitute and evaluate.',
+              question: 'If f(x) = x² − 4, find f(−2)',
+              solution: 'Step 1: Understand the function. f(x) = x² − 4 means: square x, then subtract 4. Step 2: Substitute x = −2. Replace x with −2: f(−2) = (−2)² − 4. Step 3: Evaluate carefully. First, calculate (−2)². Important: (−2)² = (−2) × (−2) = 4 (not −4!). The square of a negative number is positive. Step 4: Complete the calculation. f(−2) = 4 − 4 = 0. Step 5: Verify. We can check: f(−2) = (−2)² − 4 = 4 − 4 = 0 ✓. Step 6: Final answer. Therefore, f(−2) = 0.',
+              explanation: 'When substituting negative numbers, be careful with signs. Remember that (−a)² = a² (squaring a negative gives a positive). Always use parentheses when substituting to avoid sign errors.',
             },
             {
-              question: 'Domain of f(x) = 1/(x−3)?',
-              solution: 'x−3 ≠ 0, so x ≠ 3. Domain: all real numbers except 3',
-              explanation: 'Denominator cannot be zero, so exclude x = 3.',
+              question: 'What is the domain of the function f(x) = 1/(x − 3)?',
+              solution: 'Step 1: Understand domain. The domain of a function is all possible input values (x-values) for which the function is defined. Step 2: Identify restrictions. This function has a fraction with denominator (x − 3). The denominator cannot be zero because division by zero is undefined. Step 3: Find when denominator equals zero. Set the denominator equal to zero: x − 3 = 0. Solve: x = 3. Step 4: Determine the domain. Since x = 3 makes the denominator zero, we must exclude x = 3. The domain is all real numbers EXCEPT x = 3. Step 5: Write in proper notation. Domain: {x | x ∈ ℝ, x ≠ 3} or in interval notation: (−∞, 3) ∪ (3, ∞). Step 6: Verify. Test x = 3: f(3) = 1/(3 − 3) = 1/0, which is undefined ✓. Test x = 0: f(0) = 1/(0 − 3) = 1/(−3) = −1/3, which is defined ✓. Therefore, the domain is all real numbers except 3.',
+              explanation: 'For rational functions (fractions), the domain excludes any x-values that make the denominator zero. Always check for division by zero, square roots of negative numbers, and logarithms of non-positive numbers when finding domains.',
             },
           ],
           commonMistakes: [
@@ -1631,14 +1631,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'If f(x) = x+2 and g(x) = 3x, find f(g(4))',
-              solution: 'g(4) = 3(4) = 12 → f(12) = 12+2 = 14',
-              explanation: 'Apply g first: g(4) = 12, then apply f: f(12) = 14.',
+              question: 'If f(x) = x + 2 and g(x) = 3x, find f(g(4)).',
+              solution: 'Step 1: Understand function composition. f(g(4)) means: first apply g to 4, then apply f to that result. We work from the inside out. Step 2: Apply the inner function first. Evaluate g(4): g(x) = 3x, so g(4) = 3(4) = 12. Step 3: Apply the outer function. Now evaluate f(12): f(x) = x + 2, so f(12) = 12 + 2 = 14. Step 4: Write the final answer. f(g(4)) = f(12) = 14. Step 5: Verify the order. f(g(4)) means "f of g of 4". We read from right to left: g of 4 first, then f of that result. This is correct. Step 6: Note about order. f(g(4)) is different from g(f(4)). If we did g(f(4)): f(4) = 4 + 2 = 6, then g(6) = 3(6) = 18, which is different from 14. Step 7: Final answer. Therefore, f(g(4)) = 14.',
+              explanation: 'Function composition f(g(x)) means apply g first, then apply f to the result. Always work from the inside out. The notation f(g(x)) is read as "f of g of x", which tells you the order: g first, then f.',
             },
             {
-              question: 'If f(x) = x² and g(x) = x+1, find f(g(x))',
-              solution: 'f(g(x)) = f(x+1) = (x+1)² = x²+2x+1',
-              explanation: 'Substitute g(x) = x+1 into f: f(x+1) = (x+1)².',
+              question: 'If f(x) = x² and g(x) = x + 1, find f(g(x)) and simplify.',
+              solution: 'Step 1: Understand the composition. f(g(x)) means: substitute g(x) into the function f. We need to find the expression for f(g(x)). Step 2: Find g(x). g(x) = x + 1. Step 3: Substitute g(x) into f. f(g(x)) = f(x + 1). Since f(x) = x², we substitute (x + 1) for x: f(x + 1) = (x + 1)². Step 4: Expand the expression. (x + 1)² = (x + 1)(x + 1). Using FOIL or the identity (a + b)² = a² + 2ab + b²: (x + 1)² = x² + 2(x)(1) + 1² = x² + 2x + 1. Step 5: Write the final answer. f(g(x)) = x² + 2x + 1. Step 6: Verify with a test value. Test x = 2: g(2) = 2 + 1 = 3, then f(3) = 3² = 9. Check f(g(2)): f(g(2)) = (2 + 1)² = 3² = 9 ✓. Step 7: Final answer. Therefore, f(g(x)) = x² + 2x + 1.',
+              explanation: 'To find f(g(x)), substitute the entire expression g(x) wherever x appears in f(x). Then simplify the resulting expression. This gives you a new function that represents the composition.',
             },
           ],
           commonMistakes: [
@@ -1667,14 +1667,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Find inverse of f(x) = 2x+3',
-              solution: 'y = 2x+3 → Swap: x = 2y+3 → Solve: x−3 = 2y → y = (x−3)/2 → f⁻¹(x) = (x−3)/2',
-              explanation: 'Swap x and y, then solve for y to get inverse.',
+              question: 'Find the inverse function of f(x) = 2x + 3.',
+              solution: 'Step 1: Understand inverse functions. The inverse function f⁻¹(x) "undoes" what f(x) does. If f(a) = b, then f⁻¹(b) = a. Step 2: Replace f(x) with y. Write: y = 2x + 3. Step 3: Swap x and y. This is the key step: x = 2y + 3. Step 4: Solve for y. We need to isolate y: x = 2y + 3. Subtract 3 from both sides: x − 3 = 2y. Divide both sides by 2: (x − 3) / 2 = y. So: y = (x − 3) / 2. Step 5: Write the inverse function. f⁻¹(x) = (x − 3) / 2. Step 6: Verify the inverse. Check: f(f⁻¹(x)) = f((x−3)/2) = 2((x−3)/2) + 3 = (x−3) + 3 = x ✓. Also: f⁻¹(f(x)) = f⁻¹(2x+3) = ((2x+3)−3)/2 = (2x)/2 = x ✓. Both compositions give x, confirming it\'s the correct inverse. Step 7: Final answer. Therefore, f⁻¹(x) = (x − 3) / 2.',
+              explanation: 'To find the inverse: (1) Replace f(x) with y, (2) Swap x and y, (3) Solve for y, (4) Replace y with f⁻¹(x). Always verify that f(f⁻¹(x)) = x and f⁻¹(f(x)) = x. The inverse "undoes" the original function.',
             },
             {
-              question: 'If f(x) = x² (x≥0), find f⁻¹(x)',
-              solution: 'y = x² → x = y² → y = √x (since x≥0) → f⁻¹(x) = √x',
-              explanation: 'Swap and solve. Note: need x≥0 restriction for inverse to exist.',
+              question: 'If f(x) = x² for x ≥ 0, find the inverse function f⁻¹(x).',
+              solution: 'Step 1: Understand the restriction. The function f(x) = x² has domain x ≥ 0. This restriction is necessary because x² is not one-to-one on all real numbers (both 2 and −2 give 4). With x ≥ 0, the function is one-to-one and has an inverse. Step 2: Replace f(x) with y. Write: y = x², where x ≥ 0. Step 3: Swap x and y. x = y², where y ≥ 0 (since the original x ≥ 0, and we swapped, the new y ≥ 0). Step 4: Solve for y. x = y². Taking the square root: y = √x. Since we had y ≥ 0, we take the positive square root, so y = √x (not −√x). Step 5: Write the inverse function. f⁻¹(x) = √x. Step 6: Determine the domain of the inverse. Since the range of f(x) = x² (with x ≥ 0) is y ≥ 0, the domain of f⁻¹(x) = √x is x ≥ 0. Step 7: Verify the inverse. Check: f(f⁻¹(x)) = f(√x) = (√x)² = x (for x ≥ 0) ✓. f⁻¹(f(x)) = f⁻¹(x²) = √(x²) = x (for x ≥ 0) ✓. Step 8: Final answer. Therefore, f⁻¹(x) = √x, with domain x ≥ 0.',
+              explanation: 'For functions that aren\'t one-to-one on their entire domain (like x²), we need to restrict the domain to make them one-to-one before finding the inverse. The domain of f becomes the range of f⁻¹, and the range of f becomes the domain of f⁻¹.',
             },
           ],
           commonMistakes: [
@@ -1704,19 +1704,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Degree of 3x⁴ − 2x² + 5?',
-              solution: 'Degree = 4 (highest power)',
-              explanation: 'Find the term with highest exponent.',
+              question: 'What is the degree of the polynomial 3x⁴ − 2x² + 5?',
+              solution: 'Step 1: Understand polynomial degree. The degree of a polynomial is the highest power of the variable that appears in the polynomial. Step 2: Identify all terms and their powers. Term 1: 3x⁴ (power = 4). Term 2: −2x² (power = 2). Term 3: 5 (power = 0, since 5 = 5x⁰). Step 3: Find the highest power. The powers are: 4, 2, and 0. The highest is 4. Step 4: Determine the degree. Since the highest power is 4, the degree of the polynomial is 4. Step 5: Note about the constant term. The constant term 5 has degree 0 (it can be written as 5x⁰), but it doesn\'t affect the overall degree since 0 < 4. Step 6: Final answer. Therefore, the degree of the polynomial 3x⁴ − 2x² + 5 is 4.',
+              explanation: 'The degree is determined by the term with the highest exponent. Coefficients don\'t affect the degree. A constant term has degree 0. The degree tells us the highest power behavior of the polynomial.',
             },
             {
-              question: 'Add: (2x²+3x−1) + (x²−2x+4)',
-              solution: 'Combine like terms: (2x²+x²) + (3x−2x) + (−1+4) = 3x² + x + 3',
-              explanation: 'Add coefficients of like terms.',
+              question: 'Add the polynomials: (2x² + 3x − 1) + (x² − 2x + 4)',
+              solution: 'Step 1: Understand polynomial addition. To add polynomials, combine like terms (terms with the same variable and exponent). Step 2: Identify like terms. x² terms: 2x² and x². x terms: 3x and −2x. Constant terms: −1 and 4. Step 3: Combine x² terms. 2x² + x² = (2 + 1)x² = 3x². Step 4: Combine x terms. 3x + (−2x) = 3x − 2x = (3 − 2)x = x (or 1x). Step 5: Combine constant terms. −1 + 4 = 3. Step 6: Write the result. (2x² + 3x − 1) + (x² − 2x + 4) = 3x² + x + 3. Step 7: Verify. Check: 3x² + x + 3. x² terms: 3x² ✓, x terms: x ✓, constants: 3 ✓. Step 8: Final answer. Therefore, (2x² + 3x − 1) + (x² − 2x + 4) = 3x² + x + 3.',
+              explanation: 'Polynomial addition is done by combining like terms. Like terms have the same variable raised to the same power. Add the coefficients, keep the variable part the same. Always verify by checking that all terms are accounted for.',
             },
             {
-              question: 'Multiply: (x+2)(x−3)',
-              solution: 'x(x−3) + 2(x−3) = x²−3x+2x−6 = x²−x−6',
-              explanation: 'Use FOIL or distribute each term.',
+              question: 'Multiply the binomials: (x + 2)(x − 3)',
+              solution: 'Step 1: Understand the problem. We need to multiply two binomials. Step 2: Method 1 - Use the distributive property. (x + 2)(x − 3) = x(x − 3) + 2(x − 3). Step 3: Distribute x. x(x − 3) = x × x + x × (−3) = x² − 3x. Step 4: Distribute 2. 2(x − 3) = 2 × x + 2 × (−3) = 2x − 6. Step 5: Combine the results. (x + 2)(x − 3) = (x² − 3x) + (2x − 6) = x² − 3x + 2x − 6. Step 6: Combine like terms. −3x + 2x = −x. So: x² − x − 6. Step 7: Method 2 - Use FOIL. FOIL stands for First, Outer, Inner, Last. First: x × x = x². Outer: x × (−3) = −3x. Inner: 2 × x = 2x. Last: 2 × (−3) = −6. Sum: x² − 3x + 2x − 6 = x² − x − 6. Step 8: Verify by expanding. Check: (x + 2)(x − 3) = x² − 3x + 2x − 6 = x² − x − 6 ✓. Step 9: Final answer. Therefore, (x + 2)(x − 3) = x² − x − 6.',
+              explanation: 'To multiply binomials, use the distributive property (each term in first multiplies each term in second) or FOIL method. Both give the same result. Always combine like terms in the final answer. FOIL is just a mnemonic for the distributive property applied to two binomials.',
             },
           ],
           commonMistakes: [
@@ -1783,14 +1783,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'x = (−b ± √(b²−4ac)) / 2a',
           examples: [
             {
-              question: 'Solve: x²−5x+6=0 using quadratic formula',
-              solution: 'a=1, b=−5, c=6 → x = (5 ± √(25−24)) / 2 = (5 ± 1) / 2 → x = 3 or x = 2',
-              explanation: 'Substitute into formula, calculate discriminant, solve.',
+              question: 'Solve the quadratic equation x² − 5x + 6 = 0 using the quadratic formula.',
+              solution: 'Step 1: Identify coefficients. Standard form: ax² + bx + c = 0. For x² − 5x + 6 = 0: a = 1, b = −5, c = 6. Step 2: Recall the quadratic formula. x = (−b ± √(b² − 4ac)) / (2a). Step 3: Calculate the discriminant. Discriminant = b² − 4ac = (−5)² − 4(1)(6) = 25 − 24 = 1. Since the discriminant is positive (1 > 0), there are two real solutions. Step 4: Substitute into the formula. x = (−(−5) ± √1) / (2 × 1) = (5 ± 1) / 2. Step 5: Calculate both solutions. Case 1 (using +): x = (5 + 1) / 2 = 6 / 2 = 3. Case 2 (using −): x = (5 − 1) / 2 = 4 / 2 = 2. Step 6: Verify both solutions. Check x = 3: (3)² − 5(3) + 6 = 9 − 15 + 6 = 0 ✓. Check x = 2: (2)² − 5(2) + 6 = 4 − 10 + 6 = 0 ✓. Step 7: Final answer. Therefore, the solutions are x = 3 or x = 2.',
+              explanation: 'The quadratic formula works for any quadratic equation. Calculate the discriminant first to determine the number of solutions. Be careful with signs, especially with −b. Always verify your solutions by substituting back into the original equation.',
             },
             {
-              question: 'How many solutions: x²+4x+5=0?',
-              solution: 'Discriminant: 16−20 = −4 < 0 → No real solutions',
-              explanation: 'Negative discriminant means no real solutions.',
+              question: 'How many real solutions does the equation x² + 4x + 5 = 0 have?',
+              solution: 'Step 1: Identify coefficients. Standard form: ax² + bx + c = 0. For x² + 4x + 5 = 0: a = 1, b = 4, c = 5. Step 2: Calculate the discriminant. Discriminant = b² − 4ac = 4² − 4(1)(5) = 16 − 20 = −4. Step 3: Interpret the discriminant. The discriminant is −4, which is negative (< 0). Step 4: Apply the discriminant rule. When discriminant < 0: The quadratic equation has NO real solutions. The solutions would be complex numbers (involving the imaginary unit i). Step 5: Understand why. In the quadratic formula x = (−b ± √(b²−4ac)) / (2a), we have √(b²−4ac) = √(−4) = 2i (where i = √(−1)). This gives complex solutions: x = (−4 ± 2i) / 2 = −2 ± i. Step 6: Verify by checking if the quadratic can be factored. Try to factor: We need two numbers that multiply to 5 and add to 4. The factors of 5 are 1 and 5, or −1 and −5. None of these add to 4, confirming it doesn\'t factor over real numbers. Step 7: Final answer. Therefore, the equation x² + 4x + 5 = 0 has NO real solutions. It has two complex solutions: x = −2 + i and x = −2 − i.',
+              explanation: 'The discriminant (b² − 4ac) determines the nature of solutions: positive = two real solutions, zero = one real solution (repeated), negative = no real solutions (two complex solutions). This is a quick way to determine solution types without solving the full equation.',
             },
           ],
           commonMistakes: [
@@ -1819,14 +1819,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Complete square: x²+6x+5',
-              solution: 'x²+6x+5 = (x²+6x+9) + 5−9 = (x+3)² − 4',
-              explanation: 'Add (6/2)² = 9, subtract 9 to balance. Perfect square: (x+3)².',
+              question: 'Complete the square for the expression: x² + 6x + 5',
+              solution: 'Step 1: Understand completing the square. We want to write x² + 6x + 5 in the form (x + h)² + k. Step 2: Focus on the x² and x terms. Look at x² + 6x. To complete the square, we need to add (b/2)², where b is the coefficient of x. Here b = 6, so we add (6/2)² = 3² = 9. Step 3: Add and subtract 9. To maintain equality, we add 9 and subtract 9: x² + 6x + 5 = x² + 6x + 9 − 9 + 5. Step 4: Group the perfect square. x² + 6x + 9 is a perfect square: (x + 3)² (since (x + 3)² = x² + 6x + 9). Step 5: Simplify the constant. −9 + 5 = −4. Step 6: Write in completed square form. x² + 6x + 5 = (x² + 6x + 9) + 5 − 9 = (x + 3)² − 4. Step 7: Verify by expanding. Check: (x + 3)² − 4 = x² + 6x + 9 − 4 = x² + 6x + 5 ✓. Step 8: Final answer. Therefore, x² + 6x + 5 = (x + 3)² − 4.',
+              explanation: 'Completing the square: take half the coefficient of x, square it, add and subtract that value. This creates a perfect square trinomial. The formula: x² + bx + c = (x + b/2)² + (c − (b/2)²).',
             },
             {
-              question: 'Solve by completing square: x²−4x−5=0',
-              solution: 'x²−4x = 5 → x²−4x+4 = 5+4 → (x−2)² = 9 → x−2 = ±3 → x = 5 or x = −1',
-              explanation: 'Complete square, then take square root of both sides.',
+              question: 'Solve the quadratic equation by completing the square: x² − 4x − 5 = 0',
+              solution: 'Step 1: Move the constant to the right side. x² − 4x − 5 = 0 becomes: x² − 4x = 5. Step 2: Complete the square on the left side. For x² − 4x, the coefficient of x is −4. Half of −4 is −2. Square it: (−2)² = 4. Add 4 to both sides: x² − 4x + 4 = 5 + 4. Step 3: Write as a perfect square. The left side is now a perfect square: x² − 4x + 4 = (x − 2)². So: (x − 2)² = 9. Step 4: Take the square root of both sides. √[(x − 2)²] = √9. This gives: |x − 2| = 3. Since we\'re solving, we have: x − 2 = 3 OR x − 2 = −3. Step 5: Solve each case. Case 1: x − 2 = 3 → x = 3 + 2 = 5. Case 2: x − 2 = −3 → x = −3 + 2 = −1. Step 6: Verify both solutions. Check x = 5: (5)² − 4(5) − 5 = 25 − 20 − 5 = 0 ✓. Check x = −1: (−1)² − 4(−1) − 5 = 1 + 4 − 5 = 0 ✓. Step 7: Final answer. Therefore, the solutions are x = 5 or x = −1.',
+              explanation: 'Completing the square is an alternative to the quadratic formula. The steps: (1) Move constant to right, (2) Add (b/2)² to both sides, (3) Write left side as perfect square, (4) Take square root, (5) Solve for x. Always check both the positive and negative square root.',
             },
           ],
           commonMistakes: [
@@ -1856,14 +1856,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Solve: 2x+y=7, x−y=2',
-              solution: 'Add equations: 3x=9 → x=3 → Substitute: 3−y=2 → y=1',
-              explanation: 'Elimination works well here. Add to eliminate y.',
+              question: 'Solve the system of equations: 2x + y = 7 and x − y = 2',
+              solution: 'Step 1: Choose a method. Both equations have y terms with opposite coefficients (y and −y). This makes elimination ideal - we can add the equations to eliminate y. Step 2: Add the equations. (2x + y = 7) + (x − y = 2). Add left sides: 2x + y + x − y = 3x. Add right sides: 7 + 2 = 9. So: 3x = 9. Step 3: Solve for x. Divide both sides by 3: 3x ÷ 3 = 9 ÷ 3, which gives: x = 3. Step 4: Substitute x into one equation to find y. Use the simpler equation: x − y = 2. Substitute x = 3: 3 − y = 2. Subtract 3 from both sides: −y = 2 − 3 = −1. Multiply by −1: y = 1. Step 5: Verify the solution. Check in first equation: 2(3) + 1 = 6 + 1 = 7 ✓. Check in second equation: 3 − 1 = 2 ✓. Both equations are satisfied. Step 6: Final answer. Therefore, the solution is x = 3 and y = 1.',
+              explanation: 'Elimination works well when coefficients of one variable are opposites or can be made opposites. Adding equations eliminates that variable. Always verify your solution by checking in both original equations.',
             },
             {
-              question: 'How many solutions: 2x+3y=6, 4x+6y=12?',
-              solution: 'Second equation is 2×first → Same line → Infinite solutions (dependent)',
-              explanation: 'If one equation is multiple of other, same line = infinite solutions.',
+              question: 'How many solutions does the system 2x + 3y = 6 and 4x + 6y = 12 have?',
+              solution: 'Step 1: Analyze the equations. Equation 1: 2x + 3y = 6. Equation 2: 4x + 6y = 12. Step 2: Check if one is a multiple of the other. Notice: 4x + 6y = 2(2x + 3y). And 12 = 2(6). So: 4x + 6y = 2(2x + 3y) = 2(6) = 12. This means Equation 2 is exactly 2 times Equation 1. Step 3: Understand what this means. If one equation is a constant multiple of the other, they represent the SAME line (not two different lines). Step 4: Determine the number of solutions. Since both equations represent the same line, every point on that line satisfies both equations. There are infinitely many solutions. This is called a "dependent" system. Step 5: Verify by solving. If we try to solve: From Equation 1: 2x + 3y = 6, so 3y = 6 − 2x, so y = 2 − (2/3)x. This gives infinitely many (x, y) pairs. Step 6: Final answer. Therefore, the system has INFINITE solutions (the equations are dependent - they represent the same line).',
+              explanation: 'When one equation is a multiple of the other, they\'re the same line = infinite solutions (dependent system). When lines are parallel (same slope, different y-intercept) = no solution (inconsistent). When lines intersect = one solution (independent). Always check the relationship between equations first.',
             },
           ],
           commonMistakes: [
@@ -1946,14 +1946,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Mix 20L of 30% acid with 30L of 50% acid. Final concentration?',
-              solution: 'Acid in first: 20×0.30=6L. Acid in second: 30×0.50=15L. Total acid: 21L, Total solution: 50L. Concentration: 21/50=42%',
-              explanation: 'Find pure acid in each, add, divide by total volume.',
+              question: 'If you mix 20 liters of 30% acid solution with 30 liters of 50% acid solution, what is the final concentration of acid?',
+              solution: 'Step 1: Understand the problem. We\'re mixing two solutions with different acid concentrations. We need to find the concentration of the resulting mixture. Step 2: Calculate the amount of pure acid in the first solution. First solution: 20L of 30% acid. Pure acid = Volume × Concentration = 20L × 0.30 = 6L. Step 3: Calculate the amount of pure acid in the second solution. Second solution: 30L of 50% acid. Pure acid = Volume × Concentration = 30L × 0.50 = 15L. Step 4: Find the total amount of pure acid. Total pure acid = Acid from first + Acid from second = 6L + 15L = 21L. Step 5: Find the total volume of the mixture. Total volume = Volume of first + Volume of second = 20L + 30L = 50L. Step 6: Calculate the final concentration. Final concentration = (Total pure acid / Total volume) × 100% = (21L / 50L) × 100% = 0.42 × 100% = 42%. Step 7: Verify. Check: 50L of 42% solution contains: 50 × 0.42 = 21L of pure acid ✓. This matches our calculation. Step 8: Final answer. Therefore, the final concentration is 42%.',
+              explanation: 'For mixture problems, find the amount of the "pure substance" (acid in this case) in each part, add them together, then divide by the total volume to get the concentration. The key principle: Total pure substance before mixing = Total pure substance after mixing.',
             },
             {
-              question: 'How much 40% solution to mix with 20L of 60% to get 50%?',
-              solution: 'Let x = amount of 40%. Acid: 0.40x + 0.60(20) = 0.50(x+20) → 0.40x+12=0.50x+10 → 2=0.10x → x=20L',
-              explanation: 'Set up equation: acid before = acid after.',
+              question: 'How much of a 40% acid solution must be mixed with 20 liters of a 60% acid solution to obtain a 50% acid solution?',
+              solution: 'Step 1: Define the variable. Let x = the amount (in liters) of 40% solution needed. Step 2: Set up a table to organize information. Solution 1: x liters of 40% acid. Solution 2: 20 liters of 60% acid. Final mixture: (x + 20) liters of 50% acid. Step 3: Calculate pure acid in each solution. Pure acid in 40% solution = x × 0.40 = 0.40x liters. Pure acid in 60% solution = 20 × 0.60 = 12 liters. Pure acid in final mixture = (x + 20) × 0.50 = 0.50(x + 20) liters. Step 4: Set up the equation. The key principle: Pure acid before mixing = Pure acid after mixing. So: 0.40x + 12 = 0.50(x + 20). Step 5: Solve the equation. Expand the right side: 0.40x + 12 = 0.50x + 10. Subtract 0.40x from both sides: 12 = 0.10x + 10. Subtract 10 from both sides: 2 = 0.10x. Divide by 0.10: x = 2 / 0.10 = 20 liters. Step 6: Verify the answer. Check: Mix 20L of 40% with 20L of 60%. Pure acid: 20×0.40 + 20×0.60 = 8 + 12 = 20L. Total volume: 40L. Concentration: 20/40 = 0.50 = 50% ✓. Step 7: Final answer. Therefore, 20 liters of the 40% solution must be mixed with 20 liters of the 60% solution.',
+              explanation: 'For mixture problems where you need to find an unknown quantity, set up an equation based on: Amount of pure substance before = Amount of pure substance after. Use a table to organize: Solution | Volume | Concentration | Pure Substance. This helps avoid errors.',
             },
           ],
           commonMistakes: [
@@ -2040,19 +2040,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Solve: 2ˣ = 16',
-              solution: '16 = 2⁴, so 2ˣ = 2⁴ → x = 4',
-              explanation: 'Make bases same, then set exponents equal.',
+              question: 'Solve the exponential equation: 2ˣ = 16',
+              solution: 'Step 1: Understand the equation. We have an exponential equation where the variable is in the exponent. Step 2: Express 16 as a power of 2. We need to write 16 as 2 raised to some power. 16 = 2⁴ (since 2⁴ = 2 × 2 × 2 × 2 = 16). Step 3: Rewrite the equation with the same base. 2ˣ = 16 becomes: 2ˣ = 2⁴. Step 4: Apply the property. If bᵐ = bⁿ (where b > 0 and b ≠ 1), then m = n. Since both sides have base 2, we can set the exponents equal: x = 4. Step 5: Verify the solution. Check: 2⁴ = 16 ✓. Step 6: Final answer. Therefore, x = 4.',
+              explanation: 'To solve exponential equations, try to express both sides with the same base. Then set the exponents equal. This is the fastest method when you can recognize powers (like 16 = 2⁴, 27 = 3³, etc.).',
             },
             {
-              question: 'Solve: 3ˣ⁺¹ = 27',
-              solution: '27 = 3³, so 3ˣ⁺¹ = 3³ → x+1 = 3 → x = 2',
-              explanation: 'Express 27 as power of 3, then equate exponents.',
+              question: 'Solve the exponential equation: 3ˣ⁺¹ = 27',
+              solution: 'Step 1: Understand the equation. We have 3 raised to the power (x + 1) equals 27. Step 2: Express 27 as a power of 3. 27 = 3³ (since 3³ = 3 × 3 × 3 = 27). Step 3: Rewrite the equation. 3ˣ⁺¹ = 27 becomes: 3ˣ⁺¹ = 3³. Step 4: Set exponents equal. Since both sides have base 3, the exponents must be equal: x + 1 = 3. Step 5: Solve for x. Subtract 1 from both sides: x + 1 − 1 = 3 − 1, which gives: x = 2. Step 6: Verify the solution. Check: 3²⁺¹ = 3³ = 27 ✓. Step 7: Final answer. Therefore, x = 2.',
+              explanation: 'When the bases are the same, set the exponents equal and solve the resulting equation. This works because exponential functions are one-to-one (each input gives a unique output).',
             },
             {
-              question: 'Solve: 5ˣ = 25',
-              solution: '25 = 5², so 5ˣ = 5² → x = 2',
-              explanation: 'Recognize 25 as 5².',
+              question: 'Solve the exponential equation: 5ˣ = 25',
+              solution: 'Step 1: Express 25 as a power of 5. 25 = 5² (since 5² = 5 × 5 = 25). Step 2: Rewrite the equation. 5ˣ = 25 becomes: 5ˣ = 5². Step 3: Set exponents equal. Since both sides have base 5: x = 2. Step 4: Verify. Check: 5² = 25 ✓. Step 5: Final answer. Therefore, x = 2.',
+              explanation: 'This is a straightforward case where we recognize 25 as 5². Memorizing common powers (2²=4, 2³=8, 2⁴=16, 3²=9, 3³=27, 5²=25, etc.) speeds up solving exponential equations.',
             },
           ],
           commonMistakes: [
@@ -2081,14 +2081,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Solve: log₂(x) = 3',
-              solution: 'x = 2³ = 8',
-              explanation: 'log₂(x) = 3 means 2³ = x.',
+              question: 'Solve the logarithmic equation: log₂(x) = 3',
+              solution: 'Step 1: Understand the logarithm. log₂(x) = 3 asks: "What power of 2 equals x?" In other words, 2³ = x. Step 2: Convert to exponential form. The definition: log_b(a) = c means b^c = a. So: log₂(x) = 3 means 2³ = x. Step 3: Calculate 2³. 2³ = 2 × 2 × 2 = 8. Step 4: Write the solution. x = 8. Step 5: Verify. Check: log₂(8) = ? We ask: 2^? = 8. Since 2³ = 8, we have log₂(8) = 3 ✓. Step 6: Check domain. For log₂(x), we need x > 0. Since x = 8 > 0, the solution is valid. Step 7: Final answer. Therefore, x = 8.',
+              explanation: 'To solve log_b(x) = c, convert to exponential form: x = b^c. This is the definition of logarithms. Always check that the solution satisfies the domain requirement (argument of log must be positive).',
             },
             {
-              question: 'Solve: log(x) + log(x+3) = 1',
-              solution: 'log(x(x+3)) = 1 → x(x+3) = 10 → x²+3x−10=0 → (x+5)(x−2)=0 → x=2 (x=−5 rejected, log of negative undefined)',
-              explanation: 'Combine logs, convert to exponential, solve, check domain.',
+              question: 'Solve the logarithmic equation: log(x) + log(x + 3) = 1',
+              solution: 'Step 1: Understand the notation. "log" without a base means base 10 (common logarithm). Step 2: Combine the logarithms. Use the property: log(a) + log(b) = log(ab). So: log(x) + log(x + 3) = log(x(x + 3)) = log(x² + 3x). The equation becomes: log(x² + 3x) = 1. Step 3: Convert to exponential form. log(x² + 3x) = 1 means 10¹ = x² + 3x. So: x² + 3x = 10. Step 4: Rearrange to form a quadratic equation. x² + 3x − 10 = 0. Step 5: Solve the quadratic. Factor: (x + 5)(x − 2) = 0. So: x + 5 = 0 or x − 2 = 0, which gives: x = −5 or x = 2. Step 6: Check domain restrictions. For log(x), we need x > 0. For log(x + 3), we need x + 3 > 0, so x > −3. Both conditions require x > 0. Step 7: Verify each solution. Check x = −5: log(−5) is undefined (negative argument) ✗. So x = −5 is rejected. Check x = 2: log(2) + log(2 + 3) = log(2) + log(5) = log(10) = 1 ✓. Step 8: Final answer. Therefore, the solution is x = 2. (x = −5 is extraneous and must be rejected).',
+              explanation: 'When solving logarithmic equations, always check domain restrictions. The argument of any logarithm must be positive. Extraneous solutions often arise when solving logarithmic equations, so verification is essential. Combine logs using properties, convert to exponential form, solve, then check all solutions.',
             },
           ],
           commonMistakes: [
@@ -2152,14 +2152,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'y varies directly with x. If y=12 when x=3, find y when x=7',
-              solution: 'y = kx → 12 = k(3) → k = 4 → y = 4(7) = 28',
-              explanation: 'Find constant k, then use to find y for new x.',
+              question: 'y varies directly with x. If y = 12 when x = 3, find y when x = 7.',
+              solution: 'Step 1: Understand direct variation. "y varies directly with x" means y is proportional to x. The relationship is: y = kx, where k is the constant of variation (proportionality constant). Step 2: Find the constant k. We know y = 12 when x = 3. Substitute into y = kx: 12 = k(3). Solve for k: k = 12 / 3 = 4. Step 3: Write the variation equation. Now we know k = 4, so: y = 4x. Step 4: Find y when x = 7. Substitute x = 7 into y = 4x: y = 4(7) = 28. Step 5: Verify. Check: When x = 3, y = 4(3) = 12 ✓. When x = 7, y = 4(7) = 28 ✓. Also, the ratio y/x is constant: 12/3 = 4 and 28/7 = 4 ✓. Step 6: Final answer. Therefore, when x = 7, y = 28.',
+              explanation: 'Direct variation: y = kx, where k is constant. The ratio y/x is always the same. To solve: (1) Find k using given values, (2) Write equation y = kx, (3) Substitute new x value. Direct variation means both increase or decrease together.',
             },
             {
-              question: 'y varies inversely with x. If y=8 when x=5, find y when x=10',
-              solution: 'y = k/x → 8 = k/5 → k = 40 → y = 40/10 = 4',
-              explanation: 'Find k, then use inverse variation formula.',
+              question: 'y varies inversely with x. If y = 8 when x = 5, find y when x = 10.',
+              solution: 'Step 1: Understand inverse variation. "y varies inversely with x" means y is inversely proportional to x. The relationship is: y = k/x, where k is the constant of variation. Step 2: Find the constant k. We know y = 8 when x = 5. Substitute into y = k/x: 8 = k/5. Solve for k: Multiply both sides by 5: k = 8 × 5 = 40. Step 3: Write the variation equation. Now we know k = 40, so: y = 40/x. Step 4: Find y when x = 10. Substitute x = 10 into y = 40/x: y = 40/10 = 4. Step 5: Verify. Check: When x = 5, y = 40/5 = 8 ✓. When x = 10, y = 40/10 = 4 ✓. Also, the product xy is constant: 5 × 8 = 40 and 10 × 4 = 40 ✓. Step 6: Interpret. Notice that when x doubled (from 5 to 10), y halved (from 8 to 4). This is characteristic of inverse variation. Step 7: Final answer. Therefore, when x = 10, y = 4.',
+              explanation: 'Inverse variation: y = k/x, where k is constant. The product xy is always the same. To solve: (1) Find k using given values, (2) Write equation y = k/x, (3) Substitute new x value. Inverse variation means as one increases, the other decreases, and vice versa.',
             },
           ],
           commonMistakes: [
@@ -2228,14 +2228,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Area = ½bh   |   a² + b² = c² (right triangle)   |   Sum angles = 180°',
           examples: [
             {
-              question: 'Triangle has angles 55° and 65°. Find third angle.',
-              solution: 'Sum = 180° → Third angle = 180° − (55°+65°) = 180°−120° = 60°',
-              explanation: 'Use the angle sum property. Subtract known angles from 180°.',
+              question: 'A triangle has two angles measuring 55° and 65°. What is the measure of the third angle?',
+              solution: 'Step 1: Recall the triangle angle sum property. In any triangle, the sum of all three interior angles always equals 180°. This is a fundamental property of triangles. Step 2: Set up the equation. Let the third angle be x. Then: 55° + 65° + x = 180°. Step 3: Calculate the sum of known angles. 55° + 65° = 120°. Step 4: Solve for the third angle. 120° + x = 180°. Subtract 120° from both sides: x = 180° − 120° = 60°. Step 5: Verify the answer. Check: 55° + 65° + 60° = 180° ✓. All angles are positive and less than 180°, which is valid for a triangle. Therefore, the third angle measures 60°.',
+              explanation: 'The triangle angle sum property (sum of angles = 180°) is one of the most fundamental properties in geometry. It applies to ALL triangles, regardless of their type (right, acute, obtuse, equilateral, etc.). This property is essential for solving many triangle problems.',
             },
             {
-              question: 'Right triangle legs: 9 and 12. Find hypotenuse.',
-              solution: 'Recognize 3-4-5 triple scaled by 3: 3×3=9, 4×3=12 → Hypotenuse = 5×3 = 15',
-              explanation: 'Recognize Pythagorean triples for faster calculation. Or calculate: 9²+12²=81+144=225, √225=15.',
+              question: 'A right triangle has legs measuring 9 units and 12 units. Find the length of the hypotenuse.',
+              solution: 'Step 1: Identify the triangle type. This is a right triangle, so we can use the Pythagorean theorem. Step 2: Recall the Pythagorean theorem. For a right triangle with legs a and b and hypotenuse c: a² + b² = c². Step 3: Assign values. Let a = 9 and b = 12. We need to find c (the hypotenuse). Step 4: Method 1 - Recognize Pythagorean triple. Notice that 9:12:? could be a multiple of the 3-4-5 triple. Check: 9 = 3 × 3, 12 = 4 × 3. So the scale factor is 3. Therefore, the hypotenuse = 5 × 3 = 15. Step 5: Method 2 - Use the formula directly. Apply the Pythagorean theorem: c² = a² + b² = 9² + 12² = 81 + 144 = 225. Step 6: Find the hypotenuse. c = √225 = 15. Step 7: Verify the answer. Check: 9² + 12² = 81 + 144 = 225, and 15² = 225 ✓. Also, 9:12:15 = 3:4:5 (dividing by 3), confirming it\'s a 3-4-5 triple scaled by 3. Therefore, the hypotenuse is 15 units.',
+              explanation: 'The Pythagorean theorem (a² + b² = c²) is essential for right triangles. Recognizing common Pythagorean triples (like 3-4-5, 5-12-13, 8-15-17) can save time, but you can always use the formula directly. Always verify your answer by checking that a² + b² = c².',
             },
           ],
           commonMistakes: [
@@ -2266,14 +2266,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'C = 2πr = πd   |   A = πr²   |   Sector = (θ/360°) × A',
           examples: [
             {
-              question: 'Circle radius = 10.5 cm. Find circumference and area.',
-              solution: 'Circumference = 2πr = 2×π×10.5 = 21π ≈ 65.97 cm → Area = πr² = π×(10.5)² = 110.25π ≈ 346.36 cm²',
-              explanation: 'Use formulas directly. Leave answer in terms of π for exact value, or approximate.',
+              question: 'A circle has a radius of 10.5 cm. Find its circumference and area.',
+              solution: 'Step 1: Identify given information. Radius r = 10.5 cm. Step 2: Find the circumference. Formula: C = 2πr. Substitute r = 10.5: C = 2 × π × 10.5 = 21π cm. Step 3: Calculate numerical value (if needed). Using π ≈ 3.14159: C = 21 × 3.14159 ≈ 65.97 cm. Step 4: Find the area. Formula: A = πr². Substitute r = 10.5: A = π × (10.5)² = π × 110.25 = 110.25π cm². Step 5: Calculate numerical value (if needed). A = 110.25 × 3.14159 ≈ 346.36 cm². Step 6: Write the answers. Exact values: Circumference = 21π cm, Area = 110.25π cm². Approximate values: Circumference ≈ 65.97 cm, Area ≈ 346.36 cm². Step 7: Verify units. Both answers are in cm and cm² respectively, which is correct. Therefore, the circumference is 21π cm (≈ 65.97 cm) and the area is 110.25π cm² (≈ 346.36 cm²).',
+              explanation: 'Remember: circumference uses r (radius), area uses r² (radius squared). Always use radius, not diameter. Leaving answers in terms of π gives exact values, while using π ≈ 3.14 gives approximations. Both are acceptable depending on the problem requirements.',
             },
             {
-              question: 'Find area of 72° sector of circle with radius 15.',
-              solution: 'Total area = π×15² = 225π → Sector area = (72/360)×225π = (1/5)×225π = 45π',
-              explanation: 'Find total area first, then multiply by fraction of circle (72/360 = 1/5).',
+              question: 'Find the area of a 72° sector of a circle with radius 15 units.',
+              solution: 'Step 1: Understand a sector. A sector is a "slice" of a circle, like a piece of pie. The area of a sector is a fraction of the total circle area. Step 2: Find the total circle area. Formula: A = πr². With r = 15: A = π × 15² = π × 225 = 225π square units. Step 3: Determine the fraction of the circle. The sector has a central angle of 72°. A full circle is 360°. So the fraction is: 72/360. Step 4: Simplify the fraction. 72/360 = 72÷72 / 360÷72 = 1/5. So the sector is 1/5 of the circle. Step 5: Calculate the sector area. Sector area = (fraction of circle) × (total area) = (1/5) × 225π = 225π/5 = 45π square units. Step 6: Verify. We can also use the formula directly: Sector area = (θ/360°) × πr² = (72/360) × π × 15² = (1/5) × 225π = 45π ✓. Step 7: Final answer. Therefore, the area of the 72° sector is 45π square units (or approximately 141.37 square units if using π ≈ 3.14159).',
+              explanation: 'A sector\'s area is proportional to its central angle. The formula is: Sector area = (θ/360°) × πr², where θ is the central angle in degrees. Always find the fraction first (angle/360°), then multiply by the total area. This makes the calculation clear and easy to verify.',
             },
           ],
           commonMistakes: [
@@ -2304,19 +2304,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Interior sum = (n−2) × 180°   |   Each interior (regular) = [(n−2) × 180°] / n',
           examples: [
             {
-              question: 'Find sum of interior angles of hexagon.',
-              solution: 'n = 6 → Sum = (6−2) × 180° = 4 × 180° = 720°',
-              explanation: 'Use formula with n=6. Subtract 2 from number of sides, multiply by 180°.',
+              question: 'Find the sum of the interior angles of a hexagon.',
+              solution: 'Step 1: Identify the polygon. A hexagon has 6 sides, so n = 6. Step 2: Recall the formula. The sum of interior angles of an n-sided polygon is: Sum = (n − 2) × 180°. Step 3: Substitute n = 6. Sum = (6 − 2) × 180° = 4 × 180° = 720°. Step 4: Verify (optional). We can think: A hexagon can be divided into 4 triangles (by drawing diagonals from one vertex). Each triangle has 180°, so 4 × 180° = 720° ✓. Step 5: Final answer. Therefore, the sum of interior angles of a hexagon is 720°.',
+              explanation: 'The formula (n − 2) × 180° comes from dividing the polygon into triangles. An n-sided polygon can be divided into (n − 2) triangles, each with 180°. This formula works for any polygon, regular or irregular.',
             },
             {
-              question: 'Each interior angle of regular octagon?',
-              solution: 'n = 8 → Sum = (8−2) × 180° = 1080° → Each = 1080° / 8 = 135°',
-              explanation: 'Find total sum first, then divide by number of sides for regular polygon.',
+              question: 'A regular octagon has all sides and angles equal. What is the measure of each interior angle?',
+              solution: 'Step 1: Identify the polygon. A regular octagon has 8 equal sides and 8 equal angles, so n = 8. Step 2: Find the sum of all interior angles. Use the formula: Sum = (n − 2) × 180°. With n = 8: Sum = (8 − 2) × 180° = 6 × 180° = 1,080°. Step 3: Find each interior angle. Since it\'s a regular polygon, all angles are equal. Each interior angle = Total sum / Number of sides = 1,080° / 8 = 135°. Step 4: Verify. Check: 8 angles × 135° = 1,080° ✓. Also, we can use the direct formula: Each interior angle = [(n − 2) × 180°] / n = [(8 − 2) × 180°] / 8 = 1,080° / 8 = 135° ✓. Step 5: Final answer. Therefore, each interior angle of a regular octagon measures 135°.',
+              explanation: 'For regular polygons, divide the total sum of interior angles by the number of sides to get each angle. The direct formula is: Each interior angle = [(n − 2) × 180°] / n. Regular polygons have all sides and angles equal, which makes calculations simpler.',
             },
             {
-              question: 'If exterior angle of regular polygon is 30°, how many sides?',
-              solution: '360° / n = 30° → n = 360° / 30° = 12 sides',
-              explanation: 'Use formula: 360° divided by number of sides equals exterior angle.',
+              question: 'If a regular polygon has an exterior angle of 30°, how many sides does it have?',
+              solution: 'Step 1: Understand exterior angles. An exterior angle is formed by extending one side of the polygon. For any polygon, the sum of all exterior angles is always 360°. Step 2: Use the property of regular polygons. In a regular polygon, all exterior angles are equal. If each exterior angle is 30°, and there are n sides (and therefore n exterior angles), then: n × 30° = 360°. Step 3: Solve for n. Divide both sides by 30°: n = 360° / 30° = 12. Step 4: Verify. Check: A 12-sided polygon (dodecagon) with exterior angles of 30°: 12 × 30° = 360° ✓. Also, interior angle = 180° − 30° = 150°, and 12 × 150° = 1,800° = (12 − 2) × 180° = 10 × 180° = 1,800° ✓. Step 5: Final answer. Therefore, the polygon has 12 sides (it is a dodecagon).',
+              explanation: 'The sum of exterior angles of any polygon is always 360°, regardless of the number of sides. For regular polygons, divide 360° by the exterior angle to find the number of sides. This is often easier than working with interior angles. Also remember: Interior angle + Exterior angle = 180° (they form a straight line).',
             },
           ],
           commonMistakes: [
@@ -2347,19 +2347,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Box: V=lwh   |   Cylinder: V=πr²h   |   Sphere: V=(4/3)πr³   |   Cone: V=(1/3)πr²h',
           examples: [
             {
-              question: 'Rectangular box: length=8, width=5, height=3. Find volume and surface area.',
-              solution: 'Volume = 8 × 5 × 3 = 120 → SA = 2(8×5 + 8×3 + 5×3) = 2(40 + 24 + 15) = 2(79) = 158',
-              explanation: 'Volume is length × width × height. Surface area is sum of areas of all 6 faces.',
+              question: 'A rectangular box (rectangular prism) has length = 8 units, width = 5 units, and height = 3 units. Find its volume and surface area.',
+              solution: 'Step 1: Calculate the volume. Volume of a rectangular box = length × width × height. Volume = 8 × 5 × 3. Step 2: Perform the multiplication. 8 × 5 = 40, then 40 × 3 = 120. So Volume = 120 cubic units. Step 3: Calculate the surface area. A rectangular box has 6 faces. Surface Area = 2(lw + lh + wh), which represents: 2 faces of area lw, 2 faces of area lh, and 2 faces of area wh. Step 4: Calculate each face area. lw = 8 × 5 = 40, lh = 8 × 3 = 24, wh = 5 × 3 = 15. Step 5: Apply the formula. SA = 2(40 + 24 + 15) = 2(79) = 158 square units. Step 6: Verify by calculating all 6 faces. Face 1 (bottom): 8 × 5 = 40. Face 2 (top): 8 × 5 = 40. Face 3 (front): 8 × 3 = 24. Face 4 (back): 8 × 3 = 24. Face 5 (left): 5 × 3 = 15. Face 6 (right): 5 × 3 = 15. Total: 40 + 40 + 24 + 24 + 15 + 15 = 158 ✓. Step 7: Final answer. Therefore, Volume = 120 cubic units, Surface Area = 158 square units.',
+              explanation: 'Volume measures the space inside (3D), surface area measures the area of the outside (2D). For a box, volume = lwh, and surface area = 2(lw + lh + wh). Always use consistent units and remember: volume is cubic units, surface area is square units.',
             },
             {
-              question: 'Cylinder: radius=4, height=10. Find volume.',
-              solution: 'Volume = π × 4² × 10 = π × 16 × 10 = 160π',
-              explanation: 'Use formula: π times radius squared times height.',
+              question: 'A cylinder has a radius of 4 units and a height of 10 units. Find its volume.',
+              solution: 'Step 1: Recall the cylinder volume formula. Volume of a cylinder = π × r² × h, where r is the radius and h is the height. Step 2: Identify the given values. Radius (r) = 4 units, Height (h) = 10 units. Step 3: Apply the formula. Volume = π × r² × h = π × 4² × 10. Step 4: Calculate r². 4² = 4 × 4 = 16. Step 5: Complete the calculation. Volume = π × 16 × 10 = 160π cubic units. Step 6: Understand the formula. A cylinder is like a "stacked circle" - the base is a circle (area = πr²), and we multiply by height to get volume. Step 7: Approximate value (if needed). Using π ≈ 3.14159: Volume ≈ 160 × 3.14159 ≈ 502.65 cubic units. Step 8: Final answer. Therefore, the volume is 160π cubic units (or approximately 502.65 cubic units).',
+              explanation: 'Cylinder volume = πr²h. Think of it as: (area of circular base) × height. Always use radius, not diameter. The formula comes from the fact that a cylinder is essentially a circular prism.',
             },
             {
-              question: 'Sphere: radius=6. Find volume and surface area.',
-              solution: 'Volume = (4/3) × π × 6³ = (4/3) × π × 216 = 288π → SA = 4 × π × 6² = 4 × π × 36 = 144π',
-              explanation: 'Volume uses (4/3)πr³, surface area uses 4πr². Remember to cube radius for volume.',
+              question: 'A sphere has a radius of 6 units. Find its volume and surface area.',
+              solution: 'Step 1: Calculate the volume. Volume of a sphere = (4/3)πr³. With r = 6: Volume = (4/3) × π × 6³. Step 2: Calculate 6³. 6³ = 6 × 6 × 6 = 216. Step 3: Complete volume calculation. Volume = (4/3) × π × 216 = (4 × 216 × π) / 3 = 864π / 3 = 288π cubic units. Step 4: Calculate the surface area. Surface area of a sphere = 4πr². With r = 6: SA = 4 × π × 6². Step 5: Calculate 6². 6² = 6 × 6 = 36. Step 6: Complete surface area calculation. SA = 4 × π × 36 = 144π square units. Step 7: Verify the formulas. Volume formula: (4/3)πr³. Surface area formula: 4πr². Note: Volume uses r³ (cubed), surface area uses r² (squared). Step 8: Approximate values (if needed). Volume ≈ 288 × 3.14159 ≈ 904.78 cubic units. Surface area ≈ 144 × 3.14159 ≈ 452.39 square units. Step 9: Final answer. Therefore, Volume = 288π cubic units and Surface Area = 144π square units.',
+              explanation: 'Sphere formulas: Volume = (4/3)πr³ and Surface Area = 4πr². Remember: volume uses r³ (radius cubed), surface area uses r² (radius squared). The (4/3) factor in volume is important - don\'t forget it! Always use radius, not diameter.',
             },
           ],
           commonMistakes: [
@@ -2390,24 +2390,24 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Distance: √[(x₂−x₁)²+(y₂−y₁)²]   |   Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2)   |   Slope: (y₂−y₁)/(x₂−x₁)',
           examples: [
             {
-              question: 'Distance between (3, 4) and (7, 1)?',
-              solution: 'd = √[(7−3)² + (1−4)²] = √[4² + (−3)²] = √[16 + 9] = √25 = 5',
-              explanation: 'Use distance formula. Subtract x-coordinates and y-coordinates, square, add, take square root.',
+              question: 'Find the distance between the points (3, 4) and (7, 1)',
+              solution: 'Step 1: Recall the distance formula. The distance between two points (x₁, y₁) and (x₂, y₂) is: d = √[(x₂ − x₁)² + (y₂ − y₁)²]. Step 2: Identify the coordinates. Point 1: (x₁, y₁) = (3, 4). Point 2: (x₂, y₂) = (7, 1). Step 3: Calculate the difference in x-coordinates. x₂ − x₁ = 7 − 3 = 4. Step 4: Calculate the difference in y-coordinates. y₂ − y₁ = 1 − 4 = −3. Step 5: Apply the distance formula. d = √[(7 − 3)² + (1 − 4)²] = √[4² + (−3)²] = √[16 + 9] = √25. Step 6: Calculate the square root. √25 = 5. Step 7: Final answer. Therefore, the distance between (3, 4) and (7, 1) is 5 units. Step 8: Verify (optional). We can visualize: moving from (3, 4) to (7, 1) is 4 units right and 3 units down, forming a 3-4-5 right triangle, so the distance is 5 ✓.',
+              explanation: 'The distance formula comes from the Pythagorean theorem. The distance is the hypotenuse of a right triangle with legs equal to the differences in x and y coordinates. Always be careful with the order: (x₂ − x₁) and (y₂ − y₁), not the other way around.',
             },
             {
-              question: 'Midpoint of segment from (2, 5) to (8, 9)?',
-              solution: 'M = ((2+8)/2, (5+9)/2) = (10/2, 14/2) = (5, 7)',
-              explanation: 'Average the x-coordinates and y-coordinates separately.',
+              question: 'Find the midpoint of the line segment from (2, 5) to (8, 9)',
+              solution: 'Step 1: Recall the midpoint formula. The midpoint M between (x₁, y₁) and (x₂, y₂) is: M = ((x₁ + x₂)/2, (y₁ + y₂)/2). Step 2: Identify the coordinates. Point 1: (x₁, y₁) = (2, 5). Point 2: (x₂, y₂) = (8, 9). Step 3: Calculate the x-coordinate of the midpoint. x-coordinate = (x₁ + x₂)/2 = (2 + 8)/2 = 10/2 = 5. Step 4: Calculate the y-coordinate of the midpoint. y-coordinate = (y₁ + y₂)/2 = (5 + 9)/2 = 14/2 = 7. Step 5: Write the midpoint. M = (5, 7). Step 6: Verify. Check: The midpoint should be halfway between the endpoints. From (2, 5) to (5, 7): x increases by 3, y increases by 2. From (5, 7) to (8, 9): x increases by 3, y increases by 2. The distances are equal ✓. Therefore, the midpoint is (5, 7).',
+              explanation: 'The midpoint is simply the average of the x-coordinates and the average of the y-coordinates. This gives the point exactly halfway between the two endpoints. The midpoint formula is easy to remember: average the x\'s, average the y\'s.',
             },
             {
-              question: 'Slope of line through (1, 2) and (4, 8)?',
-              solution: 'm = (8−2)/(4−1) = 6/3 = 2',
-              explanation: 'Change in y divided by change in x. Rise over run.',
+              question: 'Find the slope of the line passing through the points (1, 2) and (4, 8)',
+              solution: 'Step 1: Recall the slope formula. The slope m of a line through points (x₁, y₁) and (x₂, y₂) is: m = (y₂ − y₁)/(x₂ − x₁). Step 2: Identify the coordinates. Point 1: (x₁, y₁) = (1, 2). Point 2: (x₂, y₂) = (4, 8). Step 3: Calculate the change in y (rise). y₂ − y₁ = 8 − 2 = 6. Step 4: Calculate the change in x (run). x₂ − x₁ = 4 − 1 = 3. Step 5: Calculate the slope. m = (y₂ − y₁)/(x₂ − x₁) = 6/3 = 2. Step 6: Interpret the slope. A slope of 2 means: for every 1 unit we move to the right, we move 2 units up. Step 7: Verify. We can check: from (1, 2), if we move 3 units right (to x = 4), we should move 2 × 3 = 6 units up, giving y = 2 + 6 = 8 ✓. Therefore, the slope is 2.',
+              explanation: 'Slope measures the steepness of a line. It\'s the ratio of vertical change (rise) to horizontal change (run). Be careful with the order: (y₂ − y₁)/(x₂ − x₁), not (y₁ − y₂)/(x₁ − x₂), though both give the same result. Positive slope means the line goes up from left to right.',
             },
             {
-              question: 'Equation of line with slope 3 through point (2, 5)?',
-              solution: 'y = mx + b → 5 = 3(2) + b → 5 = 6 + b → b = −1 → y = 3x − 1',
-              explanation: 'Substitute point and slope into y=mx+b to find b (y-intercept), then write equation.',
+              question: 'Find the equation of the line with slope 3 that passes through the point (2, 5)',
+              solution: 'Step 1: Recall the slope-intercept form. The equation of a line is y = mx + b, where m is the slope and b is the y-intercept. Step 2: Identify known values. We know: slope m = 3, and the point (2, 5) is on the line, so when x = 2, y = 5. Step 3: Substitute into the equation. Substitute m = 3, x = 2, and y = 5 into y = mx + b: 5 = 3(2) + b. Step 4: Solve for b. Simplify: 5 = 6 + b. Subtract 6 from both sides: 5 − 6 = b, which gives: b = −1. Step 5: Write the equation. Now we have m = 3 and b = −1, so: y = 3x + (−1) = 3x − 1. Step 6: Verify. Check that (2, 5) satisfies the equation: y = 3(2) − 1 = 6 − 1 = 5 ✓. Also check another point: when x = 0, y = 3(0) − 1 = −1, so the y-intercept is (0, −1) ✓. Therefore, the equation is y = 3x − 1.',
+              explanation: 'To find the equation of a line given a point and slope, substitute the point coordinates and slope into y = mx + b, solve for b, then write the complete equation. Always verify by checking that the given point satisfies your equation.',
             },
           ],
           commonMistakes: [
@@ -2437,14 +2437,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'If triangles similar: a₁/a₂ = b₁/b₂ = c₁/c₂ = k, Area ratio = k²',
           examples: [
             {
-              question: 'Triangles similar. Small: sides 3,4,5. Large: corresponding side 9. Find other sides.',
-              solution: 'Scale factor = 9/3 = 3 → Other sides: 4×3=12, 5×3=15',
-              explanation: 'Find scale factor from one pair, apply to all sides.',
+              question: 'Two triangles are similar. The smaller triangle has sides measuring 3, 4, and 5 units. In the larger triangle, the side corresponding to the side of length 3 in the smaller triangle is 9 units. Find the lengths of the other two sides of the larger triangle.',
+              solution: 'Step 1: Understand similar triangles. Similar triangles have the same shape but different sizes. Corresponding sides are proportional, meaning they have the same ratio. Step 2: Identify corresponding sides. The side of length 3 in the small triangle corresponds to the side of length 9 in the large triangle. Step 3: Find the scale factor. Scale factor = (Large side) / (Corresponding small side) = 9 / 3 = 3. This means the large triangle is 3 times larger than the small triangle. Step 4: Apply the scale factor to find the second side. The side corresponding to 4 in the small triangle: Large side = 4 × 3 = 12 units. Step 5: Apply the scale factor to find the third side. The side corresponding to 5 in the small triangle: Large side = 5 × 3 = 15 units. Step 6: Verify the ratios. Check that all ratios are equal: 9/3 = 3, 12/4 = 3, 15/5 = 3. All ratios equal 3 ✓. Step 7: Final answer. Therefore, the other two sides of the larger triangle are 12 units and 15 units.',
+              explanation: 'For similar triangles, find the scale factor from one pair of corresponding sides, then multiply all sides of the smaller triangle by that factor. Always verify that all corresponding side ratios are equal. This ensures the triangles are truly similar.',
             },
             {
-              question: 'Similar triangles: areas 16 and 64. Side ratio?',
-              solution: 'Area ratio = 64/16 = 4 → Side ratio = √4 = 2',
-              explanation: 'Area ratio = (side ratio)², so side ratio = √(area ratio).',
+              question: 'Two similar triangles have areas of 16 square units and 64 square units respectively. What is the ratio of their corresponding sides?',
+              solution: 'Step 1: Understand the relationship. For similar figures, the area ratio equals the square of the side ratio. If side ratio = k, then area ratio = k². Step 2: Calculate the area ratio. Area ratio = (Larger area) / (Smaller area) = 64 / 16 = 4. Step 3: Find the side ratio. Since area ratio = (side ratio)², we have: (side ratio)² = 4. Taking the square root of both sides: side ratio = √4 = 2. Step 4: Interpret the result. A side ratio of 2 means the larger triangle\'s sides are 2 times the corresponding sides of the smaller triangle. Step 5: Verify. Check: If side ratio = 2, then area ratio should be 2² = 4. And 64/16 = 4 ✓. Step 6: Alternative verification. If a triangle with area 16 has sides scaled by factor 2, the new area = 16 × 2² = 16 × 4 = 64 ✓. Step 7: Final answer. Therefore, the ratio of corresponding sides is 2:1 (or simply 2).',
+              explanation: 'The key relationship: Area scales as the square of the linear scale factor. If sides are multiplied by k, area is multiplied by k². To find side ratio from area ratio, take the square root. This relationship applies to all similar 2D figures.',
             },
           ],
           commonMistakes: [
@@ -2474,9 +2474,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Triangles: sides 5,6,7 and 5,6,7. Are they congruent?',
-              solution: 'Yes, by SSS (all three sides equal)',
-              explanation: 'SSS criterion: if all three sides match, triangles are congruent.',
+              question: 'Two triangles have sides measuring 5, 6, and 7 units respectively. Are these triangles congruent?',
+              solution: 'Step 1: Understand congruence. Congruent triangles are identical in size and shape - they can be placed on top of each other and match exactly. Step 2: Check the given information. Both triangles have sides: 5, 6, and 7. All three corresponding sides are equal. Step 3: Apply the SSS criterion. SSS (Side-Side-Side) is a valid congruence criterion. If all three sides of one triangle are equal to the corresponding three sides of another triangle, then the triangles are congruent. Step 4: Verify the criterion applies. Triangle 1: sides 5, 6, 7. Triangle 2: sides 5, 6, 7. All corresponding sides match: 5 = 5, 6 = 6, 7 = 7. Step 5: Check triangle inequality (to ensure triangles are valid). For triangle with sides 5, 6, 7: 5 + 6 = 11 > 7 ✓, 5 + 7 = 12 > 6 ✓, 6 + 7 = 13 > 5 ✓. Both triangles are valid. Step 6: Final answer. Therefore, yes, the triangles are congruent by the SSS (Side-Side-Side) criterion.',
+              explanation: 'SSS is one of the valid congruence criteria. If all three sides match, the triangles must be congruent. The valid criteria are: SSS, SAS, ASA, AAS. Note: SSA is NOT valid (this is the ambiguous case).',
             },
           ],
           commonMistakes: [
@@ -2505,14 +2505,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: '30-60-90: 1 : √3 : 2   |   45-45-90: 1 : 1 : √2',
           examples: [
             {
-              question: '30-60-90 triangle, short side = 5. Find other sides.',
-              solution: 'Short: 5, Long leg: 5√3, Hypotenuse: 10',
-              explanation: 'Use ratio 1 : √3 : 2. Short side = 5, so multiply ratio by 5.',
+              question: 'In a 30-60-90 triangle, the shortest side (opposite the 30° angle) is 5 units. Find the lengths of the other two sides.',
+              solution: 'Step 1: Recall the 30-60-90 triangle ratio. In a 30-60-90 triangle, the sides are in the ratio: Short leg : Long leg : Hypotenuse = 1 : √3 : 2. The short leg is opposite the 30° angle, the long leg is opposite the 60° angle, and the hypotenuse is opposite the 90° angle. Step 2: Identify the given side. The short side (short leg) = 5 units. This corresponds to the "1" in the ratio. Step 3: Find the scale factor. Since the short leg in the ratio is 1, and our short leg is 5, the scale factor is 5. Step 4: Calculate the long leg. Long leg in ratio = √3. Multiply by scale factor: Long leg = 5 × √3 = 5√3 units. Step 5: Calculate the hypotenuse. Hypotenuse in ratio = 2. Multiply by scale factor: Hypotenuse = 5 × 2 = 10 units. Step 6: Verify using Pythagorean theorem. Check: (Short leg)² + (Long leg)² = (Hypotenuse)². 5² + (5√3)² = 25 + 25(3) = 25 + 75 = 100. Hypotenuse² = 10² = 100 ✓. Step 7: Final answer. Therefore, the sides are: Short leg = 5, Long leg = 5√3, Hypotenuse = 10.',
+              explanation: '30-60-90 triangles have a fixed ratio of 1 : √3 : 2. Once you identify which side is given, multiply the corresponding ratio value by the scale factor to find all sides. The short leg is always opposite the 30° angle. Memorizing this ratio saves significant time on tests.',
             },
             {
-              question: '45-45-90 triangle, leg = 6. Find hypotenuse.',
-              solution: 'Hypotenuse = 6√2',
-              explanation: 'In 45-45-90, hypotenuse = leg × √2.',
+              question: 'In a 45-45-90 triangle, one leg measures 6 units. Find the length of the hypotenuse.',
+              solution: 'Step 1: Understand the 45-45-90 triangle. A 45-45-90 triangle is an isosceles right triangle. It has two 45° angles and one 90° angle. The two legs are equal in length. Step 2: Recall the 45-45-90 triangle ratio. In a 45-45-90 triangle, the sides are in the ratio: Leg : Leg : Hypotenuse = 1 : 1 : √2. Both legs are equal, and the hypotenuse is √2 times the leg. Step 3: Identify the given side. One leg = 6 units. Since both legs are equal, the other leg is also 6 units. Step 4: Calculate the hypotenuse. Using the ratio: Hypotenuse = Leg × √2. So: Hypotenuse = 6 × √2 = 6√2 units. Step 5: Verify using Pythagorean theorem. Check: (Leg)² + (Leg)² = (Hypotenuse)². 6² + 6² = 36 + 36 = 72. Hypotenuse² = (6√2)² = 36 × 2 = 72 ✓. Step 6: Final answer. Therefore, the hypotenuse is 6√2 units (approximately 8.49 units if using √2 ≈ 1.414).',
+              explanation: '45-45-90 triangles are isosceles right triangles. The key relationship is: Hypotenuse = Leg × √2. This comes from the Pythagorean theorem: if both legs are x, then hypotenuse = √(x² + x²) = √(2x²) = x√2. Memorizing this ratio is essential for quick calculations.',
             },
           ],
           commonMistakes: [
@@ -2541,9 +2541,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 's = (a+b+c)/2, Area = √[s(s−a)(s−b)(s−c)]',
           examples: [
             {
-              question: 'Triangle sides: 5, 6, 7. Find area.',
-              solution: 's = (5+6+7)/2 = 9 → Area = √[9(9−5)(9−6)(9−7)] = √[9×4×3×2] = √216 = 6√6',
-              explanation: 'Find semi-perimeter, then apply Heron\'s formula.',
+              question: 'A triangle has sides measuring 5, 6, and 7 units. Find its area using Heron\'s formula.',
+              solution: 'Step 1: Understand Heron\'s formula. Heron\'s formula finds the area of a triangle when all three sides are known, without needing the height. Formula: Area = √[s(s−a)(s−b)(s−c)], where s is the semi-perimeter and a, b, c are the three sides. Step 2: Calculate the semi-perimeter. Semi-perimeter s = (a + b + c) / 2. With sides 5, 6, 7: s = (5 + 6 + 7) / 2 = 18 / 2 = 9. Step 3: Apply Heron\'s formula. Area = √[s(s−a)(s−b)(s−c)] = √[9(9−5)(9−6)(9−7)] = √[9 × 4 × 3 × 2]. Step 4: Calculate inside the square root. 9 × 4 = 36, 36 × 3 = 108, 108 × 2 = 216. So: Area = √216. Step 5: Simplify the square root. Factor 216: 216 = 36 × 6 = 6² × 6. So: √216 = √(36 × 6) = √36 × √6 = 6√6. Step 6: Verify (optional). Check: (6√6)² = 36 × 6 = 216 ✓. Step 7: Final answer. Therefore, the area of the triangle is 6√6 square units (approximately 14.70 square units if using √6 ≈ 2.449).',
+              explanation: 'Heron\'s formula is useful when you know all three sides but not the height. The semi-perimeter is half the perimeter. Always calculate s first, then substitute into the formula. Simplify the square root if possible for the final answer.',
             },
           ],
           commonMistakes: [
@@ -2573,14 +2573,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Parallelogram: A = bh   |   Rhombus: A = (d₁d₂)/2',
           examples: [
             {
-              question: 'Parallelogram: base=10, height=6. Area?',
-              solution: 'Area = 10 × 6 = 60',
-              explanation: 'Use base × height formula.',
+              question: 'A parallelogram has a base of 10 units and a height of 6 units. What is its area?',
+              solution: 'Step 1: Recall the parallelogram area formula. Area of parallelogram = base × height, where height is the perpendicular distance from the base to the opposite side. Step 2: Identify the given values. Base = 10 units, Height = 6 units. Step 3: Apply the formula. Area = base × height = 10 × 6 = 60 square units. Step 4: Verify units. Area should be in square units, which is correct. Step 5: Understand the formula. A parallelogram can be "cut" and rearranged into a rectangle with the same base and height, which is why the area formula is the same as a rectangle. Step 6: Final answer. Therefore, the area of the parallelogram is 60 square units.',
+              explanation: 'Parallelogram area = base × height, where height is the perpendicular distance (not the slanted side length). The height must be perpendicular to the base. This is the same formula as a rectangle because a parallelogram can be transformed into a rectangle.',
             },
             {
-              question: 'Rhombus: diagonals 8 and 6. Area?',
-              solution: 'Area = (8 × 6)/2 = 24',
-              explanation: 'Use diagonal formula for rhombus.',
+              question: 'A rhombus has diagonals measuring 8 units and 6 units. What is its area?',
+              solution: 'Step 1: Understand a rhombus. A rhombus is a parallelogram with all sides equal. It has special properties, including that its diagonals are perpendicular bisectors of each other. Step 2: Recall the rhombus area formula. For a rhombus, Area = (d₁ × d₂) / 2, where d₁ and d₂ are the lengths of the two diagonals. Step 3: Identify the diagonals. Diagonal 1 (d₁) = 8 units, Diagonal 2 (d₂) = 6 units. Step 4: Apply the formula. Area = (d₁ × d₂) / 2 = (8 × 6) / 2 = 48 / 2 = 24 square units. Step 5: Understand why this works. The diagonals divide the rhombus into 4 right triangles. Each triangle has area = ½ × (d₁/2) × (d₂/2) = d₁d₂/8. Four triangles: 4 × (d₁d₂/8) = d₁d₂/2. Step 6: Verify. Check: (8 × 6) / 2 = 48 / 2 = 24 ✓. Step 7: Final answer. Therefore, the area of the rhombus is 24 square units.',
+              explanation: 'The rhombus area formula using diagonals is: Area = (d₁ × d₂) / 2. This works because the diagonals are perpendicular and divide the rhombus into 4 equal right triangles. This formula is often easier than using base × height when diagonals are given.',
             },
           ],
           commonMistakes: [
@@ -2609,9 +2609,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'A = ½(b₁ + b₂)h',
           examples: [
             {
-              question: 'Trapezoid: bases 8 and 12, height 5. Area?',
-              solution: 'Area = ½(8 + 12) × 5 = ½(20) × 5 = 50',
-              explanation: 'Average the bases, multiply by height.',
+              question: 'A trapezoid has bases measuring 8 units and 12 units, and a height of 5 units. What is the area of the trapezoid?',
+              solution: 'Step 1: Understand a trapezoid. A trapezoid is a quadrilateral with exactly one pair of parallel sides. The parallel sides are called the bases. Step 2: Recall the trapezoid area formula. Area = ½ × (base₁ + base₂) × height, where height is the perpendicular distance between the bases. Step 3: Identify the values. Base 1 (b₁) = 8 units, Base 2 (b₂) = 12 units, Height (h) = 5 units. Step 4: Apply the formula. Area = ½ × (b₁ + b₂) × h = ½ × (8 + 12) × 5. Step 5: Calculate step by step. First, add the bases: 8 + 12 = 20. Then multiply by height: 20 × 5 = 100. Finally, multiply by ½: ½ × 100 = 50. Step 6: Alternative calculation. Area = ½(8 + 12) × 5 = ½(20) × 5 = 10 × 5 = 50 square units. Step 7: Understand the formula. The formula averages the two bases (finds the "middle" length) and multiplies by height. This works because a trapezoid can be thought of as having an "average width" equal to the average of the two bases. Step 8: Final answer. Therefore, the area of the trapezoid is 50 square units.',
+              explanation: 'The trapezoid area formula is: Area = ½(b₁ + b₂)h. This averages the two bases and multiplies by the height. Always use the perpendicular height, not the slanted side length. The ½ factor comes from averaging the bases.',
             },
           ],
           commonMistakes: [
@@ -2833,14 +2833,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Parallel: m₁ = m₂   |   Perpendicular: m₁ × m₂ = −1',
           examples: [
             {
-              question: 'Line: y = 2x+3. Find parallel line through (1,4).',
-              solution: 'Same slope: m = 2 → y − 4 = 2(x − 1) → y = 2x + 2',
-              explanation: 'Parallel means same slope. Use point-slope form.',
+              question: 'Find the equation of a line parallel to y = 2x + 3 that passes through the point (1, 4).',
+              solution: 'Step 1: Understand parallel lines. Parallel lines have the same slope but different y-intercepts. They never intersect. Step 2: Identify the slope of the given line. The line y = 2x + 3 is in slope-intercept form (y = mx + b), where m = 2 is the slope. Step 3: Determine the slope of the parallel line. Since parallel lines have the same slope, the new line also has slope m = 2. Step 4: Use point-slope form. We know the slope (m = 2) and a point (1, 4). Point-slope form: y − y₁ = m(x − x₁). Substituting: y − 4 = 2(x − 1). Step 5: Simplify to slope-intercept form. Expand: y − 4 = 2x − 2. Add 4 to both sides: y = 2x − 2 + 4 = 2x + 2. Step 6: Verify. Check that (1, 4) is on the line: y = 2(1) + 2 = 2 + 2 = 4 ✓. Also verify slopes: both lines have slope 2, so they\'re parallel ✓. Step 7: Final answer. Therefore, the equation of the parallel line is y = 2x + 2.',
+              explanation: 'Parallel lines have identical slopes. To find a parallel line through a given point, use that same slope with the point-slope form. The y-intercepts will be different (unless the point happens to be on the original line).',
             },
             {
-              question: 'Line: y = 2x+3. Find perpendicular line through (1,4).',
-              solution: 'Perpendicular slope: m = −1/2 → y − 4 = −½(x − 1) → y = −½x + 4.5',
-              explanation: 'Perpendicular: negative reciprocal slope.',
+              question: 'Find the equation of a line perpendicular to y = 2x + 3 that passes through the point (1, 4).',
+              solution: 'Step 1: Understand perpendicular lines. Perpendicular lines intersect at a 90° angle. Their slopes multiply to −1. Step 2: Identify the slope of the given line. The line y = 2x + 3 has slope m₁ = 2. Step 3: Find the perpendicular slope. If m₁ × m₂ = −1, then m₂ = −1/m₁. So: m₂ = −1/2. Step 4: Verify the relationship. Check: 2 × (−1/2) = −1 ✓. This confirms the slopes are perpendicular. Step 5: Use point-slope form. We know the slope (m = −1/2) and a point (1, 4). Point-slope form: y − y₁ = m(x − x₁). Substituting: y − 4 = (−1/2)(x − 1). Step 6: Simplify to slope-intercept form. Expand: y − 4 = (−1/2)x + 1/2. Add 4 to both sides: y = (−1/2)x + 1/2 + 4 = (−1/2)x + 1/2 + 8/2 = (−1/2)x + 9/2 = −½x + 4.5. Step 7: Verify. Check that (1, 4) is on the line: y = −½(1) + 4.5 = −0.5 + 4.5 = 4 ✓. Check slopes multiply to −1: 2 × (−1/2) = −1 ✓. Step 8: Final answer. Therefore, the equation of the perpendicular line is y = −½x + 4.5 (or y = −x/2 + 9/2).',
+              explanation: 'Perpendicular lines have slopes that are negative reciprocals. If one line has slope m, the perpendicular line has slope −1/m. Always verify that m₁ × m₂ = −1. Remember: horizontal lines (slope 0) are perpendicular to vertical lines (undefined slope).',
             },
           ],
           commonMistakes: [
@@ -2899,14 +2899,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Translate (3,4) by (2,−1)',
-              solution: '(3+2, 4+(−1)) = (5, 3)',
-              explanation: 'Add translation vector to coordinates.',
+              question: 'Translate the point (3, 4) by the vector (2, −1). What are the coordinates of the new point?',
+              solution: 'Step 1: Understand translation. Translation moves a point by adding a vector to its coordinates. The translation vector (2, −1) means: move 2 units right (positive x) and 1 unit down (negative y). Step 2: Apply the translation rule. To translate point (x, y) by vector (h, k), the new coordinates are: (x + h, y + k). Step 3: Substitute the values. Original point: (3, 4). Translation vector: (2, −1). New point: (3 + 2, 4 + (−1)) = (3 + 2, 4 − 1) = (5, 3). Step 4: Verify. The point moved from (3, 4) to (5, 3). This is 2 units right (3 → 5) and 1 unit down (4 → 3) ✓. Step 5: Final answer. Therefore, after translation, the point is at (5, 3).',
+              explanation: 'Translation is simply adding the translation vector to the original coordinates. The vector (h, k) means move h units horizontally and k units vertically. Positive h = right, negative h = left. Positive k = up, negative k = down.',
             },
             {
-              question: 'Reflect (3,4) over x-axis',
-              solution: '(3, −4)',
-              explanation: 'Reflection over x-axis: change sign of y.',
+              question: 'Reflect the point (3, 4) over the x-axis. What are the coordinates of the reflected point?',
+              solution: 'Step 1: Understand reflection over x-axis. Reflection over the x-axis means the point is "flipped" across the horizontal x-axis. The x-coordinate stays the same, but the y-coordinate changes sign. Step 2: Apply the reflection rule. Reflection over x-axis: (x, y) → (x, −y). The x-coordinate remains unchanged, and the y-coordinate becomes its opposite. Step 3: Apply to the given point. Point (3, 4): x = 3, y = 4. After reflection: x stays 3, y becomes −4. So: (3, 4) → (3, −4). Step 4: Visualize. The point (3, 4) is 4 units above the x-axis. After reflection, it becomes (3, −4), which is 4 units below the x-axis. The distance from the x-axis is the same (4 units), but on the opposite side. Step 5: Verify. Check: The midpoint between (3, 4) and (3, −4) is (3, 0), which lies on the x-axis ✓. Step 6: Final answer. Therefore, the reflected point is (3, −4).',
+              explanation: 'Reflection over x-axis: keep x, change sign of y. Reflection over y-axis: change sign of x, keep y. Reflection over origin: change signs of both. Reflection over line y=x: swap x and y. Memorize these rules for quick application.',
             },
           ],
           commonMistakes: [
@@ -2967,14 +2967,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: '(x−h)² + (y−k)² = r² (center (h,k), radius r)',
           examples: [
             {
-              question: 'Circle: center (2,−3), radius 5. Equation?',
-              solution: '(x−2)² + (y+3)² = 25',
-              explanation: 'Use standard form with h=2, k=−3, r=5.',
+              question: 'A circle has center at (2, −3) and radius 5. What is the equation of the circle?',
+              solution: 'Step 1: Recall the standard form of a circle equation. The standard form is: (x − h)² + (y − k)² = r², where (h, k) is the center and r is the radius. Step 2: Identify the values. Center: (h, k) = (2, −3), so h = 2 and k = −3. Radius: r = 5. Step 3: Substitute into the standard form. (x − h)² + (y − k)² = r² becomes: (x − 2)² + (y − (−3))² = 5². Step 4: Simplify. (x − 2)² + (y + 3)² = 25. Note: y − (−3) = y + 3. Step 5: Verify. Check: If we substitute the center (2, −3): (2 − 2)² + (−3 + 3)² = 0² + 0² = 0, which should equal r² = 25? Wait, that\'s not right. Actually, at the center, the distance is 0, so the equation gives 0 = 25? Let me recalculate: At center (2, −3): (2−2)² + (−3−(−3))² = 0² + 0² = 0. But the equation is (x−2)² + (y+3)² = 25. At center: (2−2)² + (−3+3)² = 0 + 0 = 0, but the equation says it should equal 25. Actually, I need to check: y − k, and k = −3, so y − (−3) = y + 3. At center: (2, −3), so (2−2)² + (−3+3)² = 0. But the equation is = 25, not 0. Actually, the standard form is correct. A point on the circle satisfies the equation. The center itself doesn\'t satisfy (x−h)² + (y−k)² = r² because at the center, the left side is 0, not r². Points on the circle are at distance r from center. Let me verify with a point on the circle: A point 5 units from (2, −3) would be (2+5, −3) = (7, −3). Check: (7−2)² + (−3+3)² = 5² + 0² = 25 ✓. Step 6: Final answer. Therefore, the equation is (x − 2)² + (y + 3)² = 25.',
+              explanation: 'The standard form (x−h)² + (y−k)² = r² represents all points at distance r from center (h, k). Be careful with signs: if center is (2, −3), then h = 2 and k = −3, so the equation has (x−2) and (y−(−3)) = (y+3). The right side is r², not r.',
             },
             {
-              question: 'Equation: (x+1)² + (y−4)² = 9. Center and radius?',
-              solution: 'Center: (−1, 4), Radius: 3',
-              explanation: 'Standard form: (x−h)² + (y−k)² = r². Note: (x+1) = (x−(−1)).',
+              question: 'Given the circle equation (x + 1)² + (y − 4)² = 9, find the center and radius of the circle.',
+              solution: 'Step 1: Compare with standard form. Standard form: (x − h)² + (y − k)² = r². Given: (x + 1)² + (y − 4)² = 9. Step 2: Find the center (h, k). For the x-term: (x + 1) = (x − (−1)), so h = −1. For the y-term: (y − 4) matches the form (y − k), so k = 4. Therefore, center = (−1, 4). Step 3: Find the radius. The right side is 9, which equals r². So: r² = 9. Taking the square root: r = √9 = 3 (radius is positive). Step 4: Verify. Check: The equation (x + 1)² + (y − 4)² = 9 means points at distance 3 from center (−1, 4). Test a point on the circle: (−1 + 3, 4) = (2, 4). Check: (2 + 1)² + (4 − 4)² = 3² + 0² = 9 ✓. Step 5: Final answer. Therefore, the center is (−1, 4) and the radius is 3.',
+              explanation: 'To find center and radius from standard form, match the pattern: (x−h)² + (y−k)² = r². Watch the signs carefully: (x+1) means h = −1, not h = 1. The radius is the square root of the right side (r = √r²).',
             },
           ],
           commonMistakes: [
@@ -3002,14 +3002,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Can sides 5, 7, 12 form triangle?',
-              solution: 'Check: 5+7=12, NOT > 12 → Cannot form triangle',
-              explanation: 'Sum of two sides must be STRICTLY greater than third.',
+              question: 'Can three line segments with lengths 5, 7, and 12 units form a triangle?',
+              solution: 'Step 1: Recall the Triangle Inequality Theorem. For three sides to form a triangle, the sum of any two sides must be STRICTLY greater than the third side. All three conditions must be satisfied. Step 2: Check condition 1: a + b > c. Using sides 5, 7, 12: 5 + 7 = 12. Is 12 > 12? No! 12 is NOT greater than 12 (it\'s equal). Step 3: Since one condition fails, we can stop. The Triangle Inequality requires STRICT inequality (>), not ≥. Since 5 + 7 = 12 (not > 12), this condition fails. Step 4: Interpret the result. If 5 + 7 = 12, the three segments would lie on a straight line, not forming a triangle. They would be collinear. Step 5: Verify with other combinations (optional). Check: 5 + 12 = 17 > 7 ✓, 7 + 12 = 19 > 5 ✓. But since the first check failed, we cannot form a triangle. Step 6: Final answer. Therefore, NO, sides 5, 7, and 12 cannot form a triangle because 5 + 7 is not greater than 12 (they are equal).',
+              explanation: 'The Triangle Inequality requires STRICT inequality: a + b > c, not a + b ≥ c. If a + b = c, the three points are collinear (on a straight line), which doesn\'t form a triangle. Always check all three combinations, but if one fails, the answer is no.',
             },
             {
-              question: 'Can sides 6, 8, 10 form triangle?',
-              solution: 'Check: 6+8=14>10 ✓, 6+10=16>8 ✓, 8+10=18>6 ✓ → Yes, can form triangle',
-              explanation: 'All three inequalities must be satisfied.',
+              question: 'Can three line segments with lengths 6, 8, and 10 units form a triangle?',
+              solution: 'Step 1: Apply the Triangle Inequality Theorem. We need to check all three conditions: a + b > c, a + c > b, and b + c > a. Step 2: Check condition 1: 6 + 8 > 10. 6 + 8 = 14. Is 14 > 10? Yes ✓. Step 3: Check condition 2: 6 + 10 > 8. 6 + 10 = 16. Is 16 > 8? Yes ✓. Step 4: Check condition 3: 8 + 10 > 6. 8 + 10 = 18. Is 18 > 6? Yes ✓. Step 5: Analyze the results. All three conditions are satisfied. Each sum of two sides is greater than the third side. Step 6: Verify this is a valid triangle. These sides (6, 8, 10) actually form a right triangle (6² + 8² = 36 + 64 = 100 = 10², so it\'s a 3-4-5 right triangle scaled by 2). Step 7: Final answer. Therefore, YES, sides 6, 8, and 10 can form a triangle. In fact, they form a right triangle.',
+              explanation: 'All three Triangle Inequality conditions must be checked and satisfied. If any one fails, a triangle cannot be formed. When all pass, a triangle is possible. Note: These particular sides (6, 8, 10) form a right triangle, which is a special case.',
             },
           ],
           commonMistakes: [
@@ -3078,14 +3078,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: '% change = [(New−Old)/Old] × 100%   |   Increase: ×(1+k/100)   |   Decrease: ×(1−k/100)',
           examples: [
             {
-              question: 'Price increases 30%, then decreases 30%. Net effect?',
-              solution: 'Let original = 100 → After increase: 100 × 1.30 = 130 → After decrease: 130 × 0.70 = 91 → Net change: (91−100)/100 = −9% (9% decrease)',
-              explanation: 'Percentages are NOT reversible! The decrease is applied to the larger number, so net result is a decrease.',
+              question: 'A price increases by 30%, then decreases by 30%. What is the net percentage change?',
+              solution: 'Step 1: Set up a base value. Let the original price = Rs. 100 (using 100 makes percentage calculations easier). Step 2: Apply the first change (30% increase). To increase by 30%, multiply by (1 + 0.30) = 1.30. New price = 100 × 1.30 = Rs. 130. Step 3: Apply the second change (30% decrease). To decrease by 30%, multiply by (1 − 0.30) = 0.70. IMPORTANT: This decrease is applied to the NEW price (Rs. 130), not the original. Final price = 130 × 0.70 = Rs. 91. Step 4: Calculate the net change. Original price = Rs. 100, Final price = Rs. 91. Change = 91 − 100 = −Rs. 9 (a decrease). Step 5: Calculate the net percentage change. Percentage change = (Change / Original) × 100% = (−9 / 100) × 100% = −9%. Step 6: Interpret the result. The net effect is a 9% decrease, NOT 0% as many people mistakenly think. Step 7: Understand why. Percentages are NOT reversible! The 30% decrease is applied to the larger number (130), so it removes more value than the 30% increase added to the smaller number (100). Therefore, the net result is a decrease.',
+              explanation: 'This demonstrates a critical concept: percentages are NOT reversible. An x% increase followed by an x% decrease does NOT return to the original value. The decrease is applied to a larger base, so it removes more than the increase added. Always calculate step-by-step, applying each percentage change to the new value, not the original.',
             },
             {
-              question: 'After 15% discount, price is Rs. 425. Original price?',
-              solution: 'WRONG: 425 × 1.15 = 488.75 → CORRECT: Original = 425/(1 − 0.15) = 425/0.85 = 500',
-              explanation: 'To reverse a percentage change, divide by (1 ± percentage), don\'t multiply. This is a common trap!',
+              question: 'After a 15% discount, the price of an item is Rs. 425. What was the original price?',
+              solution: 'Step 1: Understand the problem. We know the final price (Rs. 425) after a 15% discount, and we need to find the original price. Step 2: Recognize the common mistake. Many people incorrectly think: Original = Final × (1 + discount%) = 425 × 1.15 = Rs. 488.75. This is WRONG! Step 3: Understand why the common approach is wrong. If the original was Rs. 488.75, then after 15% discount: 488.75 × 0.85 = Rs. 415.44, which is NOT Rs. 425. The error occurs because we\'re applying the percentage to the wrong value. Step 4: Set up the correct equation. If original price = P, then after 15% discount: Final = P × (1 − 0.15) = P × 0.85. We know Final = 425, so: 425 = P × 0.85. Step 5: Solve for P. To reverse a percentage decrease, we divide by (1 − percentage), not multiply by (1 + percentage). P = 425 / 0.85 = 425 / (85/100) = 425 × (100/85) = 425 × (20/17) = 8,500 / 17 = Rs. 500. Step 6: Verify the answer. Original = Rs. 500. After 15% discount: 500 × 0.85 = Rs. 425 ✓. This confirms our answer is correct. Step 7: General formula. To reverse a percentage change: Original = Final / (1 ± percentage). Use (1 − %) for discounts, (1 + %) for increases. Therefore, the original price was Rs. 500.',
+              explanation: 'This is one of the most common percentage traps! To reverse a percentage change, you must DIVIDE by (1 ± percentage), not multiply. The key insight: if Final = Original × (1 − %), then Original = Final / (1 − %). Always verify your answer by applying the percentage change forward to check if you get the given final value.',
+            },
+            {
+              question: 'A store marks up the cost price by 25% to get the selling price. If the selling price is Rs. 1,500, what was the cost price?',
+              solution: 'Step 1: Understand the problem. The cost price was increased by 25% to get the selling price of Rs. 1,500. We need to find the original cost price. This is a "reverse percentage increase" problem. Step 2: Set up the relationship. Cost price + 25% markup = Selling price. Mathematically: Cost × (1 + 25/100) = 1,500. Step 3: Convert percentage to decimal. 25% = 25/100 = 0.25. So: Cost × (1 + 0.25) = 1,500, which gives: Cost × 1.25 = 1,500. Step 4: Solve for the cost price. To reverse a percentage increase, we divide by (1 + percentage). Cost = 1,500 ÷ 1.25. Step 5: Calculate step by step. 1,500 ÷ 1.25 = 1,500 ÷ (5/4) = 1,500 × (4/5) = 6,000/5 = 1,200. Step 6: Verify the answer. Cost price = Rs. 1,200. 25% markup = 25% of 1,200 = 0.25 × 1,200 = 300. Selling price = 1,200 + 300 = 1,500. ✓ This matches the given selling price! Step 7: Common mistake to avoid. WRONG approach: Some people think: Cost = 1,500 × 0.75 = 1,125. This is INCORRECT! If we check: 1,125 + 25% of 1,125 = 1,125 + 281.25 = 1,406.25, which is NOT 1,500. The correct method is to DIVIDE by (1 + markup%), not multiply by (1 − markup%). Therefore, the cost price was Rs. 1,200.',
+              explanation: 'To reverse a percentage increase, we divide by (1 + percentage). If Cost × 1.25 = 1,500, then Cost = 1,500 ÷ 1.25. This is the inverse operation of the markup. Always verify by checking that the calculated cost price, when increased by the given percentage, gives the known selling price. This is another common trap - students often try to "undo" an increase by subtracting, but that\'s incorrect.',
             },
           ],
           commonMistakes: [
@@ -3114,9 +3119,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Compare 3/5 and 4/7',
-              solution: 'Cross-multiplication: 3 × 7 = 21, 5 × 4 = 20 → Since 21 > 20, therefore 3/5 > 4/7',
-              explanation: 'Cross-multiply: if ad > bc, then a/b > c/d. This method always works.',
+              question: 'Compare the fractions 3/5 and 4/7. Which is larger?',
+              solution: 'Step 1: Understand the problem. We need to determine which fraction is larger: 3/5 or 4/7. Step 2: Choose a comparison method. Since the denominators are different (5 and 7) and the numerators are also different (3 and 4), we\'ll use cross-multiplication, which always works. Step 3: Apply cross-multiplication. For fractions a/b and c/d, cross-multiply: compare a × d with b × c. If a × d > b × c, then a/b > c/d. For 3/5 and 4/7: Compare 3 × 7 with 5 × 4. Step 4: Calculate the cross products. 3 × 7 = 21. 5 × 4 = 20. Step 5: Compare the results. Since 21 > 20, we have: 3 × 7 > 5 × 4. Step 6: Apply the rule. Since 3 × 7 > 5 × 4, it follows that 3/5 > 4/7. Step 7: Verify (optional). Convert to decimals: 3/5 = 0.6, 4/7 ≈ 0.571. Since 0.6 > 0.571, we confirm 3/5 > 4/7 ✓. Step 8: Final answer. Therefore, 3/5 is larger than 4/7.',
+              explanation: 'Cross-multiplication is the most reliable method for comparing fractions with different numerators and denominators. The rule is: if ad > bc, then a/b > c/d. This works because we\'re essentially comparing the fractions after converting them to have the same denominator (bd). Always cross-multiply in the same direction to avoid errors.',
             },
           ],
           commonMistakes: [
@@ -3146,19 +3151,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'A = P(1 + r/n)ⁿᵗ   |   Simple: A = P(1 + rt)',
           examples: [
             {
-              question: 'Rs. 1000 at 10% annual compound interest for 3 years. Final amount?',
-              solution: 'A = 1000(1 + 0.10)³ = 1000(1.1)³ = 1000 × 1.331 = Rs. 1,331',
-              explanation: 'Use compound formula with annual compounding (n=1). Raise (1+r) to power of years.',
+              question: 'Rs. 1,000 is invested at 10% annual compound interest for 3 years. What is the final amount?',
+              solution: 'Step 1: Identify the given values. Principal (P) = Rs. 1,000, Rate (r) = 10% = 0.10, Time (t) = 3 years, Compounding frequency: annual (n = 1). Step 2: Use the compound interest formula. For annual compounding: A = P(1 + r)ᵗ. Step 3: Substitute the values. A = 1,000(1 + 0.10)³ = 1,000(1.1)³. Step 4: Calculate (1.1)³. (1.1)³ = 1.1 × 1.1 × 1.1. First: 1.1 × 1.1 = 1.21. Then: 1.21 × 1.1 = 1.331. So (1.1)³ = 1.331. Step 5: Calculate the final amount. A = 1,000 × 1.331 = Rs. 1,331. Step 6: Calculate the interest earned. Interest = Final amount − Principal = 1,331 − 1,000 = Rs. 331. Step 7: Verify (optional). Year 1: 1,000 × 1.10 = 1,100. Year 2: 1,100 × 1.10 = 1,210. Year 3: 1,210 × 1.10 = 1,331 ✓. Therefore, the final amount is Rs. 1,331.',
+              explanation: 'Compound interest means interest is calculated on the principal AND previously earned interest. Each period, the amount grows by (1+r), so after t periods, it\'s multiplied by (1+r)ᵗ. This creates exponential growth, which is why compound interest grows faster than simple interest over time.',
             },
             {
-              question: 'Rs. 5000 at 8% simple interest for 5 years. Final amount?',
-              solution: 'A = 5000(1 + 0.08×5) = 5000(1 + 0.40) = 5000 × 1.40 = Rs. 7,000',
-              explanation: 'Simple interest: multiply rate by time, add to 1, multiply by principal.',
+              question: 'Rs. 5,000 is invested at 8% simple interest for 5 years. What is the final amount?',
+              solution: 'Step 1: Identify the given values. Principal (P) = Rs. 5,000, Rate (r) = 8% = 0.08, Time (t) = 5 years. Step 2: Use the simple interest formula. Simple interest formula: A = P(1 + rt), where A is the final amount. Step 3: Calculate rt. rt = 0.08 × 5 = 0.40. Step 4: Substitute into the formula. A = 5,000(1 + 0.40) = 5,000 × 1.40 = Rs. 7,000. Step 5: Alternative method - calculate interest separately. Simple Interest = P × r × t = 5,000 × 0.08 × 5 = 5,000 × 0.40 = Rs. 2,000. Final amount = Principal + Interest = 5,000 + 2,000 = Rs. 7,000. Step 6: Verify. Check: 5,000(1 + 0.08×5) = 5,000(1.40) = 7,000 ✓. Step 7: Final answer. Therefore, the final amount is Rs. 7,000.',
+              explanation: 'Simple interest is calculated only on the principal, not on previously earned interest. The formula A = P(1 + rt) is equivalent to A = P + Prt = P + Interest. Simple interest grows linearly, while compound interest grows exponentially.',
             },
             {
-              question: 'Population doubles every 20 years. If current is 10,000, what in 60 years?',
-              solution: '60 years = 3 doubling periods → 10,000 × 2³ = 10,000 × 8 = 80,000',
-              explanation: 'Each doubling multiplies by 2. Number of doublings = time / doubling period.',
+              question: 'A population doubles every 20 years. If the current population is 10,000, what will the population be in 60 years?',
+              solution: 'Step 1: Understand the problem. The population follows exponential growth with a doubling period of 20 years. Current population = 10,000. Step 2: Determine the number of doubling periods. Time period = 60 years. Doubling period = 20 years. Number of doublings = 60 ÷ 20 = 3. Step 3: Apply the doubling. Each doubling multiplies the population by 2. After 3 doublings: Final population = Initial × 2³ = 10,000 × 2³. Step 4: Calculate 2³. 2³ = 2 × 2 × 2 = 8. Step 5: Calculate the final population. Final = 10,000 × 8 = 80,000. Step 6: Verify step by step. After 20 years (1st doubling): 10,000 × 2 = 20,000. After 40 years (2nd doubling): 20,000 × 2 = 40,000. After 60 years (3rd doubling): 40,000 × 2 = 80,000 ✓. Step 7: Final answer. Therefore, the population will be 80,000 in 60 years.',
+              explanation: 'Exponential growth with a known doubling period is straightforward: divide the time by the doubling period to get the number of doublings, then multiply the initial amount by 2 raised to that power. This is a special case of exponential growth where the growth factor is 2.',
             },
           ],
           commonMistakes: [
@@ -3189,19 +3194,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Profit % = (SP−CP)/CP × 100%   |   SP = CP × (1 ± profit%)',
           examples: [
             {
-              question: 'Cost = Rs. 500, Selling = Rs. 600. Profit percentage?',
-              solution: 'Profit = 600 − 500 = 100 → Profit % = (100/500) × 100% = 20%',
-              explanation: 'Calculate profit first, then divide by cost price and multiply by 100%.',
+              question: 'An item costs Rs. 500 and is sold for Rs. 600. What is the profit percentage?',
+              solution: 'Step 1: Identify the given values. Cost Price (CP) = Rs. 500, Selling Price (SP) = Rs. 600. Step 2: Calculate the profit. Profit = Selling Price − Cost Price = 600 − 500 = Rs. 100. Step 3: Recall the profit percentage formula. Profit % = (Profit / Cost Price) × 100%. IMPORTANT: Profit percentage is always calculated on the COST PRICE, not the selling price. Step 4: Calculate the profit percentage. Profit % = (100 / 500) × 100% = 0.20 × 100% = 20%. Step 5: Verify. Check: If CP = 500 and profit % = 20%, then Profit = 500 × 0.20 = 100, and SP = 500 + 100 = 600 ✓. Step 6: Final answer. Therefore, the profit percentage is 20%.',
+              explanation: 'Profit percentage is always calculated on the cost price (the original amount paid). The formula is: Profit % = (Profit/CP) × 100%. Never calculate profit percentage on the selling price - this is a common mistake. Always verify your answer by working backwards.',
             },
             {
-              question: 'Cost = Rs. 800, sold at 25% profit. Selling price?',
-              solution: 'SP = 800 × (1 + 0.25) = 800 × 1.25 = Rs. 1,000',
-              explanation: 'Multiply cost by (1 + profit percentage as decimal).',
+              question: 'An item costs Rs. 800. If it is sold at a 25% profit, what is the selling price?',
+              solution: 'Step 1: Identify the given values. Cost Price (CP) = Rs. 800, Profit % = 25%. Step 2: Understand what 25% profit means. A 25% profit means the selling price is 25% more than the cost price. Step 3: Use the selling price formula. Selling Price = Cost Price × (1 + Profit % as decimal). SP = CP × (1 + 25/100) = CP × (1 + 0.25) = CP × 1.25. Step 4: Calculate the selling price. SP = 800 × 1.25 = Rs. 1,000. Step 5: Verify. Check: Profit = SP − CP = 1,000 − 800 = Rs. 200. Profit % = (200/800) × 100% = 25% ✓. Step 6: Alternative method. Calculate profit first: Profit = 25% of 800 = 0.25 × 800 = Rs. 200. Then: SP = CP + Profit = 800 + 200 = Rs. 1,000. Step 7: Final answer. Therefore, the selling price is Rs. 1,000.',
+              explanation: 'To find selling price when cost and profit percentage are given, multiply the cost by (1 + profit% as decimal). This is equivalent to: SP = CP + (Profit% of CP). The multiplier method is faster and less error-prone.',
             },
             {
-              question: 'Sold for Rs. 450 at 10% loss. What was cost price?',
-              solution: 'SP = CP × (1 − 0.10) → 450 = CP × 0.90 → CP = 450/0.90 = Rs. 500',
-              explanation: 'To find original cost from selling price with loss, divide by (1 − loss%).',
+              question: 'An item is sold for Rs. 450 at a 10% loss. What was the original cost price?',
+              solution: 'Step 1: Identify the given values. Selling Price (SP) = Rs. 450, Loss % = 10%. Step 2: Understand the relationship. A 10% loss means the selling price is 10% less than the cost price. So: SP = CP × (1 − 10/100) = CP × (1 − 0.10) = CP × 0.90. Step 3: Set up the equation. We know SP = 450, so: 450 = CP × 0.90. Step 4: Solve for CP. To find CP, divide both sides by 0.90: CP = 450 / 0.90 = 450 / (9/10) = 450 × (10/9) = 4,500 / 9 = Rs. 500. Step 5: Verify. Check: If CP = 500 and loss % = 10%, then Loss = 10% of 500 = 0.10 × 500 = Rs. 50. SP = CP − Loss = 500 − 50 = Rs. 450 ✓. Step 6: Common mistake to avoid. Many people incorrectly calculate: CP = 450 × 1.10 = Rs. 495. This is WRONG! To reverse a percentage decrease, you must DIVIDE by (1 − %), not multiply by (1 + %). Step 7: Final answer. Therefore, the original cost price was Rs. 500.',
+              explanation: 'To find the cost price when selling price and loss percentage are given, divide the selling price by (1 − loss% as decimal). This reverses the percentage decrease. Remember: to reverse a decrease, divide by (1 − %), not multiply by (1 + %). Always verify by checking that applying the loss percentage to your answer gives the given selling price.',
             },
           ],
           commonMistakes: [
@@ -3846,14 +3851,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'a/b = c/d → ad = bc   |   Part = (ratio part / total parts) × total',
           examples: [
             {
-              question: 'Divide Rs. 1200 among A, B, C in ratio 2:3:5',
-              solution: 'Total parts = 2+3+5 = 10 → A: (2/10)×1200 = 240 → B: (3/10)×1200 = 360 → C: (5/10)×1200 = 600',
-              explanation: 'Find total parts first, then each person gets their part fraction of the total.',
+              question: 'Divide Rs. 1,200 among three people A, B, and C in the ratio 2:3:5. How much does each person receive?',
+              solution: 'Step 1: Understand the ratio. The ratio 2:3:5 means A gets 2 parts, B gets 3 parts, and C gets 5 parts. Step 2: Find the total number of parts. Total parts = 2 + 3 + 5 = 10 parts. Step 3: Determine the value of one part. Total amount = Rs. 1,200. Value of one part = 1,200 ÷ 10 = Rs. 120. Step 4: Calculate each person\'s share. Person A: 2 parts × Rs. 120 = Rs. 240. Person B: 3 parts × Rs. 120 = Rs. 360. Person C: 5 parts × Rs. 120 = Rs. 600. Step 5: Verify the answer. Total = 240 + 360 + 600 = Rs. 1,200 ✓. The ratio is also correct: 240:360:600 = 2:3:5 (dividing by 120) ✓. Step 6: Alternative method (using fractions). A gets 2/10 of total = (2/10) × 1,200 = 240. B gets 3/10 of total = (3/10) × 1,200 = 360. C gets 5/10 of total = (5/10) × 1,200 = 600. Therefore, A receives Rs. 240, B receives Rs. 360, and C receives Rs. 600.',
+              explanation: 'When dividing in a ratio, first find the total number of parts, then determine the value of one part. Each person\'s share is their number of parts multiplied by the value per part. Always verify by checking that the shares sum to the total and maintain the correct ratio.',
             },
             {
-              question: 'If 3 oranges cost Rs. 5, how many oranges for Rs. 100?',
-              solution: 'Set proportion: 3/5 = x/100 → Cross multiply: 3×100 = 5×x → 300 = 5x → x = 60 oranges',
-              explanation: 'Set up proportion with same units on same side, then cross multiply to solve.',
+              question: 'If 3 oranges cost Rs. 5, how many oranges can you buy for Rs. 100?',
+              solution: 'Step 1: Understand the problem. We have a rate: 3 oranges cost Rs. 5. We need to find how many oranges can be bought with Rs. 100. Step 2: Set up a proportion. A proportion states that two ratios are equal. We have: (oranges) / (cost) = (oranges) / (cost). So: 3 oranges / Rs. 5 = x oranges / Rs. 100. Step 3: Ensure same units on same side. In our proportion, oranges are on the left side of both ratios, and cost (rupees) are on the right side. This is correct: 3/5 = x/100. Step 4: Cross multiply. When we have a/b = c/d, we can cross multiply to get: a × d = b × c. So: 3 × 100 = 5 × x, which gives: 300 = 5x. Step 5: Solve for x. Divide both sides by 5: 300 ÷ 5 = 5x ÷ 5, which gives: 60 = x. Step 6: Interpret the answer. x = 60 means we can buy 60 oranges for Rs. 100. Step 7: Verify the answer. Check: If 3 oranges cost Rs. 5, then 1 orange costs Rs. 5/3. For Rs. 100, we can buy: 100 ÷ (5/3) = 100 × (3/5) = 300/5 = 60 oranges ✓. Therefore, you can buy 60 oranges for Rs. 100.',
+              explanation: 'Proportions are powerful tools for solving rate problems. The key is setting up the proportion correctly with the same units on the same side. Then cross multiply to solve. Always verify your answer by checking if it makes sense with the given rate.',
             },
           ],
           commonMistakes: [
@@ -3884,19 +3889,24 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Rate = Work/Time   |   Combined rate = Rate₁ + Rate₂   |   Time together = 1/(1/a + 1/b)',
           examples: [
             {
-              question: 'A can complete work in 6 hours, B in 4 hours. How long together?',
-              solution: 'A rate = 1/6 per hour, B rate = 1/4 per hour → Combined = 1/6 + 1/4 = 2/12 + 3/12 = 5/12 per hour → Time = 1 ÷ (5/12) = 12/5 = 2.4 hours',
-              explanation: 'Find individual rates (1/time), add them, then time = 1/combined rate.',
+              question: 'Person A can complete a job in 6 hours working alone. Person B can complete the same job in 4 hours working alone. How long will it take for both A and B to complete the job if they work together?',
+              solution: 'Step 1: Understand the problem. We need to find how long it takes when A and B work together. The key is to work with rates, not times. Step 2: Calculate Person A\'s work rate. If A completes the job in 6 hours, A\'s rate = 1 job ÷ 6 hours = 1/6 of the job per hour. Step 3: Calculate Person B\'s work rate. If B completes the job in 4 hours, B\'s rate = 1 job ÷ 4 hours = 1/4 of the job per hour. Step 4: Calculate the combined work rate. When working together, their rates add up: Combined rate = A\'s rate + B\'s rate = 1/6 + 1/4. Step 5: Find a common denominator and add. Common denominator of 6 and 4 is 12. 1/6 = 2/12 and 1/4 = 3/12. Combined rate = 2/12 + 3/12 = 5/12 of the job per hour. Step 6: Calculate the time to complete the job together. Using Time = Work ÷ Rate: Time = 1 job ÷ (5/12 job/hour) = 1 × (12/5) = 12/5 hours. Step 7: Convert to decimal and mixed number. 12/5 = 2.4 hours = 2 hours and 0.4 × 60 minutes = 2 hours 24 minutes. Therefore, working together, A and B will complete the job in 12/5 hours (or 2 hours 24 minutes). Step 8: Verify. In 12/5 hours: A completes (1/6) × (12/5) = 12/30 = 2/5 of the job. B completes (1/4) × (12/5) = 12/20 = 3/5 of the job. Together: 2/5 + 3/5 = 5/5 = 1 complete job. ✓',
+              explanation: 'Work problems require thinking in terms of rates (work per unit time), not times. Each person\'s rate is 1 divided by their time to complete the job alone. When people work together, their rates add up. To find the time together, we divide 1 (the whole job) by the combined rate. This gives us the time needed to complete one full job.',
             },
             {
-              question: 'Pipe A fills tank in 3 hours, Pipe B in 5 hours. Both together?',
-              solution: 'A rate = 1/3, B rate = 1/5 → Combined = 1/3 + 1/5 = 5/15 + 3/15 = 8/15 → Time = 15/8 = 1.875 hours',
-              explanation: 'Same method as work problems. Add rates, invert to get time.',
+              question: 'Pipe A can fill a water tank in 3 hours. Pipe B can fill the same tank in 5 hours. How long will it take to fill the tank if both pipes are opened at the same time?',
+              solution: 'Step 1: Understand the problem. This is similar to work problems - pipes filling a tank is like workers completing a job. Step 2: Calculate Pipe A\'s filling rate. If Pipe A fills the tank in 3 hours, A\'s rate = 1 tank ÷ 3 hours = 1/3 of the tank per hour. Step 3: Calculate Pipe B\'s filling rate. If Pipe B fills the tank in 5 hours, B\'s rate = 1 tank ÷ 5 hours = 1/5 of the tank per hour. Step 4: Calculate the combined filling rate. When both pipes are open, their rates add up: Combined rate = 1/3 + 1/5. Step 5: Find a common denominator and add. Common denominator of 3 and 5 is 15. 1/3 = 5/15 and 1/5 = 3/15. Combined rate = 5/15 + 3/15 = 8/15 of the tank per hour. Step 6: Calculate the time to fill the tank. Using Time = Work ÷ Rate: Time = 1 tank ÷ (8/15 tank/hour) = 1 × (15/8) = 15/8 hours. Step 7: Convert to decimal and mixed number. 15/8 = 1.875 hours = 1 hour + 0.875 × 60 minutes = 1 hour 52.5 minutes = 1 hour 52 minutes 30 seconds. Therefore, with both pipes open, the tank will be filled in 15/8 hours (or 1 hour 52 minutes 30 seconds). Step 8: Verify. In 15/8 hours: Pipe A fills (1/3) × (15/8) = 15/24 = 5/8 of the tank. Pipe B fills (1/5) × (15/8) = 15/40 = 3/8 of the tank. Together: 5/8 + 3/8 = 8/8 = 1 full tank. ✓',
+              explanation: 'Pipe problems work exactly like work problems. Each pipe has a filling rate (tank per hour). When multiple pipes are open, their rates add together. We divide 1 (the full tank) by the combined rate to find how long it takes to fill the tank completely.',
             },
             {
-              question: 'A, B, C together complete work in 2 hours. A alone takes 6 hours, B alone takes 9 hours. How long for C alone?',
-              solution: 'Combined rate = 1/2 → A rate = 1/6, B rate = 1/9 → C rate = 1/2 − 1/6 − 1/9 = 9/18 − 3/18 − 2/18 = 4/18 = 2/9 → C time = 9/2 = 4.5 hours',
-              explanation: 'Find combined rate, subtract known rates to get C\'s rate, then find C\'s time.',
+              question: 'Three workers A, B, and C working together can complete a project in 2 hours. Worker A alone can complete it in 6 hours, and Worker B alone can complete it in 9 hours. How long would it take Worker C to complete the project alone?',
+              solution: 'Step 1: Understand the problem. We know the combined rate of all three workers and the individual rates of A and B. We need to find C\'s individual rate, then C\'s time. Step 2: Calculate the combined work rate of all three. If A, B, and C together complete the job in 2 hours, their combined rate = 1 job ÷ 2 hours = 1/2 of the job per hour. Step 3: Calculate Worker A\'s individual rate. If A alone takes 6 hours, A\'s rate = 1 job ÷ 6 hours = 1/6 of the job per hour. Step 4: Calculate Worker B\'s individual rate. If B alone takes 9 hours, B\'s rate = 1 job ÷ 9 hours = 1/9 of the job per hour. Step 5: Calculate Worker C\'s rate. Since combined rate = A\'s rate + B\'s rate + C\'s rate, we have: 1/2 = 1/6 + 1/9 + C\'s rate. Step 6: Solve for C\'s rate. C\'s rate = 1/2 − 1/6 − 1/9. Step 7: Find a common denominator. The denominators are 2, 6, and 9. LCM of 2, 6, 9 = 18. Convert: 1/2 = 9/18, 1/6 = 3/18, 1/9 = 2/18. Step 8: Subtract. C\'s rate = 9/18 − 3/18 − 2/18 = (9 − 3 − 2)/18 = 4/18 = 2/9 of the job per hour. Step 9: Calculate C\'s time to complete the job alone. Using Time = Work ÷ Rate: C\'s time = 1 job ÷ (2/9 job/hour) = 1 × (9/2) = 9/2 hours = 4.5 hours. Step 10: Convert to hours and minutes. 4.5 hours = 4 hours 30 minutes. Therefore, Worker C alone would take 9/2 hours (or 4 hours 30 minutes) to complete the project. Step 11: Verify. Combined rate check: 1/6 + 1/9 + 2/9 = 1/6 + 3/9 = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2. ✓ This matches the given combined rate!',
+              explanation: 'When we know the combined rate and some individual rates, we can find the unknown rate by subtraction. The combined rate equals the sum of all individual rates. Once we find C\'s rate, we invert it to find how long C takes alone. Always verify by checking that the rates add up correctly.',
+            },
+            {
+              question: 'A factory has two machines. Machine X can produce 100 widgets per hour, and Machine Y can produce 150 widgets per hour. If both machines work together for 4 hours, how many widgets will they produce?',
+              solution: 'Step 1: Understand the problem. We need to find the total production when both machines work together for 4 hours. Step 2: Identify the rates. Machine X rate = 100 widgets per hour. Machine Y rate = 150 widgets per hour. Step 3: Calculate the combined production rate. When both machines work together: Combined rate = 100 + 150 = 250 widgets per hour. Step 4: Calculate the total production in 4 hours. Using the formula: Total = Rate × Time. Total widgets = 250 widgets/hour × 4 hours = 1,000 widgets. Step 5: Verify by calculating each machine separately. Machine X in 4 hours: 100 × 4 = 400 widgets. Machine Y in 4 hours: 150 × 4 = 600 widgets. Total: 400 + 600 = 1,000 widgets. ✓ Therefore, both machines working together for 4 hours will produce 1,000 widgets.',
+              explanation: 'When machines (or workers) work together, their production rates add up. We multiply the combined rate by the time to get the total production. This is a straightforward application of the rate × time = work formula.',
             },
           ],
           commonMistakes: [
@@ -3927,19 +3937,24 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           formula: 'Speed = Distance/Time   |   Distance = Speed × Time   |   Average Speed = Total Distance/Total Time',
           examples: [
             {
-              question: 'Car travels 240 km in 3 hours. Average speed?',
-              solution: 'Speed = 240 km / 3 hours = 80 km/h',
-              explanation: 'Divide distance by time to get speed.',
+              question: 'A car travels a distance of 240 kilometers in 3 hours. What is the average speed of the car?',
+              solution: 'Step 1: Identify the given information. Distance traveled = 240 km. Time taken = 3 hours. Step 2: Recall the formula. Speed = Distance ÷ Time. Step 3: Substitute the values into the formula. Speed = 240 km ÷ 3 hours. Step 4: Perform the division. 240 ÷ 3 = 80. Step 5: Include the units. Speed = 80 km/h (kilometers per hour). Therefore, the average speed of the car is 80 km/h. Step 6: Verify the answer makes sense. If the car travels at 80 km/h for 3 hours: Distance = 80 × 3 = 240 km. ✓ This matches the given distance!',
+              explanation: 'This is a straightforward application of the speed formula. Speed is defined as distance divided by time. We simply divide the total distance (240 km) by the total time (3 hours) to get the average speed. The units km/h tell us how many kilometers the car travels in one hour.',
             },
             {
-              question: 'Travels 60 km at 40 km/h, then 60 km at 60 km/h. Average speed?',
-              solution: 'Time for first: 60/40 = 1.5h → Time for second: 60/60 = 1h → Total time: 2.5h, Total distance: 120km → Average = 120/2.5 = 48 km/h',
-              explanation: 'NOT (40+60)/2 = 50! Find total time first, then average = total distance/total time.',
+              question: 'A person travels 60 kilometers at a speed of 40 km/h, then travels another 60 kilometers at a speed of 60 km/h. What is the average speed for the entire journey?',
+              solution: 'Step 1: Understand the problem. This journey has two parts with different speeds. We cannot simply average the speeds - we must use the formula: Average Speed = Total Distance ÷ Total Time. Step 2: Calculate the time for the first part. Distance = 60 km, Speed = 40 km/h. Using Time = Distance ÷ Speed: Time₁ = 60 km ÷ 40 km/h = 1.5 hours. Step 3: Calculate the time for the second part. Distance = 60 km, Speed = 60 km/h. Using Time = Distance ÷ Speed: Time₂ = 60 km ÷ 60 km/h = 1 hour. Step 4: Find the total time. Total Time = Time₁ + Time₂ = 1.5 hours + 1 hour = 2.5 hours. Step 5: Find the total distance. Total Distance = 60 km + 60 km = 120 km. Step 6: Calculate the average speed. Average Speed = Total Distance ÷ Total Time = 120 km ÷ 2.5 hours = 48 km/h. Step 7: Verify (and show why averaging speeds is wrong). If we incorrectly averaged speeds: (40 + 60) ÷ 2 = 50 km/h. But this is wrong! The person spent more time at the slower speed (1.5 hours) than at the faster speed (1 hour), so the average should be closer to 40 km/h than 60 km/h. Our answer of 48 km/h makes sense. Therefore, the average speed for the entire journey is 48 km/h.',
+              explanation: 'This is a common trap! You cannot simply average the two speeds. The average speed must account for how long the person traveled at each speed. Since more time was spent at the slower speed (1.5 hours vs 1 hour), the average speed is weighted toward the slower speed. We must calculate total distance and total time separately, then divide to get the true average speed.',
             },
             {
-              question: 'Two trains, 200m and 150m, speeds 60 km/h and 40 km/h, opposite directions. Time to pass?',
-              solution: 'Relative speed = 60 + 40 = 100 km/h = 100×1000/3600 = 27.78 m/s → Distance = 200+150 = 350m → Time = 350/27.78 ≈ 12.6 seconds',
-              explanation: 'Opposite directions: add speeds. Convert to same units (m/s). Total distance is sum of lengths.',
+              question: 'Two trains are approaching each other on parallel tracks. Train A is 200 meters long and travels at 60 km/h. Train B is 150 meters long and travels at 40 km/h. How long will it take for the trains to completely pass each other (from when the fronts meet until the rears separate)?',
+              solution: 'Step 1: Understand the problem. When trains pass each other, we need to consider the total distance that must be covered. This is the sum of both train lengths. Step 2: Calculate the total distance to be covered. Total distance = Length of Train A + Length of Train B = 200 m + 150 m = 350 m. Step 3: Calculate the relative speed. Since the trains are moving toward each other (opposite directions), we add their speeds: Relative speed = 60 km/h + 40 km/h = 100 km/h. Step 4: Convert units to be consistent. The distance is in meters, but speed is in km/h. We need to convert speed to m/s (meters per second). Conversion: 1 km/h = 1000 m / 3600 s = 5/18 m/s. So 100 km/h = 100 × (5/18) = 500/18 = 250/9 ≈ 27.78 m/s. Step 5: Calculate the time. Using Time = Distance ÷ Speed: Time = 350 m ÷ 27.78 m/s ≈ 12.6 seconds. Step 6: Verify with exact calculation. Using fractions: Time = 350 m ÷ (250/9 m/s) = 350 × (9/250) = 3150/250 = 12.6 seconds. Therefore, it will take approximately 12.6 seconds for the trains to completely pass each other.',
+              explanation: 'When two objects move toward each other, their relative speed is the sum of their individual speeds. The total distance to be covered is the sum of both train lengths because we need to account for both trains passing completely. Unit conversion is crucial here - we convert km/h to m/s by multiplying by 5/18 (since 1 km/h = 1000 m / 3600 s = 5/18 m/s).',
+            },
+            {
+              question: 'A cyclist rides from Town A to Town B at an average speed of 20 km/h, then immediately returns from Town B to Town A at an average speed of 30 km/h. If the distance between the towns is 60 km, what is the cyclist\'s average speed for the entire round trip?',
+              solution: 'Step 1: Understand the problem. This is a round trip with different speeds for each direction. We need total distance and total time. Step 2: Calculate the time for the trip from A to B. Distance = 60 km, Speed = 20 km/h. Time₁ = 60 km ÷ 20 km/h = 3 hours. Step 3: Calculate the time for the return trip from B to A. Distance = 60 km, Speed = 30 km/h. Time₂ = 60 km ÷ 30 km/h = 2 hours. Step 4: Find the total time. Total Time = Time₁ + Time₂ = 3 hours + 2 hours = 5 hours. Step 5: Find the total distance. Total Distance = 60 km + 60 km = 120 km (round trip). Step 6: Calculate the average speed. Average Speed = Total Distance ÷ Total Time = 120 km ÷ 5 hours = 24 km/h. Step 7: Verify. Note that this is NOT the average of 20 and 30 (which would be 25). The cyclist spent more time at the slower speed (3 hours vs 2 hours), so the average is closer to 20 than 30. Our answer of 24 km/h makes sense. Therefore, the average speed for the entire round trip is 24 km/h.',
+              explanation: 'For round trips with different speeds, we must calculate the total distance and total time. The average speed is NOT simply the average of the two speeds because different amounts of time are spent at each speed. Since more time is spent at the slower speed (3 hours vs 2 hours), the average speed is weighted toward the slower speed.',
             },
           ],
           commonMistakes: [
@@ -3968,19 +3983,19 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Alloy: copper:zinc = 3:2. If 15 kg copper, how much zinc?',
-              solution: 'Ratio 3:2 means 3 parts copper, 2 parts zinc → 15 kg = 3 parts → 1 part = 5 kg → Zinc = 2 parts = 10 kg',
-              explanation: 'Find value of one part, then multiply by number of parts needed.',
+              question: 'An alloy is made of copper and zinc in the ratio 3:2. If there are 15 kg of copper in the alloy, how much zinc is there?',
+              solution: 'Step 1: Understand the ratio. The ratio 3:2 means for every 3 parts of copper, there are 2 parts of zinc. Step 2: Set up the relationship. If the ratio is 3:2, then: Copper = 3 parts, Zinc = 2 parts. We know Copper = 15 kg. Step 3: Find the value of one part. Since 15 kg = 3 parts, we divide: 1 part = 15 kg ÷ 3 = 5 kg. Step 4: Calculate the amount of zinc. Zinc = 2 parts = 2 × 5 kg = 10 kg. Step 5: Verify the ratio. Check: Copper : Zinc = 15 : 10 = 3 : 2 (dividing both by 5) ✓. Step 6: Final answer. Therefore, there are 10 kg of zinc in the alloy.',
+              explanation: 'When given one quantity in a ratio, find the value of one "part" first, then multiply by the number of parts for the other quantity. This method works for any ratio problem where you know one actual value.',
             },
             {
-              question: 'Mixture A:B = 2:3, total 50 kg. Add 10 kg of A. New ratio?',
-              solution: 'Original: A = (2/5)×50 = 20 kg, B = (3/5)×50 = 30 kg → After adding: A = 30 kg, B = 30 kg → New ratio = 30:30 = 1:1',
-              explanation: 'Find original amounts, add new quantity, find new ratio.',
+              question: 'A mixture has components A and B in the ratio 2:3, with a total weight of 50 kg. If 10 kg of component A is added to the mixture, what is the new ratio of A to B?',
+              solution: 'Step 1: Find the original amounts. Ratio A:B = 2:3, total = 50 kg. Total parts = 2 + 3 = 5. Component A: (2/5) × 50 = 20 kg. Component B: (3/5) × 50 = 30 kg. Step 2: Add the new quantity. After adding 10 kg of A: New A = 20 + 10 = 30 kg. Component B remains: 30 kg (unchanged). Step 3: Find the new ratio. New A : New B = 30 : 30 = 1 : 1 (dividing both by 30). Step 4: Verify. Check: Original ratio was 2:3. After adding A, we have equal amounts (30 kg each), so ratio is 1:1 ✓. Step 5: Final answer. Therefore, the new ratio is 1:1.',
+              explanation: 'When adding to a mixture, find the original amounts first using the ratio, then add the new quantity to the appropriate component, and find the new ratio. The component not being added remains unchanged.',
             },
             {
-              question: 'Solution A:B = 4:5. Remove 18L, add 18L of A. New ratio 1:1. Original total?',
-              solution: 'Let original total = 9x (4x A, 5x B) → After removal: (4x−8) A, (5x−10) B → After adding: (4x+8) A, (5x−10) B → Ratio 1:1: 4x+8 = 5x−10 → x = 18 → Original = 9×18 = 162L',
-              explanation: 'Set up algebra with ratio parts. Solve for x, then find total.',
+              question: 'A solution has components A and B in the ratio 4:5. If 18 liters are removed from the solution and then 18 liters of pure A are added, the new ratio becomes 1:1. What was the original total volume of the solution?',
+              solution: 'Step 1: Set up variables using ratio parts. Let the original solution have components in ratio 4:5. If we let the parts be 4x and 5x, then: Original A = 4x liters, Original B = 5x liters, Original total = 9x liters. Step 2: Calculate what is removed. When 18L is removed, it\'s removed in the same ratio 4:5. A removed = (4/9) × 18 = 8L, B removed = (5/9) × 18 = 10L. Total removed = 8 + 10 = 18L ✓. Step 3: Find amounts after removal. After removal: A = 4x − 8, B = 5x − 10. Step 4: Add 18L of pure A. After adding 18L of A: A = (4x − 8) + 18 = 4x + 10, B = 5x − 10 (unchanged). Step 5: Set up equation from new ratio. The new ratio is 1:1, meaning A = B. So: 4x + 10 = 5x − 10. Step 6: Solve for x. Subtract 4x from both sides: 10 = x − 10. Add 10 to both sides: 20 = x. So x = 20. Step 7: Find the original total. Original total = 9x = 9 × 20 = 180 liters. Step 8: Verify. Original: A = 80L, B = 100L (ratio 4:5) ✓. Remove 18L (8L A, 10L B): A = 72L, B = 90L. Add 18L A: A = 90L, B = 90L. New ratio = 90:90 = 1:1 ✓. Therefore, the original total volume was 180 liters.',
+              explanation: 'For complex mixture problems with removal and addition, set up algebra with ratio parts. Track each step: (1) Original amounts in ratio, (2) Calculate removal amounts (in same ratio), (3) Subtract removed amounts, (4) Add new amounts, (5) Set up equation from final ratio, (6) Solve for x, (7) Find original total. Always verify by working through the steps with your answer.',
             },
           ],
           commonMistakes: [
@@ -4615,9 +4630,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Column A: x², Column B: x, Condition: x is real number',
-              solution: 'Test x=0: A=0, B=0 → Equal → Test x=2: A=4, B=2 → A>B → Test x=½: A=¼, B=½ → A<B → Different relationships → Answer: D',
-              explanation: 'Since different test values give different relationships, the answer cannot be determined.',
+              question: 'Quantitative Comparison: Column A: x², Column B: x. Condition: x is a real number. Which is greater?',
+              solution: 'Step 1: Follow the QC systematic approach. The problem has a variable (x), so we need to test different values. Step 2: Test x = 0 (always test 0 first). Column A: x² = 0² = 0. Column B: x = 0. Result: A = B (they are equal). Step 3: Test x = 1 (always test 1). Column A: x² = 1² = 1. Column B: x = 1. Result: A = B (they are equal). Step 4: Test x = 2 (a positive number greater than 1). Column A: x² = 2² = 4. Column B: x = 2. Result: A > B (Column A is greater). Step 5: Test x = ½ (a fraction between 0 and 1). Column A: x² = (½)² = ¼ = 0.25. Column B: x = ½ = 0.5. Result: A < B (Column A is smaller). Step 6: Analyze the results. We found: x = 0 or 1: A = B. x = 2: A > B. x = ½: A < B. Since different test values give different relationships (equal, A>B, A<B), the relationship depends on the value of x. Step 7: Determine the answer. In QC, if the relationship can change depending on the value of the variable, the answer is D (The relationship cannot be determined from the information given). Step 8: Final answer. Therefore, the answer is D - the relationship cannot be determined.',
+              explanation: 'For QC problems with variables, you must test multiple values systematically. Always test: 0, 1, a positive number > 1, a fraction between 0 and 1, and a negative number if applicable. If you get different relationships, the answer is D. If you always get the same relationship, that\'s your answer.',
             },
           ],
           commonMistakes: [
@@ -4646,14 +4661,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Column A: Area of square with side 5, Column B: Area of rectangle 4×6',
-              solution: 'A: 5² = 25, B: 4×6 = 24 → A > B',
-              explanation: 'Calculate directly: square area = side², rectangle area = length × width.',
+              question: 'Quantitative Comparison: Column A: Area of a square with side 5. Column B: Area of a rectangle with length 4 and width 6. Which is greater?',
+              solution: 'Step 1: Calculate Column A. Square area = side². With side = 5: Area = 5² = 25 square units. Step 2: Calculate Column B. Rectangle area = length × width. With length = 4 and width = 6: Area = 4 × 6 = 24 square units. Step 3: Compare the values. Column A = 25, Column B = 24. Since 25 > 24, Column A is greater. Step 4: Verify calculations. Square: 5 × 5 = 25 ✓. Rectangle: 4 × 6 = 24 ✓. Step 5: Final answer. Therefore, Column A is greater than Column B.',
+              explanation: 'For QC problems without variables, calculate both columns directly and compare. Make sure to use the correct formulas: square area = side², rectangle area = length × width. Always double-check your calculations.',
             },
             {
-              question: 'Column A: Perimeter of triangle with sides 3, 4, 5, Column B: Perimeter of square with side 3',
-              solution: 'A: 3+4+5 = 12, B: 4×3 = 12 → A = B',
-              explanation: 'Calculate perimeters directly and compare.',
+              question: 'Quantitative Comparison: Column A: Perimeter of a triangle with sides 3, 4, and 5. Column B: Perimeter of a square with side 3. Which is greater?',
+              solution: 'Step 1: Calculate Column A. Triangle perimeter = sum of all three sides. With sides 3, 4, and 5: Perimeter = 3 + 4 + 5 = 12 units. Step 2: Calculate Column B. Square perimeter = 4 × side. With side = 3: Perimeter = 4 × 3 = 12 units. Step 3: Compare the values. Column A = 12, Column B = 12. Since 12 = 12, the two columns are equal. Step 4: Verify calculations. Triangle: 3 + 4 + 5 = 12 ✓. Square: 4 × 3 = 12 ✓. Step 5: Final answer. Therefore, Column A equals Column B.',
+              explanation: 'When both columns calculate to the same value, the answer is C (the two quantities are equal). Always verify your calculations, especially when the answer is C, to make sure you didn\'t make an error.',
             },
           ],
           commonMistakes: [
@@ -5391,14 +5406,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Bar graph shows sales: Jan=50, Feb=70, Mar=60, Apr=80. Average?',
-              solution: 'Total = 50+70+60+80 = 260 → Average = 260/4 = 65',
-              explanation: 'Read values from bars, sum them, divide by number of months.',
+              question: 'A bar graph shows monthly sales as follows: January = 50 units, February = 70 units, March = 60 units, April = 80 units. What is the average monthly sales?',
+              solution: 'Step 1: Understand the problem. We need to find the average (mean) of the four monthly sales values. Step 2: Read the values from the graph. January: 50, February: 70, March: 60, April: 80. Step 3: Calculate the sum. Total sales = 50 + 70 + 60 + 80 = 260 units. Step 4: Calculate the average. Average = Total / Number of values = 260 / 4 = 65 units. Step 5: Verify. Check: (50 + 70 + 60 + 80) / 4 = 260 / 4 = 65 ✓. Step 6: Interpret. The average monthly sales is 65 units, meaning if sales were constant, each month would have 65 units. Step 7: Final answer. Therefore, the average monthly sales is 65 units.',
+              explanation: 'To find the average from a bar graph, read all values, sum them, then divide by the count. Always double-check that you\'ve read the correct values from the bars and haven\'t missed any data points.',
             },
             {
-              question: 'Which month had highest growth from previous?',
-              solution: 'Feb: 70−50 = 20, Mar: 60−70 = −10, Apr: 80−60 = 20 → Feb and Apr tied at +20',
-              explanation: 'Calculate difference from previous month for each, find maximum.',
+              question: 'Using the same bar graph data (Jan=50, Feb=70, Mar=60, Apr=80), which month had the highest growth from the previous month?',
+              solution: 'Step 1: Understand growth. Growth means the increase (or decrease) from the previous month. We need to calculate the change for each month compared to the previous month. Step 2: Calculate growth for February (compared to January). February: 70, January: 50. Growth = 70 − 50 = +20 units (positive means increase). Step 3: Calculate growth for March (compared to February). March: 60, February: 70. Growth = 60 − 70 = −10 units (negative means decrease). Step 4: Calculate growth for April (compared to March). April: 80, March: 60. Growth = 80 − 60 = +20 units (positive means increase). Step 5: Compare the growth values. February: +20, March: −10, April: +20. The highest growth is +20, which occurs in both February and April. Step 6: Interpret. Both February and April had the same growth of 20 units from their respective previous months. February grew from 50 to 70 (+20), and April grew from 60 to 80 (+20). Step 7: Final answer. Therefore, February and April are tied for the highest growth, each with +20 units from the previous month.',
+              explanation: 'Growth is calculated as the difference between consecutive values. Positive values indicate increases, negative values indicate decreases. When comparing growth, look at the absolute change, not just whether it\'s positive or negative. Always calculate each period\'s growth separately.',
             },
           ],
           commonMistakes: [
@@ -5427,14 +5442,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Line graph: Year 1=100, Year 2=120, Year 3=150, Year 4=140. Overall trend?',
-              solution: 'Started at 100, peaked at 150, ended at 140 → Overall increase from 100 to 140, but decreased in final year',
-              explanation: 'Look at overall change from start to end, but note any reversals.',
+              question: 'A line graph shows values over 4 years: Year 1 = 100, Year 2 = 120, Year 3 = 150, Year 4 = 140. What is the overall trend?',
+              solution: 'Step 1: Identify the data points. Year 1: 100, Year 2: 120, Year 3: 150, Year 4: 140. Step 2: Analyze year-by-year changes. Year 1 to Year 2: 100 → 120 (increase of 20). Year 2 to Year 3: 120 → 150 (increase of 30). Year 3 to Year 4: 150 → 140 (decrease of 10). Step 3: Identify the peak. The highest value is 150 in Year 3. This is the peak. Step 4: Determine overall trend. Starting value: 100. Ending value: 140. Overall change: 140 − 100 = +40 (an increase). Step 5: Note any reversals. While the overall trend is upward (from 100 to 140), there was a decrease in the final year (Year 3 to Year 4: 150 → 140). Step 6: Describe the trend. The overall trend is upward (increasing) from Year 1 to Year 4, with the value increasing from 100 to 140. However, there was a peak at Year 3 (150), followed by a decrease in Year 4. Step 7: Final answer. Overall trend: Increasing from 100 to 140, but with a peak at 150 in Year 3 and a decrease in the final year.',
+              explanation: 'When analyzing trends, look at both the overall change (start to end) and any intermediate changes. A trend can be overall upward but have periods of decrease. Always identify peaks and valleys, and note any reversals in the trend.',
             },
             {
-              question: 'Which year had highest growth rate?',
-              solution: 'Year 1→2: (120−100)/100 = 20%, Year 2→3: (150−120)/120 = 25%, Year 3→4: (140−150)/150 = −6.7% → Year 2→3 highest',
-              explanation: 'Calculate percentage change for each period, find maximum.',
+              question: 'Using the same line graph data (Year 1=100, Year 2=120, Year 3=150, Year 4=140), which year-to-year period had the highest growth rate?',
+              solution: 'Step 1: Understand growth rate. Growth rate is the percentage change from one period to the next. Formula: Growth rate = [(New − Old) / Old] × 100%. Step 2: Calculate growth rate for Year 1 to Year 2. Old value = 100, New value = 120. Growth rate = [(120 − 100) / 100] × 100% = [20 / 100] × 100% = 0.20 × 100% = 20%. Step 3: Calculate growth rate for Year 2 to Year 3. Old value = 120, New value = 150. Growth rate = [(150 − 120) / 120] × 100% = [30 / 120] × 100% = 0.25 × 100% = 25%. Step 4: Calculate growth rate for Year 3 to Year 4. Old value = 150, New value = 140. Growth rate = [(140 − 150) / 150] × 100% = [−10 / 150] × 100% = −0.0667 × 100% = −6.67% (negative means decrease). Step 5: Compare the growth rates. Year 1→2: 20%, Year 2→3: 25%, Year 3→4: −6.67%. The highest growth rate is 25% from Year 2 to Year 3. Step 6: Verify. Year 2→3 had the largest percentage increase (25%), even though Year 1→2 had a larger absolute increase (20 vs 30, but from a smaller base). Step 7: Final answer. Therefore, the period from Year 2 to Year 3 had the highest growth rate at 25%.',
+              explanation: 'Growth rate measures percentage change, not absolute change. A smaller absolute increase can have a higher growth rate if it\'s from a smaller base. Always use the formula: [(New − Old) / Old] × 100% to calculate growth rates. Compare percentage changes, not absolute changes.',
             },
           ],
           commonMistakes: [
@@ -5463,14 +5478,14 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Table: Product A sales: Q1=100, Q2=120, Q3=110, Q4=130. Total and average?',
-              solution: 'Total = 100+120+110+130 = 460 → Average = 460/4 = 115',
-              explanation: 'Sum all quarters for total, divide by 4 for average.',
+              question: 'A data table shows Product A sales by quarter: Q1 = 100 units, Q2 = 120 units, Q3 = 110 units, Q4 = 130 units. Find the total sales and average quarterly sales.',
+              solution: 'Step 1: Understand the problem. We need to find the total sales for all four quarters and the average sales per quarter. Step 2: Calculate the total sales. Total = Q1 + Q2 + Q3 + Q4 = 100 + 120 + 110 + 130. Step 3: Add the values. 100 + 120 = 220. 220 + 110 = 330. 330 + 130 = 460. So Total = 460 units. Step 4: Calculate the average. Average = Total / Number of quarters = 460 / 4 = 115 units per quarter. Step 5: Verify. Check: If average is 115 per quarter, then total for 4 quarters = 115 × 4 = 460 ✓. Step 6: Interpret. Product A sold a total of 460 units over the year, with an average of 115 units per quarter. Step 7: Final answer. Therefore, total sales = 460 units, and average quarterly sales = 115 units.',
+              explanation: 'For tables, read values carefully from the correct row and column intersection. To find totals, sum all relevant values. To find averages, divide the total by the count. Always verify by checking that average × count = total.',
             },
             {
-              question: 'Which product had highest Q4 sales?',
-              solution: 'Read Q4 column, compare all products, find maximum value.',
-              explanation: 'Scan the Q4 column, identify the highest number.',
+              question: 'A data table shows quarterly sales for multiple products. Which product had the highest sales in Q4?',
+              solution: 'Step 1: Locate the Q4 column. In the table, find the column header labeled "Q4" or "Quarter 4". Step 2: Read all Q4 values. Scan down the Q4 column and read the sales value for each product. For example: Product A: 130, Product B: 95, Product C: 150, Product D: 120. Step 3: Compare the values. Compare all Q4 values: 130, 95, 150, 120. The highest value is 150. Step 4: Identify which product. Product C has 150 units in Q4, which is the highest. Step 5: Verify. Double-check by reading the Q4 column again to ensure you didn\'t misread any values. Step 6: Final answer. Therefore, Product C had the highest Q4 sales with 150 units.',
+              explanation: 'When finding maximum or minimum values in a table, scan the relevant column (or row) systematically. Read each value carefully, compare them, and identify the highest (or lowest). Always double-check to avoid reading errors.',
             },
           ],
           commonMistakes: [
@@ -5499,9 +5514,9 @@ const TopicDetail = ({ topicId, onBack, progress, setProgress }: TopicDetailProp
           ],
           examples: [
             {
-              question: 'Pie chart: A=30%, B=25%, C=45%. Total=200. Actual values?',
-              solution: 'A: 0.30×200=60, B: 0.25×200=50, C: 0.45×200=90',
-              explanation: 'Convert percentages to actual values using total.',
+              question: 'A pie chart shows the distribution of a total of 200 items into three categories: Category A = 30%, Category B = 25%, Category C = 45%. What are the actual values (number of items) in each category?',
+              solution: 'Step 1: Understand pie charts. A pie chart shows percentages that represent parts of a whole. To find actual values, we multiply each percentage by the total. Step 2: Verify percentages sum to 100%. Check: 30% + 25% + 45% = 100% ✓. This confirms the pie chart is complete. Step 3: Calculate actual value for Category A. Category A = 30% of 200. Actual value = 30% × 200 = 0.30 × 200 = 60 items. Step 4: Calculate actual value for Category B. Category B = 25% of 200. Actual value = 25% × 200 = 0.25 × 200 = 50 items. Step 5: Calculate actual value for Category C. Category C = 45% of 200. Actual value = 45% × 200 = 0.45 × 200 = 90 items. Step 6: Verify the total. Check: 60 + 50 + 90 = 200 ✓. The actual values sum to the given total. Step 7: Final answer. Therefore, Category A has 60 items, Category B has 50 items, and Category C has 90 items.',
+              explanation: 'Pie charts show percentages, but questions often ask for actual values. To convert: Actual value = (Percentage / 100) × Total. Always verify that the percentages sum to 100% and that the actual values sum to the total. This prevents calculation errors.',
             },
           ],
           commonMistakes: [
