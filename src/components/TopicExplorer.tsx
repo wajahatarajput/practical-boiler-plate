@@ -38,8 +38,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '🔢',
       description: 'Master basic operations, number properties, factors, multiples, and prime numbers',
       difficulty: 'beginner',
-      estimatedTime: '4-5 hours',
-      concepts: 10,
+      estimatedTime: '8-10 hours',
+      concepts: 30,
     },
     {
       id: 'algebra',
@@ -47,8 +47,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '📐',
       description: 'Learn algebraic identities, solving equations, and word problem translation',
       difficulty: 'intermediate',
-      estimatedTime: '5-6 hours',
-      concepts: 7,
+      estimatedTime: '10-12 hours',
+      concepts: 27,
     },
     {
       id: 'geometry',
@@ -56,8 +56,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '📏',
       description: 'Understand lines, angles, triangles, circles, and all geometric formulas',
       difficulty: 'intermediate',
-      estimatedTime: '6-7 hours',
-      concepts: 7,
+      estimatedTime: '10-12 hours',
+      concepts: 27,
     },
     {
       id: 'percentages',
@@ -65,8 +65,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '📊',
       description: 'Master percentage calculations, fraction comparisons, and decimal conversions',
       difficulty: 'beginner',
-      estimatedTime: '4-5 hours',
-      concepts: 5,
+      estimatedTime: '8-10 hours',
+      concepts: 25,
     },
     {
       id: 'ratios',
@@ -74,8 +74,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '⚖️',
       description: 'Learn ratio calculations, proportions, and distribution problems',
       difficulty: 'beginner',
-      estimatedTime: '4-5 hours',
-      concepts: 4,
+      estimatedTime: '8-10 hours',
+      concepts: 24,
     },
     {
       id: 'qc',
@@ -83,8 +83,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '🎯',
       description: 'Master QC strategies, systematic testing, and common traps',
       difficulty: 'advanced',
-      estimatedTime: '4-5 hours',
-      concepts: 3,
+      estimatedTime: '8-10 hours',
+      concepts: 23,
     },
     {
       id: 'data',
@@ -92,8 +92,8 @@ const TopicExplorer = ({ progress, setProgress }: TopicExplorerProps) => {
       icon: '📉',
       description: 'Analyze graphs, charts, tables, and estimation strategies',
       difficulty: 'advanced',
-      estimatedTime: '4-5 hours',
-      concepts: 4,
+      estimatedTime: '8-10 hours',
+      concepts: 24,
     },
   ];
 
